@@ -400,16 +400,16 @@ var VitrineResponsiva = (
   // resize image depending on product name height
 
   function imageLoaded(element) {
-    var rel = element.getAttribute('rel');
+    var original = element.getAttribute('data-original');
 
-    if (rel !== "{ thumb }" && element.src != rel) {
+    if (original !== "{ thumb }" && element.src != original) {
 
       if (element.offsetHeight > 100) {
-        rel = rel.replace(/T100x100/gi, "T200x200");
+        original = original.replace(/T100x100/gi, "T200x200");
       }
 
-      element.setAttribute('rel', element.src);
-      element.src = rel;
+//      element.setAttribute('data-', element.src);
+      element.src = original;
 
       element.onload = null;
 
@@ -638,10 +638,12 @@ var VitrineResponsiva = (
     }
                          
     var subdomain = ("https:" == window.location.protocol ? "sbws" : "bws");
-
+    var protocol = ("https:" == window.location.protocol ? "https:" : "http:");
+                         
     var jsonp = document.createElement("script");
-    jsonp.src = "//" + subdomain + ".buscape.com.br/service/autoComplete/mobile/664f4c566e534b707844553d/BR/?format=json&keyword=" + value + "&callback=VitrineResponsiva.autoCompleteCallback";
+    jsonp.src = protocol + "//" + subdomain + ".buscape.com.br/service/autoComplete/mobile/664f4c566e534b707844553d/BR/?format=json&keyword=" + value + "&callback=VitrineResponsiva.autoCompleteCallback";
     document.body.appendChild(jsonp);
+                         console.log(protocol);
   }
 
 
@@ -1035,19 +1037,6 @@ var VitrineResponsiva = (
   }
 
 
-  function insertCss(css) {
-    // IE < 9 sniff
-    if (is_old_ie) {
-      d.createStyleSheet().cssText = css;
-    } else {
-      var tag = d.createElement('style');
-      tag.type = 'text/css';
-      d.getElementsByTagName('head')[0].appendChild(tag);
-      tag[(typeof d.body.style.WebkitAppearance == 'string') /* webkit only */ ? 'innerText' : 'innerHTML'] = css;
-    }
-  }
-
-
   // limit input size to 6 chars as it should be rgb color in hex
 
   function hex_input(i) {
@@ -1074,7 +1063,7 @@ var VitrineResponsiva = (
     g_country = options["country"] || "BR",
     g_source_id = options["sourceId"] || "35802480";
 
-    insertCss("THE_CSS_REPLACE");
+//    insertCss("THE_CSS_REPLACE");
     // d.body.innerHTML += 'THE_FRAME_REPLACE';
 
     search_holder = $("in_sx"),
@@ -1326,7 +1315,6 @@ var VitrineResponsiva = (
         selectSugst: selectSugst,
         mouseSugst: mouseSugst,
         renderWidget: renderWidget,
-        renderIframe: renderIframe,
         imgLoad: imageLoaded,
         imgErr: imageError,
         mouseOfr: mouseOffer,
