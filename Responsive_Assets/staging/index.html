@@ -25,16 +25,7 @@
                     //Limpa mensagem de erro
                     error('');
                     
-                    var
-                        rand_id = Math.floor(Math.random()*999999),
-                        initial_options = {
-                            placer_id: "buscaofertas-" + rand_id,
-                            width: "100%",
-                            sourceId: selectedSource
-                        }
-                        initial_code = '\<div id="buscaofertas-THE_RAND">\<\/div>\<script>var _bpbuscaoq = _bpbuscaoq || [];_bpbuscaoq.push(THE_OPTIONS);(function() {var bo = document.createElement("script");bo.type = "text/javascript";bo.async = true;bo.src = "min.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bo, s);})();\<\/script>',
-                        new_code = initial_code.replace("THE_OPTIONS", JSON.stringify(initial_options)).replace("THE_RAND", rand_id);
-                    ;
+                    var new_code = "<iframe src=\"./frameads.html?sourceId="+ selectedSource +"\" width=\"100%\" height=\"183\" scrolling=\"no\" frameborder=\"0\"></iframe>"
                     
                     //Exibe resultado
                     success('Titulo: Vitrine Responsiva gerada com sucesso!', 'Descrição: Utilize a Vitrine Responsiva em seu site!', 'Código Gerado: ' + new_code, 'textarea');
