@@ -6,10 +6,25 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		710ADF9A1EEAEA4D00CD4AD3 /* app.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = app.yaml; sourceTree = "<group>"; };
+		710ADF9E1EEAEA4D00CD4AD3 /* deploy.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = deploy.sh; sourceTree = "<group>"; };
+		710ADFA41EEAEA4D00CD4AD3 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		710ADFA51EEAEA4D00CD4AD3 /* Responsive_Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Responsive_Assets; sourceTree = "<group>"; };
+		710ADFA61EEAEA4D00CD4AD3 /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; path = static; sourceTree = "<group>"; };
+		710ADFA81EEAEA4D00CD4AD3 /* TODO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TODO.rtf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		710ADF921EEA138500CD4AD3 = {
 			isa = PBXGroup;
 			children = (
+				710ADF9A1EEAEA4D00CD4AD3 /* app.yaml */,
+				710ADF9E1EEAEA4D00CD4AD3 /* deploy.sh */,
+				710ADFA41EEAEA4D00CD4AD3 /* README */,
+				710ADFA51EEAEA4D00CD4AD3 /* Responsive_Assets */,
+				710ADFA61EEAEA4D00CD4AD3 /* static */,
+				710ADFA81EEAEA4D00CD4AD3 /* TODO.rtf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -21,7 +36,7 @@
 			attributes = {
 				LastUpgradeCheck = 0830;
 			};
-			buildConfigurationList = 710ADF961EEA138500CD4AD3 /* Build configuration list for PBXProject "Vitrine Responsiva v1.5" */;
+			buildConfigurationList = 710ADF961EEA138500CD4AD3 /* Build configuration list for PBXProject "Vitrine Responsiva v1.1.0" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -52,7 +67,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		710ADF961EEA138500CD4AD3 /* Build configuration list for PBXProject "Vitrine Responsiva v1.5" */ = {
+		710ADF961EEA138500CD4AD3 /* Build configuration list for PBXProject "Vitrine Responsiva v1.1.0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				710ADF971EEA138500CD4AD3 /* Debug */,

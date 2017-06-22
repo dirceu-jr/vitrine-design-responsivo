@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.6.2</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.6.2/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.6.2/jasmine.css">
+
+  <script src="lib/jasmine-2.6.2/jasmine.js"></script>
+  <script src="lib/jasmine-2.6.2/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.6.2/boot.js"></script>
+  
+  <!-- libs... -->
+  <script src="lib/jquery-sizzle-eabce51/sizzle.min.js"></script>
+  <script src="lib/jquery-3.2.1.min.js"></script>
+
+  <!-- include source files here... -->
+  <script src="lib/spin.js"></script>
+  <script src="bo.js"></script>
+
+  <!-- include spec files here... -->
+  <script src="spec/VitrineResponsivaSpec.js"></script>
+
+</head>
+
+<body>
+    <div style="visibility: hidden; height: 0; overflow:hidden;">
+        
+        <div id="sidebar">
+            <div id="headr">
+                <div id="logo">
+                    <span>Shopping</span>
+                </div>
+                <div id="sx">
+                    <input type="text" placeholder="Digite um produto/marca" id="in_sx" autocomplete="off" onfocus="VitrineResponsiva.analytics('send', 'event', 'Search', 'Focus');" />
+                    <div id="sx-loa"></div>
+                </div>
+            </div>
+            <div id="sugst_scroll" class="hide">
+                <ul id="sugst">
+                    <li><a href="#" onmouseover='VitrineResponsiva.mouseSugst("over", this, { index });' onmouseout='VitrineResponsiva.mouseSugst("out", this, { index });' onclick='return VitrineResponsiva.selectSugst(this);'>{ word }</a></li>
+                </ul>
+            </div>
+            <div id="scrollpa">
+                <ul id="aside">
+                    <li id='tab-{ id }'>{ name }</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="entry">
+            
+            <div id="msg"></div>
+            <div id="load"></div>
+            
+            <ul id="prodct"><li><a href="{ link }" target="_blank" onclick="VitrineResponsiva.analytics('send', 'event', 'Oferta-Click', '{ product_id }-{ category_id }', '{ super duper big title product name }');"><img class="thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" rel="{ thumb }" alt="{ super duper big title product name }" onerror="VitrineResponsiva.imgErr(this);" onload="VitrineResponsiva.imgLoad(this);" /><div><h2 class="title">{ super duper big title product name }</h2><p class="price">{ price }</p><p class="installment">{ installment }</p></div></a></li></ul>
+            
+            <div>
+                <a id="nxt" href="#" title="Próximas ofertas">&rsaquo;</a>
+                <a id="pre" href="#" title="Ofertas anteriores">&lsaquo;</a>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+
+</body>
+</html>

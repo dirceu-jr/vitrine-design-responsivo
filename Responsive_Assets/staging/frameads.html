@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body style="visibility: hidden;">
+        <div id="sidebar">
+            <div id="headr">
+                <div id="logo">
+                    <span>Shopping</span>
+                </div>
+                <div id="sx">
+                    <input type="text" placeholder="Digite um produto/marca" id="in_sx" autocomplete="off" onfocus="VitrineResponsiva.analytics('send', 'event', 'Search', 'Focus');" />
+                    <div id="sx-loa"></div>
+                </div>
+            </div>
+            <div id="sugst_scroll" class="hide">
+                <ul id="sugst">
+                    <li><a href="#" onmouseover='VitrineResponsiva.mouseSugst("over", this, { index });' onmouseout='VitrineResponsiva.mouseSugst("out", this, { index });' onclick='return VitrineResponsiva.selectSugst(this);'>{ word }</a></li>
+                </ul>
+            </div>
+            <div id="scrollpa">
+                <ul id="aside">
+                    <li id='tab-{ id }'>{ name }</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="entry">
+            
+            <div id="msg"></div>
+            <div id="load"></div>
+            
+            <ul id="offer"><li><a href="{ link }" target="_blank" onclick="VitrineResponsiva.analytics('send', 'event', 'Oferta-Click', '{ product_id }-{ category_id }', '{ super duper big title product name }');"><img class="thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" rel="{ thumb }" alt="{ super duper big title product name }" onerror="VitrineResponsiva.imgErr(this);" data-onload="VitrineResponsiva.imgLoad(this);" /><div><h2 class="title">{ super duper big title product name }</h2><p class="price">{ price }</p><p class="installment">{ installment }</p></div></a></li></ul>
+            
+            <div>
+                <a id="nxt" href="#" title="Próximas ofertas">&rsaquo;</a>
+                <a id="pre" href="#" title="Ofertas anteriores">&lsaquo;</a>
+            </div>
+            
+        </div>
+        
+        <script src="vitrine_responsiva-1.5.4.min.js"></script>
+        <script>
+            var
+            hash = window.location.href.split("#"),
+            query = window.location.search.substring(1),
+            vars = (hash[1] || query || "").split("&"),
+            options = {};
+            
+            for (var i = vars.length; i--;) {
+                var pair = vars[i].split("=");
+                options[pair[0]] = pair[1];
+            }
+            VitrineResponsiva.renderWidget(options);
+        </script>
+        
+        <img src="//analytics.lomadee.com/page_view" style="display:none">
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+             
+             ga('create', 'UA-24731935-1', 'auto');
+             ga('require', 'displayfeatures');
+             ga('send', 'pageview');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            
+            <link rel="stylesheet" href="https://community.lomadee.com/resource.css">
+                <script src="https://community.lomadee.com/resource.js" async></script>
+                </head>
+    <body>
+        <p>Selecione o site para o qual deseja gerar uma Vitrine Responsiva:</p>
+        
+        <!-- Renderiza a lista de sites. Veja aqui outros recursos. -->
+        <sites></sites>
+        
+        <div class="cont-btn">
+            <a class="btn-flat primary" onclick="gerarVitrineResponsiva()">GERAR</a>
+        </div>
+        
+        <script>
+            function gerarVitrineResponsiva() {
+                //Verifica se algum site foi selecionado
+                if (selectedSource==0) {
+                    //Exibe mensagem de erro
+                    error('Selecione um site para gerar a Vitrine Responsiva.');
+                } else {
+                    //Limpa mensagem de erro
+                    error('');
+                    
+                    var
+                        rand_id = Math.floor(Math.random()*999999),
+                        initial_options = {
+                            placer_id: "buscaofertas-" + rand_id,
+                            width: "100%",
+                            sourceId: selectedSource
+                        }
+                        initial_code = '\<div id="buscaofertas-THE_RAND">\<\/div>\<script>var _bpbuscaoq = _bpbuscaoq || [];_bpbuscaoq.push(THE_OPTIONS);(function() {var bo = document.createElement("script");bo.type = "text/javascript";bo.async = true;bo.src = "min.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bo, s);})();\<\/script>',
+                        new_code = initial_code.replace("THE_OPTIONS", JSON.stringify(initial_options)).replace("THE_RAND", rand_id);
+                    ;
+                    
+                    //Exibe resultado
+                    success('Titulo: Vitrine Responsiva gerada com sucesso!', 'Descrição: Utilize a Vitrine Responsiva em seu site!', 'Código Gerado: ' + new_code, 'textarea');
+                }              
+            }          
+        </script>      
+    </body>  
+</html>
