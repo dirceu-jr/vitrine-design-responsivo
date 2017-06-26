@@ -148,13 +148,13 @@ a:hover {
 	line-height:21px;
 	padding:0 0 0 7px;
 	display:block;
-    color:#000;
+    color:#1a0dab;
   white-space:nowrap;
 }
 
 #aside .current span, #aside a:hover, #sugst a.hover {
   background:#f5f8fa;
-  color:#35a7ff;
+  text-decoration: underline;
 }
 
 
@@ -191,6 +191,7 @@ a:hover {
 
 .thumb {
   width:80%;
+  overflow: hidden;
   display: block;
   margin: 0 auto;
 }
@@ -217,8 +218,8 @@ a:hover .title {
 .price {
   overflow: hidden;
 	margin: 4px 0 0;
-	font-size: 17px;
-  color: #35a7ff;
+	font-size: 14px;
+  color: #1a0dab;
   line-height: normal;
 /*  font-weight: bold;*/
 }
