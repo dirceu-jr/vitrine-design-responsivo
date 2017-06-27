@@ -137,69 +137,69 @@ var VitrineResponsiva = (
 
   function load(url, uniqueName) {
 
-    var
-      script = d.createElement('script'),
-      done = false
-    ;
-    
-    script.src = url + uniqueName + ".cb";
-    script.async = true;
-    script.charset = "utf-8";
+      var
+          script = d.createElement('script'),
+          done = false
+          ;
 
-    script.onerror = function() {
-      clearTimeout(VitrineResponsiva[uniqueName]["timeout"]);
-      VitrineResponsiva[uniqueName]["failback"]();
-      script.onerror = null;
-    }
+      script.src = url + uniqueName + ".cb";
+      script.async = true;
+      script.charset = "utf-8";
 
-    script.onload = script.onreadystatechange = function() {
-
-      if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
-        done = true;
-        script.onload = script.onreadystatechange = null;
-        if (script && script.parentNode) {
-          script.parentNode.removeChild(script);
-        }
+      script.onerror = function () {
+          clearTimeout(VitrineResponsiva[uniqueName]["timeout"]);
+          VitrineResponsiva[uniqueName]["failback"]();
+          script.onerror = null;
       }
-    }
 
-    if (!head) {
-      head = d.getElementsByTagName('head')[0];
-    }
+      script.onload = script.onreadystatechange = function () {
 
-    head.appendChild(script);
+          if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
+              done = true;
+              script.onload = script.onreadystatechange = null;
+              if (script && script.parentNode) {
+                  script.parentNode.removeChild(script);
+              }
+          }
+      }
+
+      if (!head) {
+          head = d.getElementsByTagName('head')[0];
+      }
+
+      head.appendChild(script);
   }
 
   function simple_jsonp(url, params, callbackname, callback, failback) {
 
-    var
-      uniqueName = callbackname + "_json" + (++json_counter),
-      query = (url.match(/\?/) ? "&" : "?") + paramsToQuery(params)
-    ;
+      var
+          uniqueName = callbackname + "_json" + (++json_counter),
+          query = (url.match(/\?/) ? "&" : "?") + paramsToQuery(params)
+          ;
 
-    VitrineResponsiva[uniqueName] = {};
+      VitrineResponsiva[uniqueName] = {};
 
-    if (typeof(failback) == "function") {
-      // this will be used in load() for script.onerror
-      VitrineResponsiva[uniqueName]["failback"] = failback;
-      VitrineResponsiva[uniqueName]["timeout"] = setTimeout(function() {
-        failback();
-      }, timeout);
-    }
+      if (typeof (failback) == "function") {
+          // this will be used in load() for script.onerror
+          VitrineResponsiva[uniqueName]["failback"] = failback;
+          VitrineResponsiva[uniqueName]["timeout"] = setTimeout(function () {
+              failback();
+          }, timeout);
+      }
 
-    VitrineResponsiva[uniqueName]["cb"] = function(data) {
-      clearTimeout(VitrineResponsiva[uniqueName]["timeout"]);
-      callback(data);
-      VitrineResponsiva[uniqueName] = null;
-      try {
-        delete VitrineResponsiva[uniqueName];
-      } catch (e) {}
-    }
+      VitrineResponsiva[uniqueName]["cb"] = function (data) {
+          clearTimeout(VitrineResponsiva[uniqueName]["timeout"]);
+          callback(data);
+          VitrineResponsiva[uniqueName] = null;
+          try {
+              delete VitrineResponsiva[uniqueName];
+          } catch (e) { }
+      }
 
-    // se API precisar de um parametro diferente
-    load(url + query + "&" + callbackname + "=VitrineResponsiva.", uniqueName);
+      // se API precisar de um parametro diferente
+      load(url + query + "&" + callbackname + "=VitrineResponsiva.", uniqueName);
 
-    return "VitrineResponsiva." + uniqueName;
+      return "VitrineResponsiva." + uniqueName;
   }
 
 

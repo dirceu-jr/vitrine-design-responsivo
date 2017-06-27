@@ -12,7 +12,6 @@
 		710ADFA41EEAEA4D00CD4AD3 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		710ADFA51EEAEA4D00CD4AD3 /* Responsive_Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Responsive_Assets; sourceTree = "<group>"; };
 		710ADFA61EEAEA4D00CD4AD3 /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; path = static; sourceTree = "<group>"; };
-		710ADFA81EEAEA4D00CD4AD3 /* TODO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TODO.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -24,7 +23,6 @@
 				710ADFA41EEAEA4D00CD4AD3 /* README */,
 				710ADFA51EEAEA4D00CD4AD3 /* Responsive_Assets */,
 				710ADFA61EEAEA4D00CD4AD3 /* static */,
-				710ADFA81EEAEA4D00CD4AD3 /* TODO.rtf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -36,7 +34,7 @@
 			attributes = {
 				LastUpgradeCheck = 0830;
 			};
-			buildConfigurationList = 710ADF961EEA138500CD4AD3 /* Build configuration list for PBXProject "Vitrine Responsiva v1.1.0" */;
+			buildConfigurationList = 710ADF961EEA138500CD4AD3 /* Build configuration list for PBXProject "Vitrine Responsiva v1.5" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -67,7 +65,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		710ADF961EEA138500CD4AD3 /* Build configuration list for PBXProject "Vitrine Responsiva v1.1.0" */ = {
+		710ADF961EEA138500CD4AD3 /* Build configuration list for PBXProject "Vitrine Responsiva v1.5" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				710ADF971EEA138500CD4AD3 /* Debug */,
