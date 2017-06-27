@@ -152,7 +152,7 @@ a:hover {
   white-space:nowrap;
 }
 
-#aside .current span, #aside a:hover, #sugst a.hover {
+#tabs_holder .current span, #tabs_holder a:hover, #sugst a.hover {
   background:#f5f8fa;
   text-decoration: underline;
 }
@@ -169,6 +169,7 @@ a:hover {
   width:100%;
   text-align:center;
   float:left;
+  visibility: hidden;
 }
 
 #offer li {

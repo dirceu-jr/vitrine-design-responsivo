@@ -88,7 +88,6 @@ var VitrineResponsiva = (
     entry,
     bg_message,
     loading,
-    scrollpanel,
     sugst_scroll,
 
     // pagination
@@ -114,14 +113,8 @@ var VitrineResponsiva = (
 
     html_templates = {},
 
-    // ie < 9 sniff
-    is_old_ie = '\v' == 'v',
-
     // how much time mouseover offer
     mouse_over_timeout,
-
-    iscroll,
-    iscroll_suggestion,
 
     has_sidebar,
     has_space_for_pagination,
@@ -311,22 +304,6 @@ var VitrineResponsiva = (
   }
 
 
-  function register_template(type, element) {
-    html_templates[type] = element.innerHTML;
-    removeElement(element.childNodes[0]);
-  }
-
-
-  function render_template(type, object) {
-    var template = html_templates[type];
-    for (key in object) {
-      key_regex = new RegExp("{ " + key + " }", "g");
-      template = template.replace(key_regex, object[key]);
-    }
-    return template;
-  }
-
-
   function getStyle(oElm, strCssRule) {
     var strValue = "";
     if (oElm && d.defaultView && d.defaultView.getComputedStyle) {
@@ -388,7 +365,7 @@ var VitrineResponsiva = (
     if (getInternetExplorerVersion() !== 8) {
       el.onerror = null;
       el.onload = null;
-      el.src = el.getAttribute('rel');
+      el.src = el.getAttribute('data-original');
       addClass(el.parentNode, "imgFailed");
       el.style.marginTop = "-" + el.style.height;
     }
@@ -399,22 +376,22 @@ var VitrineResponsiva = (
   // change src to URL that was in rel
   // resize image depending on product name height
 
-  function imageLoaded(element) {
-    var original = element.getAttribute('data-original');
+//   function imageLoaded(element) {
+//     var original = element.getAttribute('data-original');
 
-    if (original !== "{ thumb }" && element.src != original) {
+//     if (original !== "{ thumb }" && element.src != original) {
 
-      if (element.offsetHeight > 100) {
-        original = original.replace(/T100x100/gi, "T200x200");
-      }
+//       if (element.offsetHeight > 100) {
+//         original = original.replace(/T100x100/gi, "T200x200");
+//       }
 
-//      element.setAttribute('data-', element.src);
-      element.src = original;
+// //      element.setAttribute('data-', element.src);
+//       element.src = original;
 
-      element.onload = null;
+//       element.onload = null;
 
-    }
-  }
+//     }
+//   }
 
 
   // ------------------------------------------------------
@@ -509,16 +486,14 @@ var VitrineResponsiva = (
   }
 
 
-  function mouseSugst(type, el, index) {
+  function mouseSugst(over, el) {
 
-    var suggestionHolder = el.parentNode.parentNode;
+    var
+      suggestionHolder = el.parentNode.parentNode,
+      index = el.getAttribute("data-index")
+    ;
 
-    if (type == 'out') {
-
-      hover_suggest = false;
-      el.className = "";
-
-    } else {
+    if (over) {
 
       hover_suggest = true;
 
@@ -532,8 +507,12 @@ var VitrineResponsiva = (
       el.className = "hover";
       hover_pos = index;
 
+    // out
+    } else {
+      hover_suggest = false;
+      el.className = "";
     }
-
+    
   }
 
 
@@ -571,10 +550,7 @@ var VitrineResponsiva = (
         var suggestion = [];
         for (var i = 0; i < words.length && i < max_suggestions; i++) {
           if (words[i] !== value) {
-            suggestion.push(render_template("sugst", {
-            word: words[i],
-            index: i
-          }));
+           suggestion.push("<li><a href='#' data-index='", i, "' onmouseover='VitrineResponsiva.mouseSugst(true, this);' onmouseout='VitrineResponsiva.mouseSugst(false, this);' onclick='return VitrineResponsiva.selectSugst(this);'>", words[i], "</a></li>");
           }
         }
 
@@ -777,8 +753,6 @@ var VitrineResponsiva = (
             if (hover_pos !== -1 && elements[hover_pos]) {
               search_holder.value = elements[hover_pos].innerHTML;
               elements[hover_pos].className = "hover";
-
-//              iscroll_suggestion.scrollToElement(elements[hover_pos], 500, 0, -(((windowHeight() - header.offsetHeight) / 2) - 10));
             } else {
               search_holder.value = search_holder.getAttribute('rel');
             }
@@ -799,13 +773,13 @@ var VitrineResponsiva = (
     hover_pos = -1;
     suggestions_holder.innerHTML = suggestionsContent;
     show(sugst_scroll);
-    hide(scrollpanel);
+    hide(tabs_holder);
   }
 
 
   function suggestionBoxHide() {
     hide(sugst_scroll);
-    show(scrollpanel);
+    show(tabs_holder);
     last_suggestion = "";
   }
 
@@ -853,7 +827,8 @@ var VitrineResponsiva = (
         var
           abrv = "BRL",
           installment = (o[i].installment && o[i].installment.quantity) ? o[i].installment.quantity + " x " + formatMoney(o[i].installment.value, abrv) : "&nbsp;",
-          price = formatMoney(o[i].price, abrv)
+          price = formatMoney(o[i].price, abrv),
+          name = o[i].name.replace("Smartphone", "")
         ;
                                   
         if (o[i].product.thumbnail && o[i].product.thumbnail.otherFormats[0]) {
@@ -863,22 +838,11 @@ var VitrineResponsiva = (
         }
 
         // in "link" we treat an issue with yql json when array size is 1
-        render.push(render_template("offer", {
-          link: o[i].link,
-          thumb: thumbnail,
-//          details: (price == slice ? "<strong>" + full_price + "</strong> - " : "") + o[i].name,
-          "super duper big title product name": o[i].name.replace("Smartphone", ""),
-          price: price,
-          installment: installment,
-          product_id: (o[i].product.id || 0),
-          category_id: (o[i].category.id || 0),
-          seller: o[i].store.name
-        }).replace("data-onload", "onload"));
-
+        render.push("<li><a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"send\", \"event\", \"Oferta-Click\", \"", (o[i].product.id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'><img class='thumb' height='96' src='", thumbnail, "' alt='", name, "' onerror='VitrineResponsiva.imgErr(this);' /><div><h2 class='title'>", name, "</h2><p class='price'>", price, "</p><p class='installment'>", installment, "</p></div></a></li>");
       }
 
       hide(bg_message);
-//      console.log(render.join(""));
+      console.log(render);
       offers_holder.innerHTML = render.join("");
 
     } else {
@@ -944,10 +908,7 @@ var VitrineResponsiva = (
     for (tab in tabs_ids) {
       // console.log(tabs_ids[tab]);
       // console.log(tabs_map[tabs_ids[tab].toString()]["n"]);
-      tabsContent.push(render_template("tab", {
-        id: tabs_ids[tab],
-        name: tabs_map[tabs_ids[tab].toString()]
-      }));
+      tabsContent.push("<li id='tab-", tabs_ids[tab], "'>", tabs_map[tabs_ids[tab].toString()], "</li>");
     }
 
     if (tabs_holder) {
@@ -974,8 +935,9 @@ var VitrineResponsiva = (
     // limpa estilo dos links das abas
     for (var i = 0; i < tabsChilds.length; i++) {
       var
-      text = tabsChilds[i].innerText ? tabsChilds[i].innerText : tabsChilds[i].textContent,
-        id = tabsChilds[i]["id"].split("tab-")[1];
+        text = tabsChilds[i].innerText ? tabsChilds[i].innerText : tabsChilds[i].textContent,
+        id = tabsChilds[i]["id"].split("tab-")[1]
+      ;
 
       text = text.replace(/\n/g, "");
 
@@ -994,13 +956,6 @@ var VitrineResponsiva = (
       findTab(open_category);
     }
 
-  }
-
-
-  // it is not really working :(
-
-  function BWS_failback_failed() {
-    hide(window.frameElement);
   }
 
 
@@ -1030,17 +985,11 @@ var VitrineResponsiva = (
 
     onDemandServices(endpoint, options, function(o) {
 //      console.log(o);
+      offers_holder.style.visibility = "visible";
       renderOffers(o.offers);
       renderPagination(o.pagination);
     });
 
-  }
-
-
-  // limit input size to 6 chars as it should be rgb color in hex
-
-  function hex_input(i) {
-    return '#' + i.substr(0, 6);
   }
 
 
@@ -1063,15 +1012,11 @@ var VitrineResponsiva = (
     g_country = options["country"] || "BR",
     g_source_id = options["sourceId"] || "35802480";
 
-//    insertCss("THE_CSS_REPLACE");
-    // d.body.innerHTML += 'THE_FRAME_REPLACE';
-
     search_holder = $("in_sx"),
     suggestions_loading = $("sx-loa"),
     suggestions_holder = $("sugst"),
-    tabs_holder = $("aside"),
+    tabs_holder = $("tabs_holder"),
     sidebar = $("sidebar"),
-    scrollpanel = $("scrollpa"),
     sugst_scroll = $("sugst_scroll"),
     offers_holder = $("offer"),
     footer = $("fotr"),
@@ -1083,9 +1028,6 @@ var VitrineResponsiva = (
     loading = $("load");
 
     search_holder.value = search_holder.getAttribute('placeholder');
-
-    register_template("sugst", suggestions_holder);
-    register_template("tab", tabs_holder);
 
     addEvent(d.body, "mouseover", function() {
       ishover = true;
@@ -1218,15 +1160,10 @@ var VitrineResponsiva = (
       entry.style.height = available_height + "px";
 
       // ajusta tamanho da parte scrollavel do menu
-      scrollpanel.style.height = (available_height - header.offsetHeight) + "px";
+      tabs_holder.style.height = (available_height - header.offsetHeight) + "px";
 
       // ajusta suggestion
       sugst_scroll.style.height = (available_height - header.offsetHeight) + "px";
-
-      // undo any modification in template if its already set
-      if (html_templates["offer"]) {
-        offers_holder.innerHTML = html_templates["offer"];
-      }
       
       var
         product_template = offers_holder.childNodes[0],
@@ -1256,8 +1193,6 @@ var VitrineResponsiva = (
       if (!isFinite(g_results)) {
         return false;
       }
-
-      register_template("offer", offers_holder);
 
       renderTabs();
 
@@ -1315,7 +1250,7 @@ var VitrineResponsiva = (
         selectSugst: selectSugst,
         mouseSugst: mouseSugst,
         renderWidget: renderWidget,
-        imgLoad: imageLoaded,
+        // imgLoad: imageLoaded,
         imgErr: imageError,
         mouseOfr: mouseOffer,
         openTab: openTab,
@@ -1323,5 +1258,16 @@ var VitrineResponsiva = (
   }
 
 }(document));
-              
-// include lib/spin.js
+
+var
+  hash = window.location.href.split("#"),
+  query = window.location.search.substring(1),
+  vars = (hash[1] || query || "").split("&"),
+  options = {};
+
+for (var i = vars.length; i--;) {
+  var pair = vars[i].split("=");
+  options[pair[0]] = pair[1];
+}
+
+VitrineResponsiva.renderWidget(options);
