@@ -204,6 +204,7 @@ a:hover {
 
 .thumbholder {
     height: 96px;
+    overflow: hidden;
 }
 
 .thumb {
