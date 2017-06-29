@@ -187,9 +187,7 @@ a:hover {
 
 #offer li {
     border-right: 1px solid #f1f1f1;
-    /*	width:16%;*/
     width: 120px;
-    padding: 2px 1%;
     background: #fff;
     text-align: center;
     display: inline-block;
@@ -201,6 +199,11 @@ a:hover {
 
 #offer a {
     display: block;
+    padding: 6px 4px;
+}
+
+.thumbholder {
+    height: 96px;
 }
 
 .thumb {
