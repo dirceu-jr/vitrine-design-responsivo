@@ -131,72 +131,7 @@ var VitrineResponsiva = (
 
         function $(e) {
             return d.getElementById(e);
-        }
-
-        function load(url, uniqueName) {
-
-            var
-                script = d.createElement('script'),
-                done = false;
-
-            script.src = url + uniqueName + ".cb";
-            script.async = true;
-            script.charset = "utf-8";
-
-            script.onerror = function () {
-                clearTimeout(VitrineResponsiva[uniqueName]["timeout"]);
-                VitrineResponsiva[uniqueName]["failback"]();
-                script.onerror = null;
-            }
-
-            script.onload = script.onreadystatechange = function () {
-
-                if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
-                    done = true;
-                    script.onload = script.onreadystatechange = null;
-                    if (script && script.parentNode) {
-                        script.parentNode.removeChild(script);
-                    }
-                }
-            }
-
-            if (!head) {
-                head = d.getElementsByTagName('head')[0];
-            }
-
-            head.appendChild(script);
-        }
-
-        function simple_jsonp(url, params, callbackname, callback, failback) {
-
-            var
-                uniqueName = callbackname + "_json" + (++json_counter),
-                query = (url.match(/\?/) ? "&" : "?") + paramsToQuery(params);
-
-            VitrineResponsiva[uniqueName] = {};
-
-            if (typeof (failback) == "function") {
-                // this will be used in load() for script.onerror
-                VitrineResponsiva[uniqueName]["failback"] = failback;
-                VitrineResponsiva[uniqueName]["timeout"] = setTimeout(function () {
-                    failback();
-                }, timeout);
-            }
-
-            VitrineResponsiva[uniqueName]["cb"] = function (data) {
-                clearTimeout(VitrineResponsiva[uniqueName]["timeout"]);
-                callback(data);
-                VitrineResponsiva[uniqueName] = null;
-                try {
-                    delete VitrineResponsiva[uniqueName];
-                } catch (e) {}
-            }
-
-            // se API precisar de um parametro diferente
-            load(url + query + "&" + callbackname + "=VitrineResponsiva.", uniqueName);
-
-            return "VitrineResponsiva." + uniqueName;
-        }
+        }        
 
 
         function paramsTo(params, prefix, and) {
@@ -623,7 +558,6 @@ var VitrineResponsiva = (
             var jsonp = document.createElement("script");
             jsonp.src = protocol + "//" + subdomain + ".buscape.com.br/service/autoComplete/mobile/664f4c566e534b707844553d/BR/?format=json&keyword=" + value + "&callback=VitrineResponsiva.autoCompleteCallback";
             document.body.appendChild(jsonp);
-            console.log(protocol);
         }
 
 
@@ -845,7 +779,6 @@ var VitrineResponsiva = (
                 }
 
                 hide(bg_message);
-                console.log(render);
                 offers_holder.innerHTML = render.join("");
 
             } else {
@@ -1010,10 +943,10 @@ var VitrineResponsiva = (
             var
                 custom_css = [];
 
-            g_country = options["country"] || "BR",
+                g_country = options["country"] || "BR",
                 g_source_id = options["sourceId"] || "35802480";
 
-            search_holder = $("in_sx"),
+                search_holder = $("in_sx"),
                 suggestions_loading = $("sx-loa"),
                 suggestions_holder = $("sugst"),
                 tabs_holder = $("tabs_holder"),
@@ -1026,7 +959,8 @@ var VitrineResponsiva = (
                 pagination_previous = $("pre"),
                 pagination_next = $("nxt"),
                 bg_message = $("msg"),
-                loading = $("load");
+                loading = $("load")
+            ;
 
             search_holder.value = search_holder.getAttribute('placeholder');
 
@@ -1140,7 +1074,8 @@ var VitrineResponsiva = (
                     available_height = windowHeight(),
 
                     // calcula padding do tabs holder
-                    sidebar_padding = getStyleInt(sidebar, "padding-top") + getStyleInt(sidebar, "padding-bottom");
+                    sidebar_padding = getStyleInt(sidebar, "padding-top") + getStyleInt(sidebar, "padding-bottom")
+                ;
 
                 has_sidebar = getStyle(sidebar, "display") !== "none";
                 has_space_for_pagination = available_width > 100;
@@ -1168,7 +1103,8 @@ var VitrineResponsiva = (
 
                 var
                     product_template = offers_holder.childNodes[0],
-                    product_width = product_template.offsetWidth;
+                    product_width = product_template.offsetWidth
+                ;
 
                 // sum product margin in product height
                 product_template.style.height = available_height + "px";
@@ -1181,7 +1117,6 @@ var VitrineResponsiva = (
 
                 var
                     available_space_cols = Math.max(Math.floor(available_width / product_width), 1)
-
                 ;
                 //      console.log(available_space_lines);
                 //      console.log(available_space_cols);
