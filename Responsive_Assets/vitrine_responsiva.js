@@ -775,7 +775,7 @@ var VitrineResponsiva = (
                     }
 
                     // in "link" we treat an issue with yql json when array size is 1
-                    render.push("<li><a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"send\", \"event\", \"Oferta-Click\", \"", (o[i].product.id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'><img class='thumb' width='96' src='", thumbnail, "' onerror='VitrineResponsiva.imgErr(this);' /><div><h2 class='title'>", name, "</h2><p class='price'>", price, "</p><p class='installment'>", installment, "</p></div></a></li>");
+                    render.push("<li><a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"send\", \"event\", \"Oferta-Click\", \"", (o[i].product.id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'><div class='thumbholder'><img class='thumb' width='96' src='", thumbnail, "' onerror='VitrineResponsiva.imgErr(this);' /></div><div><h2 class='title'>", name, "</h2><p class='price'>", price, "</p><p class='installment'>", installment, "</p></div></a></li>");
                 }
 
                 hide(bg_message);

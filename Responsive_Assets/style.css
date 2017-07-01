@@ -199,11 +199,12 @@ a:hover {
 
 #offer a {
     display: block;
-    padding: 6px 4px;
+    padding: 4px;
 }
 
 .thumbholder {
     height: 96px;
+    display: block;
     overflow: hidden;
 }
 
