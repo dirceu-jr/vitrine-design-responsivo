@@ -1,6 +1,7 @@
-// Copyright Dirceu Pauka Júnior
-// dirceuu@gmail.com
-
+/**
+ * @preserve Copyright Dirceu Pauka Júnior
+ * http://www.coora.com.br/
+ */
 ;
 var VitrineResponsiva = (
     function (d) {
@@ -19,7 +20,7 @@ var VitrineResponsiva = (
             },
 
             tabs_map = {
-                "bestsellers": "Mais vendidos",
+                "bestsellers": "Mais Vendidos",
                 "77": "Celular e Smartphone",
                 "2852": "TV",
                 "6424": "Notebook",
@@ -114,17 +115,11 @@ var VitrineResponsiva = (
 
             // carousel
             showing_tab = 0,
-            ishover = false,
-
-            html_templates = {},
 
             // how much time mouseover offer
             mouse_over_timeout,
 
-            has_sidebar,
-            has_space_for_pagination,
-            has_scrolled,
-            has_bws_failed
+            has_sidebar
 
         ;
 
@@ -353,7 +348,7 @@ var VitrineResponsiva = (
 
                 var protocol = ("https:" == window.location.protocol ? "https" : "http");
 
-                var url = protocol + "://sandbox-api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
+                var url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
 
                 getJSON(url, function (obj) {
                     client_cache[key] = obj;
@@ -501,16 +496,16 @@ var VitrineResponsiva = (
                 }
 
                 // usar valor digitado se digitou mais de 4 letras ou não tem autocompletar
-                if (value.length > 4 || words[0] == undefined) {
-                    suggestionSearch(value);
-                } else {
-                    // usa primeiro resultado do autocompletar
-                    suggestionSearch(words[0]);
+                // if (value.length > 4 || words[0] == undefined) {
+                //     suggestionSearch(value);
+                // } else {
+                //     // usa primeiro resultado do autocompletar
+                //     suggestionSearch(words[0]);
 
-                    // define o primeiro resultado do autocompletar como "selecionado"
-                    hover_pos = 0;
-                    suggestions_holder.getElementsByTagName("a")[hover_pos].className = "hover";
-                }
+                //     // define o primeiro resultado do autocompletar como "selecionado"
+                //     hover_pos = 0;
+                //     suggestions_holder.getElementsByTagName("a")[hover_pos].className = "hover";
+                // }
 
             });
         }
@@ -964,14 +959,6 @@ var VitrineResponsiva = (
 
             search_holder.value = search_holder.getAttribute('placeholder');
 
-            addEvent(d.body, "mouseover", function () {
-                ishover = true;
-            });
-
-            addEvent(d.body, "mouseout", function () {
-                ishover = false;
-            });
-
             addEvent(search_holder, "keydown", function (event) {
                 if (!event) {
                     event = window.event;
@@ -1078,7 +1065,6 @@ var VitrineResponsiva = (
                 ;
 
                 has_sidebar = getStyle(sidebar, "display") !== "none";
-                has_space_for_pagination = available_width > 100;
 
                 // use width to define max_suggestions (2 to phones : 6 screen)
                 max_suggestions = (available_width <= 320) ? 2 : 6;

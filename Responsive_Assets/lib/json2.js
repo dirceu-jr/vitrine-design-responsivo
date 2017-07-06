@@ -1,3 +1,8 @@
+/**
+ * @preserve Thank you very much
+ * https://github.com/douglascrockford/JSON-js
+ */
+
 //  json2.js
 //  2016-10-28
 //  Public Domain.
