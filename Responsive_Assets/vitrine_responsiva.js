@@ -56,8 +56,6 @@ var VitrineResponsiva = (
             // tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids),
             tabs_ids = top_tabs_ids.concat(other_tabs_ids),
 
-            client_cache = {},
-
             suggestion_has_heart_beat = true,
             suggestion_has_heart_beat_keyboard = true,
             delayed_suggestion,
@@ -333,31 +331,15 @@ var VitrineResponsiva = (
         // ------------------------------------------------------
         function Lomadee(service, params, callback) {
 
-            var
-                key = service + "/" + paramsToQuery(params),
-                cached = client_cache[key];
+            params['sourceId'] = g_source_id;
+            var protocol = ("https:" == window.location.protocol ? "https" : "http");
+            var url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
 
-            if (cached) {
-
-                // has_nextpage = has_nextpagefn(cached);
-                callback(cached);
-
-            } else {
-
-                params['sourceId'] = g_source_id;
-
-                var protocol = ("https:" == window.location.protocol ? "https" : "http");
-
-                var url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
-
-                getJSON(url, function (obj) {
-                    client_cache[key] = obj;
-                    callback(obj);
-                }, function () {
-                    document.body.style.display = "none";
-                });
-
-            }
+            getJSON(url, function (obj) {
+                callback(obj);
+            }, function () {
+                document.body.style.display = "none";
+            });
 
         }
 
