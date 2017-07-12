@@ -939,7 +939,7 @@ var VitrineResponsiva = (
                 loading = $("load")
             ;
 
-            search_holder.value = search_holder.getAttribute('placeholder');
+            // search_holder.value = search_holder.getAttribute('placeholder');
 
             addEvent(search_holder, "keydown", function (event) {
                 if (!event) {
@@ -956,6 +956,8 @@ var VitrineResponsiva = (
             });
 
             addEvent(search_holder, "keyup", function (event) {
+
+                // console.log(event.keyCode);
 
                 if (!event) {
                     event = window.event;
@@ -987,20 +989,21 @@ var VitrineResponsiva = (
                 }
 
                 // esc
-                if (event.keyCode == 27 || event.keyCode == 13) {
+                if (event.keyCode == 27) {
                     search_holder.blur();
                     suggestionBoxHide();
+                }
+                // enter
+                if (event.keyCode == 13) {
+                    if (search_holder.value !== "") {
+                        suggestionSearch(search_holder.value);
+                    }
                 }
 
                 suggestion_has_heart_beat_keyboard = true;
             });
 
             addEvent(search_holder, "focus", function () {
-
-                if (this.value == this.getAttribute('placeholder')) {
-                    this.value = "";
-                }
-
                 has_focus = true;
 
                 suggestionHeartBeat(function () {
@@ -1018,6 +1021,13 @@ var VitrineResponsiva = (
                 if (!hover_suggest) {
                     suggestionBoxHide();
                 }
+            });
+
+            addEvent($("search-submit"), "click", function(event) {
+                if (search_holder.value !== "") {
+                    suggestionSearch(search_holder.value);
+                }
+                search_holder.focus();
             });
 
             addEvent(pagination_previous, "click", function (event) {

@@ -136,7 +136,7 @@ a:hover {
 
 #in_sx {
     border-radius: 3px;
-    width: 136px;
+    width: 120px;
     padding: 0 4px;
     height: 24px;
     line-height: 24px;
@@ -148,20 +148,37 @@ a:hover {
     outline: none;
     color: #000;
     float: left;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 #in_sx:focus {
     border: 1px solid #0090ff;
 }
 
+#search-submit {
+    width: 26px;
+    line-height: 22px;
+    cursor: pointer;
+    background: linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1));
+    border: 1px solid;
+    border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
+}
+
+#search-submit:hover {
+    background: linear-gradient(#4cb1ff, #1793e5);
+}
+
 #sidebar a,
 #sidebar .current span {
-    height: 21px;
-    line-height: 21px;
+    /*height: 21px;*/
+    line-height: 29px;
     padding: 0 0 0 7px;
     display: block;
-    color: #1a0dab;
+    color: #064ac1;
     white-space: nowrap;
+    border-bottom: 1px solid #f1f1f1;
 }
 
 #tabs_holder .current span,
@@ -238,7 +255,7 @@ a:hover .title {
     overflow: hidden;
     margin: 4px 0 0;
     font-size: 14px;
-    color: #1a0dab;
+    color: #064ac1;
     line-height: normal;
     /*  font-weight: bold;*/
 }
