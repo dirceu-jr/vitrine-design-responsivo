@@ -16,8 +16,8 @@
   <script src="lib/jquery-3.2.1.min.js"></script>
 
   <!-- include source files here... -->
-  <script src="lib/spin.js"></script>
-  <script src="bo.js"></script>
+  <script src="lib/spin.min.js"></script>
+  <script src="vitrine_responsiva.js"></script>
 
   <!-- include spec files here... -->
   <script src="spec/VitrineResponsivaSpec.js"></script>
@@ -33,20 +33,19 @@
                     <span>Shopping</span>
                 </div>
                 <div id="sx">
-                    <input type="text" placeholder="Digite um produto/marca" id="in_sx" autocomplete="off" onfocus="VitrineResponsiva.analytics('send', 'event', 'Search', 'Focus');" />
+                    <input type="text" placeholder="Shopping" id="in_sx" onfocus="VitrineResponsiva.analytics('send', 'event', 'Search', 'Focus');" accesskey="s" maxlength="400" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-autocomplete="list" />
+                    <input id="search-submit" title="Enviar pesquisa" value="▶" type="button" />
                     <div id="sx-loa"></div>
                 </div>
             </div>
             <div id="sugst_scroll" class="hide">
                 <ul id="sugst">
-                    <li><a href="#" onmouseover='VitrineResponsiva.mouseSugst("over", this, { index });' onmouseout='VitrineResponsiva.mouseSugst("out", this, { index });' onclick='return VitrineResponsiva.selectSugst(this);'>{ word }</a></li>
+                    <li><a href="#" data-index="{ index }" onmouseover="VitrineResponsiva.mouseSugst(true, this);" onmouseout="VitrineResponsiva.mouseSugst(false, this);" onclick="return VitrineResponsiva.selectSugst(this);">{ word }</a></li>
                 </ul>
             </div>
-            <div id="scrollpa">
-                <ul id="aside">
-                    <li id='tab-{ id }'>{ name }</li>
-                </ul>
-            </div>
+            <ul id="tabs_holder">
+                <li id='tab-{ id }'>{ name }</li>
+            </ul>
         </div>
         
         <div id="entry">
@@ -54,7 +53,7 @@
             <div id="msg"></div>
             <div id="load"></div>
             
-            <ul id="prodct"><li><a href="{ link }" target="_blank" onclick="VitrineResponsiva.analytics('send', 'event', 'Oferta-Click', '{ product_id }-{ category_id }', '{ super duper big title product name }');"><img class="thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" rel="{ thumb }" alt="{ super duper big title product name }" onerror="VitrineResponsiva.imgErr(this);" onload="VitrineResponsiva.imgLoad(this);" /><div><h2 class="title">{ super duper big title product name }</h2><p class="price">{ price }</p><p class="installment">{ installment }</p></div></a></li></ul>
+            <ul id="offer"><li><a href="{ link }" target="_blank" onclick="VitrineResponsiva.analytics('send', 'event', 'Oferta-Click', '{ product_id }-{ category_id }', '{ product name }');"><div class="thumbholder"><img class="thumb" width="96" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="{ product name }" onerror="VitrineResponsiva.imgErr(this);" /></div><div><h2 class="title">{ product name }</h2><p class="price">{ price }</p><p class="installment">{ installment }</p></div></a></li></ul>
             
             <div>
                 <a id="nxt" href="#" title="Próximas ofertas">&rsaquo;</a>

@@ -24,6 +24,7 @@ var VitrineResponsiva = (
                 "77": "Celular e Smartphone",
                 "2852": "TV",
                 "6424": "Notebook",
+                "280": "Aquecedor",
                 "3482": "Livros",
                 "93": "Câmera Digital",
                 "6409": "Jogos",
@@ -38,7 +39,7 @@ var VitrineResponsiva = (
                 "1437": "Bicicleta"
             },
 
-            default_categories_ids_order = ["bestsellers", 77, 2852, 6424, 3482, 93, 6409, 6058, 3673, 138, 3671, 2858, 10232, 3694, 3442, 1437],
+            default_categories_ids_order = ["bestsellers", 77, 2852, 6424, 280, 3482, 93, 6409, 6058, 3673, 138, 3671, 2858, 10232, 3694, 3442, 1437],
 
             // todo montar grupos randomicos
             // com 4 produtos mas cada um de um segmento
@@ -53,8 +54,9 @@ var VitrineResponsiva = (
 
             top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
             other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
-            // tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids),
-            tabs_ids = top_tabs_ids.concat(other_tabs_ids),
+            
+            tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids),
+            // tabs_ids = top_tabs_ids.concat(other_tabs_ids),
 
             suggestion_has_heart_beat = true,
             suggestion_has_heart_beat_keyboard = true,
@@ -121,6 +123,7 @@ var VitrineResponsiva = (
 
         ;
 
+        // console.log(tabs_ids);
 
         function $(e) {
             return d.getElementById(e);
@@ -190,7 +193,6 @@ var VitrineResponsiva = (
             return o;
         }
 
-
         // function styleFromString(element, string) {
         //   var rules = string.split(';');
         //   for (i=rules.length; i--;) {
@@ -198,11 +200,6 @@ var VitrineResponsiva = (
         //     element.style[rule[0]] = rule[1];
         //   }
         // }
-
-
-        function is_array(value) {
-            return Object.prototype.toString.call(value) === "[object Array]";
-        }
 
 
         if (!Array.prototype.indexOf) {
@@ -338,7 +335,10 @@ var VitrineResponsiva = (
             getJSON(url, function (obj) {
                 callback(obj);
             }, function () {
-                document.body.style.display = "none";
+                offers_spinner.stop();
+                renderOffers();
+                // Falar que teve um erro que é para tentar novamente mais tarde
+                // document.body.style.display = "none";
             });
 
         }
@@ -699,35 +699,6 @@ var VitrineResponsiva = (
         }
 
 
-        function mouseOffer(action, element, id, title) {
-            var
-                details = element.childNodes[0],
-                img = element.childNodes[1];
-
-            if (action) {
-                img.style.marginTop = "-" + img.style.height;
-                img.style.opacity = "0.15";
-                img.style.filter = "alpha(opacity=15)";
-
-                show(details);
-
-                // send to analytics only if more than 500ms over
-                mouse_over_timeout = setTimeout(function () {
-                    analytics("send", "event", "Oferta-Over", id, title);
-                }, 500);
-            } else {
-                if (!hasClass(element, 'imgFailed')) {
-                    img.style.marginTop = "0";
-                    hide(details);
-                }
-                img.style.opacity = "1";
-                img.style.filter = "alpha(opacity=100)";
-
-                clearTimeout(mouse_over_timeout);
-            }
-        }
-
-
         function renderOffers(o) {
 
             if (o && o[0]) {
@@ -762,12 +733,12 @@ var VitrineResponsiva = (
 
                 // não encontrou oferta
 
-                offers_holder.innerHTML = "";
-                show(bg_message);
-                bg_message.innerHTML = "Nenhum produto encontrado.";
+                offers_holder.innerHTML = "<div style='margin: 20px'>Nenhum produto encontrado para essa pesquisa.</div>";
+                // show(bg_message);
+                // bg_message.innerHTML = "Nenhum produto encontrado para essa pesquisa.";
 
-                hide(pagination_previous);
-                hide(pagination_next);
+                // hide(pagination_previous);
+                // hide(pagination_next);
 
             }
 
@@ -1014,10 +985,6 @@ var VitrineResponsiva = (
             addEvent(search_holder, "blur", function () {
                 has_focus = false;
 
-                if (this.value == "") {
-                    this.value = this.getAttribute('placeholder');
-                }
-
                 if (!hover_suggest) {
                     suggestionBoxHide();
                 }
@@ -1163,9 +1130,7 @@ var VitrineResponsiva = (
             selectSugst: selectSugst,
             mouseSugst: mouseSugst,
             renderWidget: renderWidget,
-            // imgLoad: imageLoaded,
             imgErr: imageError,
-            mouseOfr: mouseOffer,
             openTab: openTab,
             analytics: analytics
         }
