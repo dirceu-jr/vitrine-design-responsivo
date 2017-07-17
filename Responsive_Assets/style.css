@@ -93,7 +93,7 @@ body {
 #sx-loa {
     display: none;
     top: 2px;
-    right: 24px;
+    right: 25px;
     width: 23px;
     height: 23px;
 }
@@ -135,7 +135,7 @@ a:hover {
 
 #in_sx {
     border-radius: 3px;
-    width: 114px;
+    width: 113px;
     padding: 0 4px;
     height: 24px;
     line-height: 24px;
@@ -157,9 +157,11 @@ a:hover {
 }
 
 #search-submit {
-    width: 23px;
-    line-height: 24px;
+    width: 24px;
+    line-height: 23px;
     cursor: pointer;
+    font-size: 18px;
+    padding-bottom: 1px;
     background: linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1));
     border: 1px solid;
     border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
