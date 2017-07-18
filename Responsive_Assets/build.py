@@ -4,7 +4,7 @@ import os
 import re
 
 REMOVE_WS = re.compile(r"\s{2,}").sub
-output_file_name = "vitrine_responsiva-1.6.4.min.js"
+output_file_name = "vitrine_responsiva-1.6.5.min.js"
 
 os.system("java -jar ~/Novos\ Arquivos/Projetos/Coora/tools/yuicompressor-2.4.8.jar ./style.css -o ./staging/style-min.css -v")
 
