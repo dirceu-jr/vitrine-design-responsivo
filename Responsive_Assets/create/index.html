@@ -6,7 +6,7 @@
                 <script src="https://community.lomadee.com/resource.js" async></script>
                 </head>
     <body>
-        <p>Selecione o site para o qual deseja gerar uma Vitrine Responsiva:</p>
+        <p>Selecione o site para o qual deseja gerar uma Vitrine Responsiva Coora:</p>
         
         <!-- Renderiza a lista de sites. Veja aqui outros recursos. -->
         <sites></sites>
@@ -20,15 +20,15 @@
                 //Verifica se algum site foi selecionado
                 if (selectedSource == 0) {
                     //Exibe mensagem de erro
-                    error('Selecione um site para gerar a Vitrine Responsiva.');
+                    error('Selecione um site para gerar a Vitrine Responsiva Coora.');
                 } else {
                     //Limpa mensagem de erro
                     error('');
                     
-                    var new_code = "<iframe src=\"//community.lomadee.com/developers/9745_1498608583075/frameads.html?sourceId="+ selectedSource +"\" width=\"100%\" height=\"183\" scrolling=\"no\" frameborder=\"0\"></iframe>";
+                    var new_code = "<iframe src=\"http://community.lomadee.com/developers/vitrine_responsiva/frameads.html?sourceId="+ selectedSource +"\" width=\"100%\" height=\"183\" scrolling=\"no\" frameborder=\"0\"></iframe>";
                     
                     //Exibe resultado
-                    success('Titulo: Vitrine Responsiva gerada com sucesso!', 'Descrição: Utilize a Vitrine Responsiva em seu site! Copie e cole o código abaixo no seu HTML', new_code, 'textarea');
+                    success('Titulo: Vitrine Responsiva Coora gerada com sucesso!', 'Descrição: Utilize a Vitrine Responsiva em seu site! Copie e cole o código abaixo no seu HTML', new_code, 'textarea');
                 }
             }          
         </script>      
