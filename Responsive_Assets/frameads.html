@@ -8,13 +8,12 @@
 	<body style="visibility: hidden;">
         <div id="sidebar">
             <div id="headr">
-                <div id="logo">
-                    <span>Shopping</span>
-                </div>
                 <div id="sx">
-                    <input type="text" placeholder="Shopping" id="in_sx" onfocus="VitrineResponsiva.analytics('send', 'event', 'Search', 'Focus');" accesskey="s" maxlength="400" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-autocomplete="list" />
-                    <input id="search-submit" title="Enviar pesquisa" value="&rsaquo;" type="button" />
-                    <div id="sx-loa"></div>
+                    <form id="the-search">
+                        <input type="text" placeholder="Shopping" id="in_sx" onfocus="VitrineResponsiva.analytics('send', 'event', 'Search', 'Focus');" accesskey="s" maxlength="400" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-autocomplete="list" />
+                        <input id="search-submit" title="Enviar pesquisa" value="&rsaquo;" type="button" />
+                        <div id="sx-loa"></div>
+                    </form>
                 </div>
             </div>
             <div id="sugst_scroll" class="hide">
@@ -46,6 +45,6 @@
         
 		<script src="vitrine_responsiva.js"></script>
         
-        <img src="//analytics.lomadee.com/page_view" style="display:none">
+        <img src="//analytics.lomadee.com/page_view" style="display:none;" alt="Analytics">
 	</body>
 </html>

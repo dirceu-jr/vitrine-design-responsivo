@@ -105,14 +105,6 @@ var VitrineResponsiva = (
             last_callback,
             last_method,
 
-            // jsonp configs
-            head,
-            // 10 seg
-            timeout = 10 * 1000,
-
-            // used by simple_json
-            json_counter = 0,
-
             // carousel
             showing_tab = 0,
 
@@ -147,7 +139,7 @@ var VitrineResponsiva = (
         }
 
 
-        var getJSON = function (url, successHandler, errorHandler) {
+        var getJSON = function (url, successHandler, errorHandler, timeoutHandler) {
             var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             xhr.open('get', url, true);
             xhr.onreadystatechange = function () {
@@ -164,6 +156,10 @@ var VitrineResponsiva = (
                     }
                 }
             };
+            xhr.ontimeout = function() {
+                timeoutHandler && timeoutHandler();
+            }
+            xhr.timeout = 10000;
             xhr.send();
         }
 
@@ -334,11 +330,12 @@ var VitrineResponsiva = (
 
             getJSON(url, function (obj) {
                 callback(obj);
-            }, function () {
+            }, function() { // error
                 offers_spinner.stop();
-                renderOffers();
-                // Falar que teve um erro que é para tentar novamente mais tarde
-                // document.body.style.display = "none";
+                bg_message.innerHTML = "<div style='margin: 20px'>Um erro ocorreu. Tente novamente mais tarde.</div>";
+            }, function() { // timeout
+                offers_spinner.stop();
+                bg_message.innerHTML = "<div style='margin: 20px'>Verifique sua conexão com a Internet e tente novamente.</div>";
             });
 
         }
@@ -990,11 +987,21 @@ var VitrineResponsiva = (
                 }
             });
 
-            addEvent($("search-submit"), "click", function(event) {
+            var onformsubmit = function(evt) {
+                evt.preventDefault();
                 if (search_holder.value !== "") {
                     suggestionSearch(search_holder.value);
                 }
                 search_holder.focus();
+                return false;
+            }
+            
+            addEvent($("search-submit"), "click", function(evt) {
+                return onformsubmit(evt);
+            });
+
+            addEvent($("the-search"), "submit", function(evt) {
+                return onformsubmit(evt);
             });
 
             addEvent(pagination_previous, "click", function (event) {
