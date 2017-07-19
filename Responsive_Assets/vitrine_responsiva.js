@@ -21,42 +21,52 @@ var VitrineResponsiva = (
 
             tabs_map = {
                 "bestsellers": "Mais Vendidos",
+
                 "77": "Celular e Smartphone",
-                "2852": "TV",
-                "6424": "Notebook",
-                "280": "Aquecedor",
                 "3482": "Livros",
-                "93": "Câmera Digital",
-                "6409": "Jogos",
-                "6058": "Videogame",
-                "3673": "Refrigerador",
-                "138": "Fogão",
+                "2852": "TV",
+                "3673": "Geladeira",
                 "3671": "Lavadora de Roupas",
-                "2858": "Tênis",
+                "6424": "Notebook",
+                "138": "Fogão",
+                "3606": "Impressora",
+                "126": "Microondas",
                 "10232": "Tablet",
-                "3694": "Relógio de Pulso",
+                "6058": "Videogame",
+                "145": "Forno Elétrico",
+                "9830": "Pneu para Carro",
+                "121": "Cafeteira",
+                "119": "Aspirador de Pó",
+                "150": "Fritadeira",
+                "6409": "Jogos",
+                "5817": "Carrinho para Bebê",
+                "3661": "Ar Condicionado",
+                "5816": "Cadeira para Auto",
+                "3669": "Liquidificador",
+                "7594": "Coifa / Exaustor",
+                "2796": "Secador de Cabelo",
+                "9863": "Purificador de Água",
+                "1437": "Bicicleta",
+                "129": "Lava Louças",
+                "120": "Batedeira",
+                "2858": "Tênis",
+                "10": "Som Portátil",
+                "131": "Freezer",
+                "93": "Câmera Digital",
+                "6504": "Frigobar",
+                "10936": "Media Server",
+                "16": "Fone de Ouvido",
                 "3442": "Perfume",
-                "1437": "Bicicleta"
+                "36": "Monitor",
+                "3643": "Home Theater",
+                "3852": "Ferro de Passar",
+                "2800": "Aquecedor",
+                "3601": "Micro System",
+                "2422": "Multiprocessador",
+                "154": "Máquina de Costura"
             },
 
-            default_categories_ids_order = ["bestsellers", 77, 2852, 6424, 280, 3482, 93, 6409, 6058, 3673, 138, 3671, 2858, 10232, 3694, 3442, 1437],
-
-            // todo montar grupos randomicos
-            // com 4 produtos mas cada um de um segmento
-
-            // seleção de ofertas
-
-            // 7 segs
-
-
-            randomize_tabs_til = 4,
-            change_tabs_til = 4,
-
-            top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
-            other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
-            
-            tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids),
-            // tabs_ids = top_tabs_ids.concat(other_tabs_ids),
+            default_categories_ids_order = ["bestsellers", 77,3482,2852,3673,3671,6424,138,3606,126,10232,6058,145,9830,121,119,150,6409,5817,3661,5816,3669,7594,2796,9863,1437,129,120,2858,10,131,93,6504,10936,16,3442,36,3643,3852,2800,3601,2422,154],
 
             suggestion_has_heart_beat = true,
             suggestion_has_heart_beat_keyboard = true,
@@ -103,23 +113,14 @@ var VitrineResponsiva = (
             // to load more pages from last BWS call
             last_options,
             last_callback,
-            last_method,
-
-            // carousel
-            showing_tab = 0,
-
-            // how much time mouseover offer
-            mouse_over_timeout,
-
-            has_sidebar
-
+            last_method
         ;
 
         // console.log(tabs_ids);
 
         function $(e) {
             return d.getElementById(e);
-        }        
+        }
 
 
         function paramsTo(params, prefix, and) {
@@ -139,7 +140,7 @@ var VitrineResponsiva = (
         }
 
 
-        var getJSON = function (url, successHandler, errorHandler, timeoutHandler) {
+        var getJSON = function(url, successHandler, errorHandler, timeoutHandler) {
             var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             xhr.open('get', url, true);
             xhr.onreadystatechange = function () {
@@ -321,6 +322,31 @@ var VitrineResponsiva = (
         //   }
 
 
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+
         // ------------------------------------------------------
         function Lomadee(service, params, callback) {
 
@@ -332,7 +358,7 @@ var VitrineResponsiva = (
                 callback(obj);
             }, function() { // error
                 offers_spinner.stop();
-                bg_message.innerHTML = "<div style='margin: 20px'>Um erro ocorreu. Tente novamente mais tarde.</div>";
+                bg_message.innerHTML = "<div style='margin: 20px'>Ops, algum erro ocorreu. Tente novamente mais tarde.</div>";
             }, function() { // timeout
                 offers_spinner.stop();
                 bg_message.innerHTML = "<div style='margin: 20px'>Verifique sua conexão com a Internet e tente novamente.</div>";
@@ -746,7 +772,7 @@ var VitrineResponsiva = (
 
         function renderPagination(o) {
 
-            //    console.log(o);
+            // console.log(o);
             if (!o) {
                 return false;
             }
@@ -780,15 +806,50 @@ var VitrineResponsiva = (
 
 
         // desenha menu lateral com "abas" de produtos
-
         function renderTabs() {
+
+
+            var
+                randomize_tabs_til = 6,
+                top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
+                other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
+                tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
+            ;
+
+            // puxa categorias já pesquisadas e que existem no tabs_map para cima
+            var lomadee_cookie = getCookie("loc");
+            if (lomadee_cookie !== "") {
+                var cx_array = lomadee_cookie.split("&");
+                if (cx_array[0]) {
+                    // console.log(cx_array);
+                    var cxs = cx_array[0].split("=");
+                    if (cxs[1]) {
+                        var cxs_array = cxs[1].split("|");
+                        // console.log(cxs_array);
+                        if (cxs_array[0]) {
+                            for (var i = 0; i < cxs_array.length; i++) {
+                                // console.log(cxs_array[i]);
+                                // só adiciona se tiver no tabs_map
+                                if (tabs_map[cxs_array[i]]) {
+                                    // localiza
+                                    var index_of_to_remove = tabs_ids.indexOf(parseInt(cxs_array[i]));
+                                    // remove
+                                    tabs_ids.splice(index_of_to_remove, 1);
+                                    // recoloca
+                                    tabs_ids.unshift(cxs_array[i]);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // tabs_ids = top_tabs_ids.concat(other_tabs_ids),
 
             var
                 tabsContent = [];
 
             for (tab in tabs_ids) {
-                // console.log(tabs_ids[tab]);
-                // console.log(tabs_map[tabs_ids[tab].toString()]["n"]);
                 tabsContent.push("<li id='tab-", tabs_ids[tab], "'>", tabs_map[tabs_ids[tab].toString()], "</li>");
             }
 
@@ -797,18 +858,12 @@ var VitrineResponsiva = (
             }
 
             openTab(tabs_ids[0]);
-
         }
 
 
         // abre uma aba
 
         function openTab(open_category, from_menu) {
-
-            // clear swipe interval if click comes from menu tabs
-            if (from_menu) {
-                showing_tab = tabs_ids.indexOf(open_category);
-            }
 
             var
                 tabsChilds = tabs_holder ? tabs_holder.getElementsByTagName('li') : [];
@@ -1030,8 +1085,6 @@ var VitrineResponsiva = (
                     sidebar_padding = getStyleInt(sidebar, "padding-top") + getStyleInt(sidebar, "padding-bottom")
                 ;
 
-                has_sidebar = getStyle(sidebar, "display") !== "none";
-
                 // use width to define max_suggestions (2 to phones : 6 screen)
                 max_suggestions = (available_width <= 320) ? 2 : 6;
 
@@ -1139,7 +1192,8 @@ var VitrineResponsiva = (
             renderWidget: renderWidget,
             imgErr: imageError,
             openTab: openTab,
-            analytics: analytics
+            analytics: analytics,
+            setCookie: setCookie
         }
 
     }(document));
