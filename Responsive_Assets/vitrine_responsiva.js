@@ -946,6 +946,8 @@ var VitrineResponsiva = (
                 g_country = options["country"] || "BR",
                 g_source_id = options["sourceId"] || "35802480";
 
+                console.log(g_source_id);
+
                 search_holder = $("in_sx"),
                 suggestions_loading = $("sx-loa"),
                 suggestions_holder = $("sugst"),
