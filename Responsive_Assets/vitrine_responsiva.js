@@ -1,5 +1,5 @@
 /**
- * @preserve Copyright Dirceu Pauka Júnior
+ * @preserve Copyright Dirceu Pauka Junior
  * http://www.coora.com.br/
  */
 ;
