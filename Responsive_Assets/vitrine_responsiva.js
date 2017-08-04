@@ -808,7 +808,6 @@ var VitrineResponsiva = (
         // desenha menu lateral com "abas" de produtos
         function renderTabs() {
 
-
             var
                 randomize_tabs_til = 6,
                 top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
@@ -830,12 +829,14 @@ var VitrineResponsiva = (
                             for (var i = 0; i < cxs_array.length; i++) {
                                 // console.log(cxs_array[i]);
                                 // só adiciona se tiver no tabs_map
-                                if (tabs_map[cxs_array[i]]) {
+                                // &&
+                                // aborta se já tiver em cima
+                                if (tabs_map[cxs_array[i]] && cxs_array[i] !== tabs_ids[0]) {
                                     // localiza
                                     var index_of_to_remove = tabs_ids.indexOf(parseInt(cxs_array[i]));
                                     // remove
                                     tabs_ids.splice(index_of_to_remove, 1);
-                                    // recoloca
+                                    // recoloca em cima
                                     tabs_ids.unshift(cxs_array[i]);
                                 }
                             }
@@ -945,8 +946,6 @@ var VitrineResponsiva = (
 
                 g_country = options["country"] || "BR",
                 g_source_id = options["sourceId"] || "35802480";
-
-                console.log(g_source_id);
 
                 search_holder = $("in_sx"),
                 suggestions_loading = $("sx-loa"),
