@@ -175,7 +175,6 @@ a:hover {
 
 #sidebar a,
 #sidebar .current span {
-    /*height: 21px;*/
     line-height: 29px;
     padding: 0 0 0 7px;
     display: block;
@@ -187,8 +186,12 @@ a:hover {
 #tabs_holder .current span,
 #tabs_holder a:hover,
 #sugst a.hover {
-    background: #f5f8fa;
     text-decoration: underline;
+}
+
+.current span {
+    background: #f6f6f6;
+    text-decoration: none !important;
 }
 
 #entry {
