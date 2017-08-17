@@ -193,6 +193,7 @@ a:hover {
 .current span {
     background: #f6f6f6;
     text-decoration: none !important;
+    cursor: default !important;
 }
 
 #entry {
