@@ -181,6 +181,7 @@ a:hover {
     color: #064ac1;
     white-space: nowrap;
     border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
 }
 
 #tabs_holder .current span,
@@ -221,6 +222,7 @@ a:hover {
 }
 
 #offer a {
+    cursor: pointer;
     display: block;
     padding: 4px;
 }
