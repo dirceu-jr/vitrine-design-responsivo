@@ -63,7 +63,19 @@ var VitrineResponsiva = (
                 "2800": "Aquecedor",
                 "3601": "Micro System",
                 "2422": "Multiprocessador",
-                "154": "Máquina de Costura"
+                "154": "Máquina de Costura",
+
+                // essas são as especiais de moda
+                "2993": "Óculos de Sol",
+                "8163": "Estojo de Maquiagem",
+                "9877": "Anti-Acne",
+                "2796": "Secador de Cabelo",
+                "k_bolsa guess": "Bolsa Guess",
+                "k_bota ramarim": "Bota Ramarim"
+
+                // para os especiais vamos ter que permitir abas de keywords
+                
+
             },
 
             default_categories_ids_order = ["bestsellers", 77,3482,2852,3673,3671,6424,138,3606,126,10232,6058,145,9830,121,119,150,6409,5817,3661,5816,3669,7594,2796,9863,1437,129,120,2858,10,131,93,6504,10936,16,3442,36,3643,3852,2800,3601,2422,154],
@@ -806,14 +818,30 @@ var VitrineResponsiva = (
 
 
         // desenha menu lateral com "abas" de produtos
-        function renderTabs() {
+        function renderTabs(options) {
 
-            var
-                randomize_tabs_til = 6,
-                top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
-                other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
-                tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
-            ;
+            // console.log(options["type"]);
+
+            // dependendo do type escolhemos categorias especialmente selecionadas 
+            // para solucionar nossos amigos publishers
+
+            if (options["type"] == "fashion") {
+
+                // 2993 óculos de sol
+                // 3442 perfume
+                // 9877 anti acne
+                // 2796 Secador de Cabelo
+                
+                var tabs_ids = shuffle(["k_bolsa guess","k_bota ramarim",2993,3442,2796]).concat(default_categories_ids_order);
+
+            } else {
+                var
+                    randomize_tabs_til = 6,
+                    top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
+                    other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
+                    tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
+                ;
+            }
 
             // puxa categorias já pesquisadas e que existem no tabs_map para cima
             var lomadee_cookie = getCookie("loc");
@@ -844,8 +872,6 @@ var VitrineResponsiva = (
                     }
                 }
             }
-
-            // tabs_ids = top_tabs_ids.concat(other_tabs_ids),
 
             var
                 tabsContent = [];
@@ -895,7 +921,7 @@ var VitrineResponsiva = (
         }
 
 
-        // procura no yql e manda renderizar
+        // procura no bws/lomadee e manda renderizar
 
         function findTab(category) {
 
@@ -910,11 +936,17 @@ var VitrineResponsiva = (
             // hide pagination
             hide(pagination_previous);
             hide(pagination_next);
+            
+            // console.log(category);
 
-            // aqui dentro tem cache local
-            // (para não bugar no onresize)
-            if (category == "bestsellers") {
+            // se category for uma keyword
+            if (category[0] == "k") {
+                options["keyword"] = category.split("k_")[1];
+                var endpoint = "offer/_search";
+            // se category for mais vendidos
+            } else if (category == "bestsellers") {
                 var endpoint = "offer/_bestsellers";
+            // se category
             } else {
                 var endpoint = "offer/_category/" + category;
             }
@@ -941,27 +973,23 @@ var VitrineResponsiva = (
 
         function renderWidget(options) {
 
-            var
-                custom_css = [];
+            // console.log(options);
 
-                g_country = options["country"] || "BR",
-                g_source_id = options["sourceId"] || "35802480";
-
-                search_holder = $("in_sx"),
-                suggestions_loading = $("sx-loa"),
-                suggestions_holder = $("sugst"),
-                tabs_holder = $("tabs_holder"),
-                sidebar = $("sidebar"),
-                sugst_scroll = $("sugst_scroll"),
-                offers_holder = $("offer"),
-                footer = $("fotr"),
-                header = $("headr"),
-                entry = $("entry"),
-                pagination_previous = $("pre"),
-                pagination_next = $("nxt"),
-                bg_message = $("msg"),
-                loading = $("load")
-            ;
+            g_source_id = (options["sourceId"] || "35802480");
+            search_holder = $("in_sx");
+            suggestions_loading = $("sx-loa");
+            suggestions_holder = $("sugst");
+            tabs_holder = $("tabs_holder");
+            sidebar = $("sidebar");
+            sugst_scroll = $("sugst_scroll");
+            offers_holder = $("offer");
+            footer = $("fotr");
+            header = $("headr");
+            entry = $("entry");
+            pagination_previous = $("pre");
+            pagination_next = $("nxt");
+            bg_message = $("msg");
+            loading = $("load");
 
             // search_holder.value = search_holder.getAttribute('placeholder');
 
@@ -1094,7 +1122,7 @@ var VitrineResponsiva = (
                 }
 
                 // menos a sidebar (se ela estiver na tela)
-                available_width -= (getStyle(sidebar, "display") !== "none" ? sidebar.offsetWidth : 0)
+                available_width -= (getStyle(sidebar, "display") !== "none" ? sidebar.offsetWidth : 0);
 
                 // menos bordas
                 available_height -= 2;
@@ -1135,7 +1163,7 @@ var VitrineResponsiva = (
                     return false;
                 }
 
-                renderTabs();
+                renderTabs(options);
 
                 d.body.style.visibility = "visible";
 
@@ -1193,8 +1221,8 @@ var VitrineResponsiva = (
             renderWidget: renderWidget,
             imgErr: imageError,
             openTab: openTab,
-            analytics: analytics,
-            setCookie: setCookie
+            analytics: analytics
+            ,setCookie: setCookie
         }
 
     }(document));
@@ -1205,7 +1233,7 @@ var
     vars = (hash[1] || query || "").split("&"),
     options = {};
 
-for (var i = vars.length; i--;) {
+for (var i = 0; i < vars.length; i++) {
     var pair = vars[i].split("=");
     options[pair[0]] = pair[1];
 }
