@@ -194,7 +194,7 @@ a:hover {
     line-height: 29px;
     padding: 0 0 0 7px;
     display: block;
-    color: #064ac1;
+    color: #3366cc;
     white-space: nowrap;
     border-bottom: 1px solid #f1f1f1;
     cursor: pointer;
@@ -280,14 +280,14 @@ a:hover .title {
     overflow: hidden;
     margin: 4px 0 0;
     font-size: 14px;
-    color: #064ac1;
+    color: #3366cc;
     line-height: normal;
-    /*  font-weight: bold;*/
+    font-weight: bold;
 }
 
 .installment {
     margin: 0;
-    color: #484848;
+    color: #666;
 }
 
 .seller {
