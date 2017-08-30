@@ -210,6 +210,8 @@ a:hover {
     background: #f6f6f6;
     text-decoration: none !important;
     cursor: default !important;
+    font-weight: bold;
+    color: #000 !important;
 }
 
 #entry {
