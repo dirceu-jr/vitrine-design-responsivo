@@ -223,6 +223,11 @@ var VitrineResponsiva = (
         }
 
 
+        String.prototype.capitalize = function() {
+            return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+        }
+
+
         // cross browser event handling
         function addEvent(el, type, fn) {
             if (window.addEventListener) {
@@ -552,7 +557,7 @@ var VitrineResponsiva = (
                 suggestions_spinner = new Spinner({
                     color: options["search"] || "#d0d0d0",
                     lines: 10,
-                    lenght: 6,
+                    length: 6,
                     width: 2,
                     radius: 1
                 }).spin(suggestions_loading);
@@ -824,15 +829,33 @@ var VitrineResponsiva = (
 
             // dependendo do type escolhemos categorias especialmente selecionadas 
             // para solucionar nossos amigos publishers
+            console.log(options["keywords"]);
+            // TODO permitir escolher keyword!
+            // limitar tamanho dessa lista para não abusarem e bugar
 
             if (options["type"] == "fashion") {
 
                 // 2993 óculos de sol
                 // 3442 perfume
                 // 9877 anti acne
+
                 // 2796 Secador de Cabelo
                 
                 var tabs_ids = shuffle(["k_bolsa guess","k_bota ramarim",2993,3442,2796]).concat(default_categories_ids_order);
+
+            } else if(options["keywords"] !== undefined) {
+
+                var
+                    keywords = options["keywords"].split(","),
+                    new_tabs_ids = []
+                ;
+                console.log(keywords);
+                for (var i = 0; i < keywords.length; i++) {
+                    new_tabs_ids.push("k_" + decodeURIComponent(keywords[i]));
+                }
+
+                console.log(new_tabs_ids);
+                var tabs_ids = shuffle(new_tabs_ids).concat(default_categories_ids_order);
 
             } else {
                 var
@@ -877,7 +900,12 @@ var VitrineResponsiva = (
                 tabsContent = [];
 
             for (tab in tabs_ids) {
-                tabsContent.push("<li id='tab-", tabs_ids[tab], "'>", tabs_map[tabs_ids[tab].toString()], "</li>");
+                // se for uma keyword
+                if (tabs_ids[tab][0] == "k") {
+                    tabsContent.push("<li id='tab-", tabs_ids[tab], "'>", tabs_ids[tab].split("k_")[1].capitalize(), "</li>");
+                } else {
+                    tabsContent.push("<li id='tab-", tabs_ids[tab], "'>", tabs_map[tabs_ids[tab].toString()], "</li>");
+                }
             }
 
             if (tabs_holder) {
