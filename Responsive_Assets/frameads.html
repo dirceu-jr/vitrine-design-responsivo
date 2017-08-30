@@ -7,6 +7,7 @@
         <meta name="author" content="http://www.coora.com.br" />
     </head>
 	<body style="visibility: hidden;">
+        <a href="http://www.coora.com.br/vitrine-responsiva" class="info" target="_blank">i</a>
         <div id="sidebar">
             <div id="headr">
                 <div id="sx">
@@ -26,26 +27,26 @@
                 <li id='tab-{ id }'>{ name }</li>
             </ul>
         </div>
-        
+
         <div id="entry">
-            
+
             <div id="msg"></div>
             <div id="load"></div>
-            
+
             <ul id="offer"><li><a href="{ link }" target="_blank" onclick="VitrineResponsiva.analytics('send', 'event', 'Oferta-Click', '{ product_id }-{ category_id }', '{ product name }');"><div class="thumbholder"><img class="thumb" width="96" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="{ product name }" onerror="VitrineResponsiva.imgErr(this);" /></div><div><h2 class="title">{ product name }</h2><p class="price">{ price }</p><p class="installment">{ installment }</p></div></a></li></ul>
-            
+
             <div>
                 <a id="nxt" href="#" title="Próximas ofertas">&rsaquo;</a>
                 <a id="pre" href="#" title="Ofertas anteriores">&lsaquo;</a>
             </div>
-            
+
         </div>
-        
+
         <script src="lib/json2.js"></script>
         <script src="lib/spin.min.js"></script>
-        
+
 		<script src="vitrine_responsiva.js"></script>
-        
+
         <img src="//analytics.lomadee.com/page_view" style="display:none;" alt="Analytics">
 	</body>
 </html>
