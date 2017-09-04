@@ -1,8 +1,8 @@
 {
-    "version": "1.6.5",
+    "version": "1.6.7",
     "publisher_id": 22225285,
-    "title": "Vitrine Responsiva Coora",
+    "title": "Vitrine Responsiva",
     "introduction": "Vitrine de ofertas com design responsivo (que se adapta à resoluções).",
-    "description": "Gere uma Vitrine de ofertas com design responsivo (que se adapta à resoluções) para cada site que você tiver cadastrado na Lomadee.",
+    "description": "Gere uma Vitrine de ofertas com design responsivo (que se adapta à resoluções e dispositivos) para cada site que você tiver cadastrado na Lomadee.",
     "category_id": 8
 }
