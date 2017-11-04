@@ -69,7 +69,7 @@ var VitrineResponsiva = (
                 "2993": "Óculos de Sol",
                 "8163": "Estojo de Maquiagem",
                 "9877": "Anti-Acne",
-                "2796": "Secador de Cabelo",
+                // "2796": "Secador de Cabelo",
                 "k_bolsa guess": "Bolsa Guess",
                 "k_bota ramarim": "Bota Ramarim"
 
@@ -829,16 +829,15 @@ var VitrineResponsiva = (
 
             // dependendo do type escolhemos categorias especialmente selecionadas 
             // para solucionar nossos amigos publishers
-            console.log(options["keywords"]);
-            // TODO permitir escolher keyword!
-            // limitar tamanho dessa lista para não abusarem e bugar
+
+            // TODO
+            // limitar tamanho da lista de keywords para não abusarem e bugar
 
             if (options["type"] == "fashion") {
 
                 // 2993 óculos de sol
                 // 3442 perfume
                 // 9877 anti acne
-
                 // 2796 Secador de Cabelo
                 
                 var tabs_ids = shuffle(["k_bolsa guess","k_bota ramarim",2993,3442,2796]).concat(default_categories_ids_order);
@@ -849,52 +848,52 @@ var VitrineResponsiva = (
                     keywords = options["keywords"].split(","),
                     new_tabs_ids = []
                 ;
-                console.log(keywords);
+                
                 for (var i = 0; i < keywords.length; i++) {
                     new_tabs_ids.push("k_" + decodeURIComponent(keywords[i]));
                 }
 
-                console.log(new_tabs_ids);
                 var tabs_ids = shuffle(new_tabs_ids).concat(default_categories_ids_order);
 
             } else {
                 var
                     randomize_tabs_til = 6,
-                    top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
-                    other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
-                    tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
+                    // top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
+                    // other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
+                    // tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
+                    tabs_ids = default_categories_ids_order
                 ;
             }
 
-            // puxa categorias já pesquisadas e que existem no tabs_map para cima
-            var lomadee_cookie = getCookie("loc");
-            if (lomadee_cookie !== "") {
-                var cx_array = lomadee_cookie.split("&");
-                if (cx_array[0]) {
-                    // console.log(cx_array);
-                    var cxs = cx_array[0].split("=");
-                    if (cxs[1]) {
-                        var cxs_array = cxs[1].split("|");
-                        // console.log(cxs_array);
-                        if (cxs_array[0]) {
-                            for (var i = 0; i < cxs_array.length; i++) {
-                                // console.log(cxs_array[i]);
-                                // só adiciona se tiver no tabs_map
-                                // &&
-                                // aborta se já tiver em cima
-                                if (tabs_map[cxs_array[i]] && cxs_array[i] !== tabs_ids[0]) {
-                                    // localiza
-                                    var index_of_to_remove = tabs_ids.indexOf(parseInt(cxs_array[i]));
-                                    // remove
-                                    tabs_ids.splice(index_of_to_remove, 1);
-                                    // recoloca em cima
-                                    tabs_ids.unshift(cxs_array[i]);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            // // puxa categorias já pesquisadas e que existem no tabs_map para cima
+            // var lomadee_cookie = getCookie("loc");
+            // if (lomadee_cookie !== "") {
+            //     var cx_array = lomadee_cookie.split("&");
+            //     if (cx_array[0]) {
+            //         // console.log(cx_array);
+            //         var cxs = cx_array[0].split("=");
+            //         if (cxs[1]) {
+            //             var cxs_array = shuffle(cxs[1].split("|"));
+            //             // console.log(cxs_array);
+            //             if (cxs_array[0]) {
+            //                 for (var i = 0; i < cxs_array.length; i++) {
+            //                     // console.log(cxs_array[i]);
+            //                     // só adiciona se tiver no tabs_map
+            //                     // &&
+            //                     // aborta se já tiver em cima
+            //                     if (tabs_map[cxs_array[i]] && cxs_array[i] !== tabs_ids[0]) {
+            //                         // localiza
+            //                         var index_of_to_remove = tabs_ids.indexOf(parseInt(cxs_array[i]));
+            //                         // remove
+            //                         tabs_ids.splice(index_of_to_remove, 1);
+            //                         // recoloca em cima
+            //                         tabs_ids.unshift(cxs_array[i]);
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
 
             var
                 tabsContent = [];
@@ -956,7 +955,8 @@ var VitrineResponsiva = (
             var options = {
                 page: 1,
                 size: (g_results + 1),
-                sourceId: g_source_id
+                sourceId: g_source_id,
+                sort: 'bestsellers'
             }
 
             // console.log(options);
@@ -974,6 +974,7 @@ var VitrineResponsiva = (
             // se category for mais vendidos
             } else if (category == "bestsellers") {
                 var endpoint = "offer/_bestsellers";
+                options["page"] = Math.floor(Math.random() * 42);
             // se category
             } else {
                 var endpoint = "offer/_category/" + category;
@@ -1135,22 +1136,24 @@ var VitrineResponsiva = (
 
                 var
                     // tamanho da tela
-                    available_width = windowWidth(),
-                    available_height = windowHeight(),
-
-                    // calcula padding do tabs holder
-                    sidebar_padding = getStyleInt(sidebar, "padding-top") + getStyleInt(sidebar, "padding-bottom")
+                    available_width = offers_holder.offsetWidth,
+                    // available_width = windowWidth(),
+                    available_height = windowHeight()
                 ;
 
                 // use width to define max_suggestions (2 to phones : 6 screen)
                 max_suggestions = (available_width <= 320) ? 2 : 6;
 
-                if (available_width <= 363) {
-                    search_holder.setAttribute('placeholder', "Digite o produto, marca ou modelo.");
-                }
+                // if (available_width <= 363) {
+                //     search_holder.setAttribute('placeholder', "Digite o produto, marca ou modelo.");
+                // }
 
                 // menos a sidebar (se ela estiver na tela)
-                available_width -= (getStyle(sidebar, "display") !== "none" ? sidebar.offsetWidth : 0);
+                // available_width -= (getStyle(sidebar, "display") !== "none" ? sidebar.offsetWidth : 0);
+
+                console.log("sidebar.offsetWidth: " + sidebar.offsetWidth);
+                console.log("offers_holder: " + offers_holder.offsetWidth);
+                // console.log(getStyle(sidebar, "display"));
 
                 // menos bordas
                 available_height -= 2;
@@ -1165,7 +1168,7 @@ var VitrineResponsiva = (
 
                 var
                     product_template = offers_holder.childNodes[0],
-                    product_width = product_template.offsetWidth
+                    product_width = product_template.offsetWidth + 1
                 ;
 
                 // sum product margin in product height
@@ -1177,9 +1180,16 @@ var VitrineResponsiva = (
                 pagination_next.style.lineHeight = available_height + "px";
                 pagination_previous.style.lineHeight = available_height + "px";
 
+                // TODO: deixar somente a quantidade exata, não deixar um produto a mais, para tirar a borda da direita
+
                 var
                     available_space_cols = Math.max(Math.floor(available_width / product_width), 1)
                 ;
+
+                console.log("available_width: " + available_width);
+                console.log("product width: " + product_width);
+                console.log(available_width / product_width);
+                console.log(available_space_cols);
                 //      console.log(available_space_lines);
                 //      console.log(available_space_cols);
 
