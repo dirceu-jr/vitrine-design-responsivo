@@ -19,11 +19,11 @@ O arquivo Responsive_Assets/sample.html mostra como deve ser instalada a Vitrine
 Executando o comando `python build.py`, gera os arquivos de produção dentro da pasta Responsive_Assets/staging.
 
 ## Testes
-Tem testes unitários e de integração.
+Foram escritos testes unitários e de integração.
 Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.html e os de integração usam a gem watir e ficam na pasta Responsive_Assets/utils/
 
 ## Pics
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/pics.png)
 
-## Trabalhando
+## Demonstração
 [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
