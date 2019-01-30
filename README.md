@@ -4,7 +4,7 @@
 ## História
 Após experiências com a API da Buscapé na criação de uma extensão para navegador, a Vitrine Responsiva começou a ser desenvolvida em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
 
-Inicialmente foram disponibilizados formatos pre-desenhados (alert, widget e mobile). No primeiro semestre de 2013, a ferramenta foi re-desenhada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante. 
+Inicialmente foram disponibilizados formatos pré-desenhados (alert, widget e mobile). No primeiro semestre de 2013, a ferramenta foi re-desenhada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante. 
 
 Com foco em dispositivos móveis, foi otimizada para consumir poucos recursos de rede.
 
