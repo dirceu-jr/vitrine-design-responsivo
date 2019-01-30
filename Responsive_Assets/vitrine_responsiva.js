@@ -8,7 +8,7 @@ var VitrineResponsiva = (
 
         // APP
         var
-            appid = "14970154949521435dbc6",
+            appid = "1534179896121c91030b2",
 
             currency_map = {
                 "BRL": {
@@ -369,7 +369,8 @@ var VitrineResponsiva = (
 
             params['sourceId'] = g_source_id;
             var protocol = ("https:" == window.location.protocol ? "https" : "http");
-            var url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
+            // var url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
+            var url = protocol + "://sandbox-api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
 
             getJSON(url, function (obj) {
                 callback(obj);
@@ -1151,8 +1152,8 @@ var VitrineResponsiva = (
                 // menos a sidebar (se ela estiver na tela)
                 // available_width -= (getStyle(sidebar, "display") !== "none" ? sidebar.offsetWidth : 0);
 
-                console.log("sidebar.offsetWidth: " + sidebar.offsetWidth);
-                console.log("offers_holder: " + offers_holder.offsetWidth);
+                // console.log("sidebar.offsetWidth: " + sidebar.offsetWidth);
+                // console.log("offers_holder: " + offers_holder.offsetWidth);
                 // console.log(getStyle(sidebar, "display"));
 
                 // menos bordas
@@ -1186,10 +1187,10 @@ var VitrineResponsiva = (
                     available_space_cols = Math.max(Math.floor(available_width / product_width), 1)
                 ;
 
-                console.log("available_width: " + available_width);
-                console.log("product width: " + product_width);
-                console.log(available_width / product_width);
-                console.log(available_space_cols);
+                // console.log("available_width: " + available_width);
+                // console.log("product width: " + product_width);
+                // console.log(available_width / product_width);
+                // console.log(available_space_cols);
                 //      console.log(available_space_lines);
                 //      console.log(available_space_cols);
 
