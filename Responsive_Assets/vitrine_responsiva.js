@@ -975,7 +975,7 @@ var VitrineResponsiva = (
             // se category for mais vendidos
             } else if (category == "bestsellers") {
                 var endpoint = "offer/_bestsellers";
-                options["page"] = Math.floor(Math.random() * 42);
+                options["page"] = Math.floor(Math.random() * 23) + 1;
             // se category
             } else {
                 var endpoint = "offer/_category/" + category;
