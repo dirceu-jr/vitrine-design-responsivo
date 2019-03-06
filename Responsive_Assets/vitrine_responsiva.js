@@ -8,7 +8,7 @@ var VitrineResponsiva = (
 
         // APP
         var
-            appid = "1534179896121c91030b2",
+            appid = "155001196902309c5f761",
 
             currency_map = {
                 "BRL": {
@@ -369,8 +369,8 @@ var VitrineResponsiva = (
 
             params['sourceId'] = g_source_id;
             var protocol = ("https:" == window.location.protocol ? "https" : "http");
-            // var url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
-            var url = protocol + "://sandbox-api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
+            var url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
+            // var url = protocol + "://sandbox-api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
 
             getJSON(url, function (obj) {
                 callback(obj);
