@@ -27,3 +27,6 @@ Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.h
 
 ## Demonstração
 [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
+
+## Team
+O desenho da interface foi feito por [Mikael Carrara](https://github.com/mikaelcarrara).
