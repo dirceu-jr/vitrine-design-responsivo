@@ -4,7 +4,7 @@ import os
 import re
 
 REMOVE_WS = re.compile(r"\s{2,}").sub
-output_file_name = "vitrine_responsiva-1.7.0.min.js"
+output_file_name = "vitrine_responsiva-1.7.2.min.js"
 
 os.system("java -jar ../tools/yuicompressor-2.4.8.jar ./style.css -o ./staging/style-min.css -v")
 
