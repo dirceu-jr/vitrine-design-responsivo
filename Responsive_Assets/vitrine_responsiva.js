@@ -22,48 +22,45 @@ var VitrineResponsiva = (
             tabs_map = {
                 "bestsellers": "Mais Vendidos",
 
-                "77": "Celular e Smartphone",
-                "3482": "Livros",
-                "2852": "TV",
-                "3673": "Geladeira",
-                "3671": "Lavadora de Roupas",
-                "6424": "Notebook",
-                "138": "Fogão",
-                "3606": "Impressora",
-                "126": "Microondas",
-                "10232": "Tablet",
-                "6058": "Videogame",
-                "145": "Forno Elétrico",
-                "9830": "Pneu para Carro",
-                "121": "Cafeteira",
-                "119": "Aspirador de Pó",
-                "150": "Fritadeira",
-                "6409": "Jogos",
-                "5817": "Carrinho para Bebê",
-                "3661": "Ar Condicionado",
-                "5816": "Cadeira para Auto",
-                "3669": "Liquidificador",
-                "7594": "Coifa / Exaustor",
-                "2796": "Secador de Cabelo",
-                "9863": "Purificador de Água",
-                "1437": "Bicicleta",
-                "129": "Lava Louças",
-                "120": "Batedeira",
-                "2858": "Tênis",
-                "10": "Som Portátil",
-                "131": "Freezer",
-                "93": "Câmera Digital",
-                "6504": "Frigobar",
-                "10936": "Media Server",
-                "16": "Fone de Ouvido",
-                "3442": "Perfume",
-                "36": "Monitor",
-                "3643": "Home Theater",
-                "3852": "Ferro de Passar",
-                "2800": "Aquecedor",
-                "3601": "Micro System",
-                "2422": "Multiprocessador",
-                "154": "Máquina de Costura",
+                77: "Celular e Smartphone",
+                2852: "TV",
+                3673: "Geladeira / Refrigerador",
+                6424: "Notebook",
+                3671: "Máquina de Lavar Roupas",
+                3661: "Ar Condicionado",
+                6058: "Console de Video Game",
+                3606: "Impressora",
+                138: "Fogão",
+                126: "Microondas",
+                10232: "Tablet",
+                9830: "Pneu para Carro",
+                62: "Caixa de Som para PC",
+                6504: "Frigobar",
+                3662: "Ventilador / Circulador",
+                145: "Forno Elétrico",
+                150: "Fritadeira",
+                9863: "Purificador de Água",
+                131: "Freezer",
+                121: "Cafeteira",
+                3442: "Perfume",
+                119: "Aspirador de Pó / Água",
+                3694: "Relógio de Pulso",
+                6378: "Monitor Cardíaco / Frequencímetro",
+                129: "Lava Louças",
+                10936: "Media Server",
+                10104: "Leitor de e-book",
+                16: "Fone de Ouvido / Headset",
+                6409: "Jogos",
+                8958: "Climatizador",
+                36: "Monitor",
+                3669: "Liquidificador",
+                2858: "Tênis",
+                120: "Batedeira",
+                2796: "Secador de Cabelo",
+                2801: "Armário / Guarda-Roupa",
+                1437: "Bicicleta",
+                7594: "Coifa / Exaustor",
+                3737: "HD",
 
                 // essas são as especiais de moda
                 "2993": "Óculos de Sol",
@@ -75,7 +72,7 @@ var VitrineResponsiva = (
 
             },
 
-            default_categories_ids_order = ["bestsellers", 77, 3482, 2852, 3673, 3671, 6424, 138, 3606, 126, 10232, 6058, 145, 9830, 121, 119, 150, 6409, 5817, 3661, 5816, 3669, 7594, 2796, 9863, 1437, 129, 120, 2858, 10, 131, 93, 6504, 10936, 16, 3442, 36, 3643, 3852, 2800, 3601, 2422, 154],
+            default_categories_ids_order = ["bestsellers", 77, 2852, 3673, 6424, 3671, 3661, 6058, 3606, 138, 126, 10232, 9830, 62, 6504, 3662, 145, 150, 9863, 131, 121, 3442, 119, 3694, 6378, 129, 10936, 10104, 16, 6409, 8958, 36, 3669, 2858, 120, 2796, 2801, 1437, 7594, 3737],
 
             suggestion_has_heart_beat = true,
             suggestion_has_heart_beat_keyboard = true,
@@ -323,6 +320,16 @@ var VitrineResponsiva = (
             }, function() { // timeout
                 offers_spinner.stop();
                 bg_message.innerHTML = "<div style='margin: 20px'>Verifique sua conexão com a Internet e tente novamente.</div>";
+            });
+
+            getJSON("https://api.lomadee.com/v2/155001196902309c5f761/category/_bestsellers?sourceId=1&size=42", function(obj) {
+                console.log(obj);
+                var ids = [];
+                for (category in obj["categories"]) {
+                    ids.push(obj["categories"][category].id);
+                    console.log(obj["categories"][category].id + ": " + "\"" + obj["categories"][category].name + "\"");
+                }
+                console.log(ids);
             });
 
         }
