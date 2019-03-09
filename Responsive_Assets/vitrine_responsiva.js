@@ -575,6 +575,7 @@ var VitrineResponsiva = (
 
             var jsonp = document.createElement("script");
             jsonp.src = protocol + "//" + subdomain + ".buscape.com.br/service/autoComplete/mobile/664f4c566e534b707844553d/BR/?format=json&keyword=" + value + "&callback=VitrineResponsiva.autoCompleteCallback";
+
             document.body.appendChild(jsonp);
         }
 
@@ -866,7 +867,21 @@ var VitrineResponsiva = (
                 ;
             }
 
-            // // puxa categorias já pesquisadas e que existem no tabs_map para cima
+            // LOMADEE COOKIES
+            // http://community.lomadee.com
+
+            // getCookie("lmd")
+            // ""5860=35965728,,,1532529680659,null,,176,,198b9a341fd,&5783=36010018,,,1548957990055,null,,176,,16f343fdb8,&5766=35779654,,,1549471199288,null,,514,,37dccff689,&5644=35779654,,,1549471199717,null,,514,,37b3def1f4,&5992=35808788,,,1550017065293,null,,10171,,43f4b4be22,&5632=35974705,,,1550941523015,null,,9940,,45675626a0,&""
+
+            // getCookie("lmd_cj")
+            // ""5860=lomadee-35965728,lomadee-35965728&5783=lomadee-36010018&5766=lomadee-35779654&5644=lomadee-35779654&5992=lomadee-35808788&5632=lomadee-35009313,lomadee-35974705&6117=zanox,zanox,zanox,zanox&""
+
+            // getCookie("loc")
+            // ""cx=77|77&px=661034|637440&us=177132148620180607204233&si=9402546""
+            // category x = 77|77
+            // product x = 661034|637440
+
+            // puxa categorias já pesquisadas e que existem no tabs_map para cima
             // var lomadee_cookie = getCookie("loc");
             // if (lomadee_cookie !== "") {
             //     var cx_array = lomadee_cookie.split("&");
@@ -1269,8 +1284,8 @@ var VitrineResponsiva = (
             renderWidget: renderWidget,
             imgErr: imageError,
             openTab: openTab,
-            analytics: analytics
-            ,setCookie: setCookie
+            analytics: analytics,
+            setCookie: setCookie
         }
 
     }(document));
