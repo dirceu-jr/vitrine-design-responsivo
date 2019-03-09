@@ -974,8 +974,17 @@ var VitrineResponsiva = (
                 var endpoint = "offer/_search";
             // se category for mais vendidos
             } else if (category == "bestsellers") {
-                var endpoint = "offer/_bestsellers";
-                options["page"] = Math.floor(Math.random() * 23) + 1;
+                var
+                    endpoint = "offer/_bestsellers",
+                    // in fact currently there are 226 totalSize
+                    // total_size = 226,
+                    // but it has to works a long time without modifications so will be conservative and lower it 
+                    total_size = 200,
+                    per_page = (g_results + 1),
+                    total_pages = total_size/per_page
+                ;
+                
+                options["page"] = Math.floor(Math.random() * total_pages) + 1;
             // se category
             } else {
                 var endpoint = "offer/_category/" + category;
