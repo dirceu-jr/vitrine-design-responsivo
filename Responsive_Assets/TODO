@@ -1,3 +1,3 @@
-- Automatizar colar style-min.css no frameads.html
-- Usar Cookies do Lomadee adequadamente;
+- Automatizar colar style-min.css no frameads.html;
+- Verificar se eventos importantes estão sendo enviados ao Google Analytics;
 - Fazer "suggestions" voltar a funcionar com novo endpoint usado pelo buscape.com.br;
