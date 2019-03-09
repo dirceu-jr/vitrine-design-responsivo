@@ -1,6 +1,6 @@
 /**
  * @preserve Copyright Dirceu Pauka Junior
- * http://www.coora.com.br/
+ * https://github.com/dirceup
  */
 ;
 var VitrineResponsiva = (
@@ -143,7 +143,7 @@ var VitrineResponsiva = (
         }
 
 
-        var getJSON = function(url, successHandler, errorHandler, timeoutHandler) {
+        var xhr = function(url, successHandler, errorHandler, timeoutHandler) {
             var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             xhr.open('get', url, true);
             xhr.onreadystatechange = function () {
@@ -165,11 +165,6 @@ var VitrineResponsiva = (
             }
             xhr.timeout = 10000;
             xhr.send();
-        }
-
-
-        function hasClass(el, cls) {
-            return el ? el.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)')) : false;
         }
 
 
@@ -209,25 +204,6 @@ var VitrineResponsiva = (
                     fn();
                 };
             }
-        }
-
-
-        function getStyle(oElm, strCssRule) {
-            var strValue = "";
-            if (oElm && d.defaultView && d.defaultView.getComputedStyle) {
-                strValue = d.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
-            } else if (oElm.currentStyle) {
-                strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1) {
-                    return p1.toUpperCase();
-                });
-                strValue = oElm.currentStyle[strCssRule];
-            }
-            return strValue;
-        }
-
-
-        function getStyleInt(el, rule) {
-            return parseInt(getStyle(el, rule).replace("px", ""));
         }
 
 
@@ -312,7 +288,7 @@ var VitrineResponsiva = (
             var url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
             // var url = protocol + "://sandbox-api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
 
-            getJSON(url, function (obj) {
+            xhr(url, function (obj) {
                 callback(obj);
             }, function() { // error
                 offers_spinner.stop();
