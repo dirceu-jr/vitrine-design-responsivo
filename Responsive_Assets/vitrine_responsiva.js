@@ -322,16 +322,6 @@ var VitrineResponsiva = (
                 bg_message.innerHTML = "<div style='margin: 20px'>Verifique sua conexão com a Internet e tente novamente.</div>";
             });
 
-            getJSON("https://api.lomadee.com/v2/155001196902309c5f761/category/_bestsellers?sourceId=1&size=42", function(obj) {
-                console.log(obj);
-                var ids = [];
-                for (category in obj["categories"]) {
-                    ids.push(obj["categories"][category].id);
-                    console.log(obj["categories"][category].id + ": " + "\"" + obj["categories"][category].name + "\"");
-                }
-                console.log(ids);
-            });
-
         }
 
 
@@ -777,11 +767,6 @@ var VitrineResponsiva = (
         // desenha menu lateral com "abas" de produtos
         function renderTabs(options) {
 
-            // console.log(options["type"]);
-
-            // dependendo do type escolhemos categorias especialmente selecionadas 
-            // para solucionar nossos amigos publishers
-
             // TODO
             // limitar tamanho da lista de keywords para não abusarem e bugar
 
@@ -808,21 +793,14 @@ var VitrineResponsiva = (
                 var tabs_ids = shuffle(new_tabs_ids).concat(default_categories_ids_order);
 
             } else {
-                // aqui pode randomizar as primeiras
-                var
-                    randomize_tabs_til = 6,
-                    // top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
-                    // other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
-                    // tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
-                    tabs_ids = default_categories_ids_order
-                ;
+                var tabs_ids = default_categories_ids_order;
             }
 
-            // !!!
-            // puxa categorias que estão no "Cookie da Lomadee" e que existem no tabs_map para cima
             var lomadee_cookie = getCookie("loc");
+            // for tests
             // var lomadee_cookie = "\"cx=77|77&px=661034|637440&us=177132148620180607204233&si=9402546\"";
 
+            // if has lomadee cookies
             if (lomadee_cookie !== "") {
                 var cookie_array = lomadee_cookie.split("&");
                 // cx (categories ids)
@@ -832,6 +810,7 @@ var VitrineResponsiva = (
                         var cxs_array = shuffle(cxs[1].split("|"));
                         if (cxs_array[0]) {
                             for (var i = 0; i < cxs_array.length; i++) {
+                                // puxa para cima categorias dos cookies
                                 // só adiciona se tiver no tabs_map
                                 // &&
                                 // aborta se já tiver em cima
@@ -854,7 +833,7 @@ var VitrineResponsiva = (
                         var pxs_array = shuffle(pxs[1].split("|"));
                         if (pxs_array[0]) {
                             for (var i = 0; i < pxs_array.length; i++) {
-                                // recoloca em cima
+                                // coloca em cima
                                 tabs_ids.unshift("p_" + pxs_array[i]);
                             }
                         }
@@ -862,7 +841,13 @@ var VitrineResponsiva = (
                 }
             }
 
-            console.log(tabs_ids);
+            // aqui pode randomizar as primeiras
+            var
+                randomize_tabs_til = 5,
+                top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
+                other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
+                tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
+            ;
 
             var
                 tabs_content = [],
