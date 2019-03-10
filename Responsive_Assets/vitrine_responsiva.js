@@ -249,8 +249,6 @@ var VitrineResponsiva = (
             el.onerror = null;
             el.onload = null;
             el.src = "data:image/gif;base64,R0lGODlhZABkALMAAP///7W1tcLCwtPT07u7u8jIyPLy8s3Nzfz8/P7+/uvr69ra2vj4+OPj46ioqAAAACH5BAAAAAAALAAAAABkAGQAAAT/EMhJq7046827/2AojmRpnmiqrmzrvnAsz3Rt33iu73zv/8CgcEgsGo/IpHLJbPYQB0JgSp1KA1fp1Yo9JJwZRgDBQJDJ5fKZwU6nzQEGGGMIABT4vH7PxwMIBnMXdXdVWAQEAooFjAUHjwORCgABgYIVBgQABg6HigIFoI4HkaULkn+WlxOEClYCiaKjA6SRC7cDk3GrFK2vi4yQtQOnp7mUqrx1CZyIwLPDtrcLCgmVvKwBCa6xogezttKnBgmA2BKZzFjPj8PF0+PlyavLdZ+NkOHw0+TX5/UB2OUTd6vBrX7zLqXLBKydKVqhEFFBeA6AmARi2JU6oMgZIokM/6wlFFQvEb5Hn1LC+uggpD9sFxnE+vbt3qdEOBGFNPdPm0xQNRfZ7BigU6cCL5URwGiyQDdZn6YMaNBAQYMBAQ4g6GlxkTOhoSIGuLpSwNQAA7byEgMAAQGnKqEKGOs0lskGAaops4Ng5deUjNByjCvgwAICahVqQlDl49O5DXDCKisAr5xVbBOY2cyZs4MBAjCYTTonE4AEmjejRrAaddbQF0aPbELoNOrbuFEDcMAIlO+wgWczqd2B4yNHo9o5Fb7EwFwtjbFQkUirukOsCy5fYnA1UrRhpEghKkX+QEAFiQWRUWCAffv3eeA3mFuAPNwGIbGt7szfDBsFA1zRCf8BU5VREQjrGUTMAlUZeCAImjFgwIQGlPHFgxhmqOGGHHbo4YcghigiCnaM2EGJJm5gx4pUTNCiBFNQAmOMMlZxCYsy1uhijjGiiGOJKDqxIoxEUtKij0YeWWSQTQzJY446EskkkEWC4SSVQF7pZJRUznHlklrySGOXTHpYZooz0ojmmmzueCYNb/KwJQdzlhAnBXf+kKcLe5JgY5ouqhkol2MaGWiWhSKZZJUtIOnojpD2CCWOUVY65KNSwqCojYpWGaank4aKZZqSvoCppXi6maqoqmbKZQV9joBpqVCKiWqiraIKaqwibKplmZIiKqWPhbpa64u8EpFsiMu26ewVs9BGK+201FZr7bXYZqvtttx2C0QEADs=";
-            // addClass(el.parentNode, "imgFailed");
-            // el.style.marginTop = "-" + el.style.height;
         }
 
 
@@ -415,7 +413,10 @@ var VitrineResponsiva = (
                     var suggestion = [];
                     for (var i = 0; i < words.length && i < max_suggestions; i++) {
                         if (words[i] !== value) {
-                            suggestion.push("<li><a href='#' data-index='", i, "' onmouseover='VitrineResponsiva.mouseSugst(true, this);' onmouseout='VitrineResponsiva.mouseSugst(false, this);' onclick='return VitrineResponsiva.selectSugst(this);'>", words[i], "</a></li>");
+                            suggestion.push(
+                                "<li><a href='#' data-index='", i, "' onmouseover='VitrineResponsiva.mouseSugst(true, this);' onmouseout='VitrineResponsiva.mouseSugst(false, this);' onclick='return VitrineResponsiva.selectSugst(this);'>",
+                                    words[i],
+                                "</a></li>");
                         }
                     }
 
@@ -662,7 +663,8 @@ var VitrineResponsiva = (
 
                     var
                         abrv = "BRL",
-                        installment = (o[i].installment && o[i].installment.quantity) ? o[i].installment.quantity + " x " + formatMoney(o[i].installment.value, abrv) : "&nbsp;",
+                        installment = (o[i].installment && o[i].installment.quantity) ?
+                            (o[i].installment.quantity + " x " + formatMoney(o[i].installment.value, abrv)) : "&nbsp;",
                         price = formatMoney(o[i].price, abrv),
                         name = o[i].name.replace("Smartphone", "");
 
@@ -672,8 +674,20 @@ var VitrineResponsiva = (
                         var thumbnail = o[i].thumbnail;
                     }
 
-                    // in "link" we treat an issue with yql json when array size is 1
-                    render.push("<li><a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"send\", \"event\", \"Oferta-Click\", \"", (o[i].product.id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'><div class='thumbholder'><img class='thumb' width='96' src='", thumbnail, "' onerror='VitrineResponsiva.imgErr(this);' /></div><div><h2 class='title'>", name, "</h2><p class='price'>", price, "</p><p class='installment'>", installment, "</p></div></a></li>");
+                    render.push(
+                        "<li>",
+                            "<a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"send\", \"event\", \"Oferta-Click\", \"", (o[i].product.id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'>",
+                                "<div class='thumbholder'>",
+                                    "<img class='thumb' width='96' src='", thumbnail, "' onerror='VitrineResponsiva.imgErr(this);' />",
+                                "</div>",
+                                "<div>",
+                                    "<h2 class='title'>", name, "</h2>",
+                                    "<p class='price'>", price, "</p>",
+                                    "<p class='installment'>", installment, "</p>",
+                                "</div>",
+                            "</a>",
+                        "</li>"
+                    );
                 }
 
                 hide(bg_message);
@@ -682,10 +696,7 @@ var VitrineResponsiva = (
             } else {
 
                 // não encontrou oferta
-
                 offers_holder.innerHTML = "<div style='margin: 20px'>Nenhum produto encontrado para essa pesquisa.</div>";
-                // show(bg_message);
-                // bg_message.innerHTML = "Nenhum produto encontrado para essa pesquisa.";
 
                 // hide(pagination_previous);
                 // hide(pagination_next);
@@ -694,8 +705,6 @@ var VitrineResponsiva = (
 
         }
 
-
-        // nova paginação - não fazer cache no dom pq tem client_cache do JSON
 
         function renderPagination(o) {
 
@@ -745,7 +754,8 @@ var VitrineResponsiva = (
                 // 9877 anti acne
                 // 2796 Secador de Cabelo
                 
-                var tabs_ids = shuffle(["k_bolsa guess", "k_bota ramarim", 2993, 3442, 2796]).concat(default_categories_ids_order);
+                var tabs_ids = shuffle(["k_bolsa guess", "k_bota ramarim", 2993, 3442, 2796])
+                                .concat(default_categories_ids_order);
 
             } else if(options["keywords"] !== undefined) {
 
@@ -823,13 +833,28 @@ var VitrineResponsiva = (
             ;
 
             for (tab in tabs_ids) {
-                // se for uma keyword
                 if (tabs_ids[tab][0] == "k") {
-                    tabs_content.push("<li id='tab-", tabs_ids[tab], "'>", tabs_ids[tab].split("k_")[1].capitalize(), "</li>");
+                    // if its a keyword tab
+                    tabs_content.push(
+                        "<li id='tab-", tabs_ids[tab], "'>",
+                            tabs_ids[tab].split("k_")[1].capitalize(),
+                        "</li>"
+                    );
                 } else if (tabs_ids[tab][0] == "p") {
-                    tabs_content.push("<li id='tab-", tabs_ids[tab], "'>" + from_cookies_labels.pop() + "</li>");
+                    // if its a product tab
+                    tabs_content.push(
+                        "<li id='tab-", tabs_ids[tab], "'>",
+                            from_cookies_labels.pop(),
+                        "</li>"
+                    );
+
                 } else {
-                    tabs_content.push("<li id='tab-", tabs_ids[tab], "'>", tabs_map[tabs_ids[tab].toString()], "</li>");
+                    // if its a category tab
+                    tabs_content.push(
+                        "<li id='tab-", tabs_ids[tab], "'>",
+                            tabs_map[tabs_ids[tab].toString()],
+                        "</li>"
+                    );
                 }
             }
 
@@ -856,7 +881,12 @@ var VitrineResponsiva = (
 
                 text = text.replace(/\n/g, "");
 
-                tabsChilds[i].innerHTML = ["<a onclick='VitrineResponsiva.openTab(\"", id, "\", true);VitrineResponsiva.analytics(\"send\", \"event\", \"Aba\", \"", id, "\", \"", text, "\");return false;' href='#'>", text, "</a>"].join('');
+                tabsChilds[i].innerHTML = [
+                    "<a onclick='VitrineResponsiva.openTab(\"", id, "\", true);VitrineResponsiva.analytics(\"send\", \"event\", \"Aba\", \"", id, "\", \"", text, "\");return false;' href='#'>",
+                        text,
+                    "</a>"
+                ].join('');
+                
                 tabsChilds[i].className = "";
             }
 
