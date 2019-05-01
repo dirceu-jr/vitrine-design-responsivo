@@ -676,7 +676,7 @@ var VitrineResponsiva = (
 
                     render.push(
                         "<li>",
-                            "<a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"send\", \"event\", \"Oferta-Click\", \"", (o[i].product.id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'>",
+                            "<a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"Oferta-Click\", \"", (o[i].product.id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'>",
                                 "<div class='thumbholder'>",
                                     "<img class='thumb' width='96' src='", thumbnail, "' onerror='VitrineResponsiva.imgErr(this);' />",
                                 "</div>",
@@ -728,7 +728,7 @@ var VitrineResponsiva = (
 
         function actionPagination(action) {
 
-            analytics('send', 'event', 'Paginacao', action);
+            analytics('Paginacao', action);
 
             if (action == "pre") {
                 last_options.page = last_options.page - 1;
@@ -882,7 +882,7 @@ var VitrineResponsiva = (
                 text = text.replace(/\n/g, "");
 
                 tabsChilds[i].innerHTML = [
-                    "<a onclick='VitrineResponsiva.openTab(\"", id, "\", true);VitrineResponsiva.analytics(\"send\", \"event\", \"Aba\", \"", id, "\", \"", text, "\");return false;' href='#'>",
+                    "<a onclick='VitrineResponsiva.openTab(\"", id, "\", true);VitrineResponsiva.analytics(\"Aba\", \"", id, "\", \"", text, "\");return false;' href='#'>",
                         text,
                     "</a>"
                 ].join('');
@@ -939,7 +939,7 @@ var VitrineResponsiva = (
                     // in fact currently there are 226 totalSize
                     // total_size = 226,
                     // but it has to works a long time without modifications so will be conservative and lower it 
-                    total_size = 200,
+                    total_size = 195,
                     per_page = (g_results + 1),
                     total_pages = total_size/per_page
                 ;
@@ -1180,9 +1180,13 @@ var VitrineResponsiva = (
         }
 
 
-        function analytics(action, type, opt1, opt2, opt3) {
-            if (typeof (ga) !== "undefined") {
-                ga(action, type, opt1, opt2, opt3);
+        function analytics(action, type, label, value) { 
+            if (typeof (gtag) !== "undefined") {
+                gtag('event', action, {
+                    'event_category': type,
+                    'event_label': label,
+                    'value': value
+                });
             }
         }
 

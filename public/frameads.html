@@ -12,7 +12,7 @@
             <div id="headr">
                 <div id="sx">
                     <form id="the-search">
-                        <input type="text" placeholder="Shopping" id="in_sx" autocomplete="off" onfocus="VitrineResponsiva.analytics('send', 'event', 'Search', 'Focus');" />
+                        <input type="text" placeholder="Shopping" id="in_sx" autocomplete="off" onfocus="VitrineResponsiva.analytics('Search', 'Focus');" />
                         <input id="search-submit" title="Enviar pesquisa" value="&rsaquo;" type="button" />
                         <div id="sx-loa"></div>
                     </form>
@@ -28,7 +28,7 @@
         <div id="entry">
             <div id="msg"></div>
             <div id="load"></div>
-            <ul id="offer"><li><a href="{ link }" target="_blank" onclick="VitrineResponsiva.analytics('send', 'event', 'Oferta-Click', '{ product_id }-{ category_id }', '{ product name }');"><div class="thumbholder"><img class="thumb" width="96" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="{ product name }" onerror="VitrineResponsiva.imgErr(this);" /></div><div><h2 class="title">{ product name }</h2><p class="price">{ price }</p><p class="installment">{ installment }</p></div></a></li></ul>
+            <ul id="offer"><li><a href="{ link }" target="_blank" onclick="VitrineResponsiva.analytics('Oferta-Click', '{ product_id }-{ category_id }', '{ product name }');"><div class="thumbholder"><img class="thumb" width="96" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="{ product name }" onerror="VitrineResponsiva.imgErr(this);" /></div><div><h2 class="title">{ product name }</h2><p class="price">{ price }</p><p class="installment">{ installment }</p></div></a></li></ul>
             <div>
                 <a id="nxt" href="#" title="Próximas ofertas">&rsaquo;</a>
                 <a id="pre" href="#" title="Ofertas anteriores">&lsaquo;</a>
