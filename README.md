@@ -23,7 +23,7 @@ Executando o comando `python build.py` dentro da pasta Responsive_Assets/, os ar
 
 ## Testes
 Foram escritos testes unitários e de integração.
-Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.html e os de integração usam a gem watir e ficam na pasta Responsive_Assets/utils/
+Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.html e os de integração usam a [gem watir](https://rubygems.org/gems/watir) e ficam na pasta Responsive_Assets/utils/
 
 ## Pics
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/formatos.png)
