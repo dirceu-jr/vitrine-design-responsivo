@@ -396,97 +396,99 @@ var VitrineResponsiva = (
         }
 
 
-        function autoCompleteCallback(data) {
-            var value = search_holder.value;
-            if (value.length == 1) {
-                value = value + "%20";
-            }
+        // query-suggestions
+        // function autoCompleteCallback(data) {
+        //     var value = search_holder.value;
+        //     if (value.length == 1) {
+        //         value = value + "%20";
+        //     }
 
-            delayed_suggestionCallback(function () {
+        //     delayed_suggestionCallback(function () {
 
-                suggestions_spinner.stop();
-                hide(suggestions_loading);
+        //         suggestions_spinner.stop();
+        //         hide(suggestions_loading);
 
-                var words = data["keywords"];
+        //         var words = data["keywords"];
 
-                if (words.length > 0 && has_focus) {
-                    var suggestion = [];
-                    for (var i = 0; i < words.length && i < max_suggestions; i++) {
-                        if (words[i] !== value) {
-                            suggestion.push(
-                                "<li><a href='#' data-index='", i, "' onmouseover='VitrineResponsiva.mouseSugst(true, this);' onmouseout='VitrineResponsiva.mouseSugst(false, this);' onclick='return VitrineResponsiva.selectSugst(this);'>",
-                                    words[i],
-                                "</a></li>");
-                        }
-                    }
+        //         if (words.length > 0 && has_focus) {
+        //             var suggestion = [];
+        //             for (var i = 0; i < words.length && i < max_suggestions; i++) {
+        //                 if (words[i] !== value) {
+        //                     suggestion.push(
+        //                         "<li><a href='#' data-index='", i, "' onmouseover='VitrineResponsiva.mouseSugst(true, this);' onmouseout='VitrineResponsiva.mouseSugst(false, this);' onclick='return VitrineResponsiva.selectSugst(this);'>",
+        //                             words[i],
+        //                         "</a></li>");
+        //                 }
+        //             }
 
-                    if (words.length == 1 && words[0] == value) {
-                        suggestionBoxHide();
-                    } else {
-                        suggestionBoxShow(suggestion.join(''));
-                    }
-                }
+        //             if (words.length == 1 && words[0] == value) {
+        //                 suggestionBoxHide();
+        //             } else {
+        //                 suggestionBoxShow(suggestion.join(''));
+        //             }
+        //         }
 
-                // usar valor digitado se digitou mais de 4 letras ou não tem autocompletar
-                // if (value.length > 4 || words[0] == undefined) {
-                //     suggestionSearch(value);
-                // } else {
-                //     // usa primeiro resultado do autocompletar
-                //     suggestionSearch(words[0]);
+        //         // usar valor digitado se digitou mais de 4 letras ou não tem autocompletar
+        //         // if (value.length > 4 || words[0] == undefined) {
+        //         //     suggestionSearch(value);
+        //         // } else {
+        //         //     // usa primeiro resultado do autocompletar
+        //         //     suggestionSearch(words[0]);
 
-                //     // define o primeiro resultado do autocompletar como "selecionado"
-                //     hover_pos = 0;
-                //     suggestions_holder.getElementsByTagName("a")[hover_pos].className = "hover";
-                // }
+        //         //     // define o primeiro resultado do autocompletar como "selecionado"
+        //         //     hover_pos = 0;
+        //         //     suggestions_holder.getElementsByTagName("a")[hover_pos].className = "hover";
+        //         // }
 
-            });
-        }
+        //     });
+        // }
 
 
-        function suggestionInstant(value) {
-            value = slugify(value);
+        // query-suggestions
+        // function suggestionInstant(value) {
+        //     value = slugify(value);
 
-            if (value == '') {
-                suggestionBoxHide();
-            }
+        //     if (value == '') {
+        //         suggestionBoxHide();
+        //     }
 
-            if (value == '' || value == last_suggestion) {
-                delayed_suggestionCallback(function () {});
-                return false;
-            }
+        //     if (value == '' || value == last_suggestion) {
+        //         delayed_suggestionCallback(function () {});
+        //         return false;
+        //     }
 
-            openTab(0);
+        //     openTab(0);
 
-            hover_pos = -1;
-            last_suggestion = value;
+        //     hover_pos = -1;
+        //     last_suggestion = value;
 
-            // inicia loading
-            if (suggestions_spinner) {
-                suggestions_spinner.spin(suggestions_loading);
-            } else {
-                suggestions_spinner = new Spinner({
-                    color: options["search"] || "#d0d0d0",
-                    lines: 10,
-                    length: 6,
-                    width: 2,
-                    radius: 1
-                }).spin(suggestions_loading);
-            }
+        //     // inicia loading
+        //     if (suggestions_spinner) {
+        //         suggestions_spinner.spin(suggestions_loading);
+        //     } else {
+        //         suggestions_spinner = new Spinner({
+        //             color: options["search"] || "#d0d0d0",
+        //             lines: 10,
+        //             length: 6,
+        //             width: 2,
+        //             radius: 1
+        //         }).spin(suggestions_loading);
+        //     }
 
-            show(suggestions_loading);
+        //     show(suggestions_loading);
 
-            if (value.length == 1) {
-                value = value + "%20";
-            }
+        //     if (value.length == 1) {
+        //         value = value + "%20";
+        //     }
 
-            var subdomain = ("https:" == window.location.protocol ? "sbws" : "bws");
-            var protocol = ("https:" == window.location.protocol ? "https:" : "http:");
+        //     var subdomain = ("https:" == window.location.protocol ? "sbws" : "bws");
+        //     var protocol = ("https:" == window.location.protocol ? "https:" : "http:");
 
-            var jsonp = document.createElement("script");
-            jsonp.src = protocol + "//" + subdomain + ".buscape.com.br/service/autoComplete/mobile/664f4c566e534b707844553d/BR/?format=json&keyword=" + value + "&callback=VitrineResponsiva.autoCompleteCallback";
+        //     var jsonp = document.createElement("script");
+        //     jsonp.src = protocol + "//" + subdomain + ".buscape.com.br/service/autoComplete/mobile/664f4c566e534b707844553d/BR/?format=json&keyword=" + value + "&callback=VitrineResponsiva.autoCompleteCallback";
 
-            document.body.appendChild(jsonp);
-        }
+        //     document.body.appendChild(jsonp);
+        // }
 
 
         // hearbeat = debounce
@@ -524,34 +526,35 @@ var VitrineResponsiva = (
 
         // --- suggestion-heartbeat
 
-        function suggestionHeartBeat(fn) {
-            if (suggestion_has_heart_beat) {
+        // query-suggestions
+        // function suggestionHeartBeat(fn) {
+        //     if (suggestion_has_heart_beat) {
 
-                suggestion_has_heart_beat = false;
-                fn();
+        //         suggestion_has_heart_beat = false;
+        //         fn();
 
-            } else {
+        //     } else {
 
-                delayed_suggestion = fn;
+        //         delayed_suggestion = fn;
 
-            }
-        }
+        //     }
+        // }
 
+        // query-suggestions
+        // function delayed_suggestionCallback(fn) {
+        //     if (delayed_suggestion) {
 
-        function delayed_suggestionCallback(fn) {
-            if (delayed_suggestion) {
+        //         var delayed_buffer = delayed_suggestion;
+        //         delayed_suggestion = null;
+        //         delayed_buffer();
 
-                var delayed_buffer = delayed_suggestion;
-                delayed_suggestion = null;
-                delayed_buffer();
+        //     } else {
 
-            } else {
+        //         fn();
+        //         suggestion_has_heart_beat = true;
 
-                fn();
-                suggestion_has_heart_beat = true;
-
-            }
-        }
+        //     }
+        // }
 
         // -- suggestion-heartbeat
 
@@ -569,85 +572,88 @@ var VitrineResponsiva = (
 
         //
 
-        function suggestionBoxCommand(event) {
+        // query-suggestions
+        // function suggestionBoxCommand(event) {
 
-            if (event.keyCode == 38) {
-                event.preventDefault && event.preventDefault();
-            }
+        //     if (event.keyCode == 38) {
+        //         event.preventDefault && event.preventDefault();
+        //     }
 
-            if (sugst_scroll.style.display == "block") {
+        //     if (sugst_scroll.style.display == "block") {
 
-                suggestionHeartBeatKeyboard(function () {
+        //         suggestionHeartBeatKeyboard(function () {
 
-                    var elements = suggestions_holder.getElementsByTagName("a");
+        //             var elements = suggestions_holder.getElementsByTagName("a");
 
-                    if (elements) {
-                        switch (event.keyCode) {
-                            // p/ baixo
-                            case 40:
-                                if (hover_pos !== -1 && elements[hover_pos]) {
-                                    elements[hover_pos].className = "";
-                                }
+        //             if (elements) {
+        //                 switch (event.keyCode) {
+        //                     // p/ baixo
+        //                     case 40:
+        //                         if (hover_pos !== -1 && elements[hover_pos]) {
+        //                             elements[hover_pos].className = "";
+        //                         }
 
-                                if ((hover_pos + 1) < elements.length) {
-                                    hover_pos++;
-                                } else {
-                                    hover_pos = -1;
-                                }
-                                break;
+        //                         if ((hover_pos + 1) < elements.length) {
+        //                             hover_pos++;
+        //                         } else {
+        //                             hover_pos = -1;
+        //                         }
+        //                         break;
 
-                                // p/ cima
-                            case 38:
-                                if (hover_pos !== -1 && elements[hover_pos]) {
-                                    elements[hover_pos].className = "";
-                                }
+        //                         // p/ cima
+        //                     case 38:
+        //                         if (hover_pos !== -1 && elements[hover_pos]) {
+        //                             elements[hover_pos].className = "";
+        //                         }
 
-                                if (hover_pos > 0) {
-                                    hover_pos--;
-                                } else {
-                                    hover_pos = elements.length;
-                                }
+        //                         if (hover_pos > 0) {
+        //                             hover_pos--;
+        //                         } else {
+        //                             hover_pos = elements.length;
+        //                         }
 
-                                break;
+        //                         break;
 
-                            default:
+        //                     default:
 
-                        }
+        //                 }
 
-                        if (event.keyCode == 40 || event.keyCode == 38) {
+        //                 if (event.keyCode == 40 || event.keyCode == 38) {
 
-                            if (hover_pos !== -1 && elements[hover_pos]) {
-                                search_holder.value = elements[hover_pos].innerHTML;
-                                elements[hover_pos].className = "hover";
-                            } else {
-                                search_holder.value = search_holder.getAttribute('rel');
-                            }
+        //                     if (hover_pos !== -1 && elements[hover_pos]) {
+        //                         search_holder.value = elements[hover_pos].innerHTML;
+        //                         elements[hover_pos].className = "hover";
+        //                     } else {
+        //                         search_holder.value = search_holder.getAttribute('rel');
+        //                     }
 
-                            suggestionSearch(search_holder.value);
+        //                     suggestionSearch(search_holder.value);
 
-                        }
+        //                 }
 
-                    }
+        //             }
 
-                });
+        //         });
 
-            }
-        }
-
-
-        function suggestionBoxShow(suggestionsContent) {
-            hover_pos = -1;
-            suggestions_holder.innerHTML = suggestionsContent;
-            show(sugst_scroll);
-            hide(tabs_holder);
-        }
+        //     }
+        // }
 
 
-        function suggestionBoxHide() {
-            hide(sugst_scroll);
-            show(tabs_holder);
-            last_suggestion = "";
-        }
+        // query-suggestions
+        // function suggestionBoxShow(suggestionsContent) {
+        //     hover_pos = -1;
+        //     suggestions_holder.innerHTML = suggestionsContent;
+        //     show(sugst_scroll);
+        //     hide(tabs_holder);
+        // }
+
+
+        // query-suggestions
+        // function suggestionBoxHide() {
+        //     hide(sugst_scroll);
+        //     show(tabs_holder);
+        //     last_suggestion = "";
+        // }
 
 
         function renderOffers(o) {
@@ -979,85 +985,93 @@ var VitrineResponsiva = (
             bg_message = $("msg");
             loading = $("load");
 
-            // search_holder.value = search_holder.getAttribute('placeholder');
+            // !
+            // Buscapé changed their "Query Suggestions" endpoint
+            // The new one does not have a "callback" param so I can't make it work with JSONP
+            // I will try to ask them but for now "Query Suggestions" will be disabled
 
-            addEvent(search_holder, "keydown", function (event) {
-                if (!event) {
-                    event = window.event;
-                }
-                suggestionBoxCommand(event);
-            });
+            // query-suggestions
+            // addEvent(search_holder, "keydown", function (event) {
+            //     if (!event) {
+            //         event = window.event;
+            //     }
+            //     suggestionBoxCommand(event);
+            // });
 
-            addEvent(search_holder, "keypress", function (event) {
-                if (!event) {
-                    event = window.event;
-                }
-                suggestionBoxCommand(event);
-            });
+            // query-suggestions
+            // addEvent(search_holder, "keypress", function (event) {
+            //     if (!event) {
+            //         event = window.event;
+            //     }
+            //     suggestionBoxCommand(event);
+            // });
 
-            addEvent(search_holder, "keyup", function (event) {
+            // query-suggestions
+            // addEvent(search_holder, "keyup", function (event) {
 
-                // console.log(event.keyCode);
+            //     // console.log(event.keyCode);
 
-                if (!event) {
-                    event = window.event;
-                }
+            //     if (!event) {
+            //         event = window.event;
+            //     }
 
-                var donothing = {
-                    38: true,
-                    40: true,
-                    16: true,
-                    17: true,
-                    18: true,
-                    91: true,
-                    37: true,
-                    39: true,
-                    27: true,
-                    13: true
-                };
+            //     var donothing = {
+            //         38: true,
+            //         40: true,
+            //         16: true,
+            //         17: true,
+            //         18: true,
+            //         91: true,
+            //         37: true,
+            //         39: true,
+            //         27: true,
+            //         13: true
+            //     };
 
-                // se for alguma tecla diferente de p/ cima, p/ baixo, shift, alt, control, command, esc
-                if (!donothing[event.keyCode]) {
+            //     // se for alguma tecla diferente de p/ cima, p/ baixo, shift, alt, control, command, esc
+            //     if (!donothing[event.keyCode]) {
 
-                    var value = this.value;
-                    this.setAttribute('rel', value);
+            //         var value = this.value;
+            //         this.setAttribute('rel', value);
 
-                    suggestionHeartBeat(function () {
-                        suggestionInstant(value);
-                    });
+            //         suggestionHeartBeat(function () {
+            //             suggestionInstant(value);
+            //         });
 
-                }
+            //     }
 
-                // esc
-                if (event.keyCode == 27) {
-                    search_holder.blur();
-                    suggestionBoxHide();
-                }
-                // enter
-                if (event.keyCode == 13) {
-                    if (search_holder.value !== "") {
-                        suggestionSearch(search_holder.value);
-                    }
-                }
+            //     // esc
+            //     if (event.keyCode == 27) {
+            //         search_holder.blur();
+            //         suggestionBoxHide();
+            //     }
+            //     // enter
+            //     if (event.keyCode == 13) {
+            //         if (search_holder.value !== "") {
+            //             suggestionSearch(search_holder.value);
+            //         }
+            //     }
 
-                suggestion_has_heart_beat_keyboard = true;
-            });
+            //     suggestion_has_heart_beat_keyboard = true;
+            // });
 
-            addEvent(search_holder, "focus", function () {
-                has_focus = true;
+            // query-suggestions
+            // addEvent(search_holder, "focus", function () {
+            //     has_focus = true;
 
-                suggestionHeartBeat(function () {
-                    suggestionInstant(search_holder.value);
-                });
-            });
+            //     suggestionHeartBeat(function () {
+            //         suggestionInstant(search_holder.value);
+            //     });
+            // });
 
-            addEvent(search_holder, "blur", function () {
-                has_focus = false;
+            // query-suggestions
+            // addEvent(search_holder, "blur", function () {
+            //     has_focus = false;
 
-                if (!hover_suggest) {
-                    suggestionBoxHide();
-                }
-            });
+            //     if (!hover_suggest) {
+            //         suggestionBoxHide();
+            //     }
+            // });
 
             var onformsubmit = function(evt) {
                 evt.preventDefault();
@@ -1192,7 +1206,7 @@ var VitrineResponsiva = (
 
 
         return {
-            autoCompleteCallback: autoCompleteCallback,
+            // autoCompleteCallback: autoCompleteCallback,
             selectSugst: selectSugst,
             mouseSugst: mouseSugst,
             renderWidget: renderWidget,
