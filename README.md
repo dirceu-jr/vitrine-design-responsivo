@@ -10,11 +10,7 @@ Com foco em dispositivos móveis, foi otimizada para consumir poucos recursos de
 Já foi usada por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/) e outros. É hospedada e distribuida pela Lomadee (Buscapé Company) na aba "Formatos" e enfrenta a concorrência de produtos de empresas como a Criteo, Google Ads, Outbrain e outros.
 
 ## Uso
-Basta incluir um `<iframe>` com o destino para o documento hospedado em "http://community.lomadee.com/developers/vitrine_responsiva/frameads.html?sourceId=x" e **colocar um sourceId do Lomadee no lugar do x**.
-
-Exemplo:
-
-`<iframe src="http://community.lomadee.com/developers/vitrine_responsiva/frameads.html?sourceId=35802480" width="100%" height="183" scrolling="no" frameborder="0"></iframe>`
+Faça o cadastro e login na rede de afiliados [Lomadee](https://www.lomadee.com), entre no menu "Formatos" e procure por "Vitrine Responsiva Coora".
 
 ## Desenvolvendo
 Os arquivos de desenvolvimento são Responsive_Assets/vitrine_responsiva.js (JS) e Responsive_Assets/style.css (CSS).
