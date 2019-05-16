@@ -20,7 +20,7 @@ var VitrineResponsiva = (
             },
 
             tabs_map = {
-                "bestsellers": "Mais Vendidos",
+                "bestsellers": "Produtos Populares",
 
                 77: "Celular e Smartphone",
                 2852: "TV",
@@ -33,34 +33,6 @@ var VitrineResponsiva = (
                 138: "Fogão",
                 126: "Microondas",
                 10232: "Tablet",
-                9830: "Pneu para Carro",
-                62: "Caixa de Som para PC",
-                6504: "Frigobar",
-                3662: "Ventilador / Circulador",
-                145: "Forno Elétrico",
-                150: "Fritadeira",
-                9863: "Purificador de Água",
-                131: "Freezer",
-                121: "Cafeteira",
-                3442: "Perfume",
-                119: "Aspirador de Pó / Água",
-                3694: "Relógio de Pulso",
-                6378: "Monitor Cardíaco",
-                129: "Lava Louças",
-                10936: "Media Server",
-                10104: "Leitor de e-book",
-                16: "Fone de Ouvido",
-                6409: "Jogos",
-                8958: "Climatizador",
-                36: "Monitor",
-                3669: "Liquidificador",
-                2858: "Tênis",
-                120: "Batedeira",
-                2796: "Secador de Cabelo",
-                2801: "Armário / Guarda-Roupa",
-                1437: "Bicicleta",
-                7594: "Coifa / Exaustor",
-                3737: "HD",
 
                 // essas são as especiais de moda
                 "2993": "Óculos de Sol",
@@ -68,11 +40,17 @@ var VitrineResponsiva = (
                 "9877": "Anti-Acne",
                 // "2796": "Secador de Cabelo",
                 "k_bolsa guess": "Bolsa Guess",
-                "k_bota ramarim": "Bota Ramarim"
+                "k_bota ramarim": "Bota Ramarim",
+
+                "k_sapato masculino": "Sapato Masculino",
+                "k_sapato feminino": "Sapato Feminino",
+                "k_mocassim feminino": "Mocassim Feminino",
+                "k_tamanco": "Tamanco",
+                "k_scarpin": "Scarpin",
 
             },
 
-            default_categories_ids_order = ["bestsellers", 77, 2852, 3673, 6424, 3671, 3661, 6058, 3606, 138, 126, 10232, 9830, 62, 6504, 3662, 145, 150, 9863, 131, 121, 3442, 119, 3694, 6378, 129, 10936, 10104, 16, 6409, 8958, 36, 3669, 2858, 120, 2796, 2801, 1437, 7594, 3737],
+            default_categories_ids_order = ["k_sapato feminino", "k_mocassim feminino", "k_tamanco", "k_scarpin", "k_sapato masculino", "bestsellers", 77, 2852, 3673, 6424, 3671, 3661, 6058, 3606, 138, 126, 10232],
 
             suggestion_has_heart_beat = true,
             suggestion_has_heart_beat_keyboard = true,
@@ -829,8 +807,8 @@ var VitrineResponsiva = (
             var
                 randomize_tabs_til = 5,
                 top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
-                other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
-                tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
+                other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til)
+                // tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
             ;
 
             var
@@ -1141,7 +1119,8 @@ var VitrineResponsiva = (
 
                 var
                     product_template = offers_holder.childNodes[0],
-                    product_width = product_template.offsetWidth + 1
+                    product_width = product_template.offsetWidth + 1,
+                    product_height = product_template.offsetHeight + 1
                 ;
 
                 // sum product margin in product height
@@ -1157,7 +1136,10 @@ var VitrineResponsiva = (
 
                 var
                     available_space_cols = Math.max(Math.floor(available_width / product_width), 1)
+                    available_space_rows = Math.max(Math.floor(available_height / product_height), 1)
                 ;
+
+                // console.log(available_space_rows);
 
                 // console.log("available_width: " + available_width);
                 // console.log("product width: " + product_width);
@@ -1167,7 +1149,7 @@ var VitrineResponsiva = (
                 //      console.log(available_space_cols);
 
                 // usa calculo para saber quantos produtos carregar
-                g_results = available_space_cols;
+                g_results = available_space_cols * available_space_rows;
 
                 // se bugar algo para de carregar
                 if (!isFinite(g_results)) {

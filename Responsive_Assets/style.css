@@ -75,7 +75,7 @@ body {
     text-align: center;
     float: left;
     display: none;
-    background: #f1f1f1;
+    background: #fecb2f;
 }
 
 
@@ -158,7 +158,7 @@ a:hover {
 
 #in_sx {
     border-radius: 3px;
-    width: 113px;
+    width: 158px;
     padding: 0 4px;
     height: 24px;
     line-height: 24px;
@@ -207,7 +207,7 @@ a:hover {
     display: block;
     color: #3366cc;
     white-space: nowrap;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #fecb2f;
     cursor: pointer;
 }
 
@@ -218,7 +218,8 @@ a:hover {
 }
 
 .current span {
-    background: #f6f6f6;
+    /* background: #f6f6f6; */
+    background: #fecb2f;
     text-decoration: none !important;
     cursor: default !important;
     font-weight: bold;
@@ -240,7 +241,7 @@ a:hover {
 }
 
 #offer li {
-    border-right: 1px solid #f1f1f1;
+    border-right: 1px solid #fecb2f;
     width: 120px;
     background: #fff;
     text-align: center;
@@ -336,8 +337,8 @@ a.imgFailed .details {
 }
 
 #sidebar {
-    width: 155px;
-    border-right: 1px solid #eaeaea;
+    width: 200px;
+    border-right: 1px solid #fecb2f;
     background: #fff;
     float: left;
 }

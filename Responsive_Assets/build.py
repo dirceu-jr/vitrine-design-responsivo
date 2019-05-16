@@ -1,7 +1,7 @@
 import os
 import re
 
-output_file_name = "./staging/vitrine_responsiva-1.7.3.min.js"
+output_file_name = "./staging/vitrine_responsiva-1.7.3-sapato.min.js"
 
 # minimize CSS using YUI Compressor - stores at ./staging/
 os.system("java -jar ../tools/yuicompressor-2.4.8.jar ./style.css -o ./staging/style-min.css -v")
