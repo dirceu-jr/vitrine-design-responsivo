@@ -5,9 +5,11 @@ Após experiências com a API (Interface de Programação de Aplicativos) da [Bu
 
 Inicialmente foram disponibilizados formatos pré-desenhados (alert, widget e mobile). No primeiro semestre de 2013, a ferramenta foi re-desenhada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante. 
 
+É hospedada e distribuida pela rede de marketing de afiliados [Lomadee](https://www.lomadee.com) na aba "Formatos" e enfrenta a concorrência de produtos de empresas como a Criteo, Google Ads, Outbrain e outras.
+
 Com foco em dispositivos móveis, foi otimizada para consumir poucos recursos de rede.
 
-Já foi usada por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/) e outros. É hospedada e distribuida pela Lomadee (Buscapé Company) na aba "Formatos" e enfrenta a concorrência de produtos de empresas como a Criteo, Google Ads, Outbrain e outros.
+Já foi usada por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/) e outros.
 
 ## Uso
 Faça o cadastro e login na rede de afiliados [Lomadee](https://www.lomadee.com), entre no menu "Formatos" e procure por "Vitrine Responsiva Coora".
