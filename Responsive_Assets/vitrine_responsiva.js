@@ -143,7 +143,7 @@ var VitrineResponsiva = (
         }
 
 
-        var xhr = function(url, successHandler, errorHandler, timeoutHandler) {
+        function xhr(url, successHandler, errorHandler, timeoutHandler) {
             var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             xhr.open('get', url, true);
             xhr.onreadystatechange = function () {
@@ -219,9 +219,9 @@ var VitrineResponsiva = (
                 str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
             }
 
-            return str.replace(/^\s+|\s+$/g, '') //trim
-                .replace(/[^-a-zA-Z0-9\s]+/ig, '')
-                .replace(/\s/gi, "-");
+            return str.replace(/^\s+|\s+$/g, '')
+                      .replace(/[^-a-zA-Z0-9\s]+/ig, '')
+                      .replace(/\s/gi, "-");
         }
 
 
@@ -274,8 +274,10 @@ var VitrineResponsiva = (
 
             params['sourceId'] = g_source_id;
             
-            var protocol = ("https:" == window.location.protocol ? "https" : "http");
-            var url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
+            var
+                protocol = ("https:" == window.location.protocol ? "https" : "http"),
+                url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params)
+            ;
             // var url = protocol + "://sandbox-api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
 
             xhr(url, function (obj) {
@@ -781,7 +783,9 @@ var VitrineResponsiva = (
             }
 
             var lomadee_cookie = getCookie("loc");
+            
             // for tests
+            // var lomadee_cookie = "\"cx=77|77&px=661034|637440&us=177132148620180607204233&si=9402546\"";
             // var lomadee_cookie = "\"cx=77|77&px=661034|637440&us=177132148620180607204233&si=9402546\"";
 
             // if has lomadee cookies
@@ -904,7 +908,7 @@ var VitrineResponsiva = (
             }
 
             if (open_category) {
-                findTab(open_category);
+                findTab(open_category, from_menu);
             }
 
         }
@@ -912,7 +916,7 @@ var VitrineResponsiva = (
 
         // procura no bws/lomadee e manda renderizar
 
-        function findTab(category) {
+        function findTab(category, from_menu) {
 
             var options = {
                 page: 1,
@@ -929,16 +933,16 @@ var VitrineResponsiva = (
             
             // console.log(category);
 
-            // se category for uma keyword
+            // if "category" is a keyword
             if (category[0] == "k") {
                 options["keyword"] = category.split("k_")[1];
                 var endpoint = "offer/_search";
             
-            // se category for um id de produto
+            // if "category" is a product id
             } else if (category[0] == "p") {
                 var endpoint = "offer/_product/" + category.split("p_")[1];
 
-            // se category for mais vendidos
+            // if "category" is best sellers
             } else if (category == "bestsellers") {
                 var
                     endpoint = "offer/_bestsellers",
@@ -951,7 +955,7 @@ var VitrineResponsiva = (
                 ;
                 
                 options["page"] = Math.floor(Math.random() * total_pages) + 1;
-            // se category
+            // if category
             } else {
                 var endpoint = "offer/_category/" + category;
             }
@@ -965,8 +969,7 @@ var VitrineResponsiva = (
         }
 
 
-        // essa parte roda dentro de um iframe
-
+        // this function runs inside a iframe
         function renderWidget(options) {
 
             g_source_id = (options["sourceId"] || "35802480");
