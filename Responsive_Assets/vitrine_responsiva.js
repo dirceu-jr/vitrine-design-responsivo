@@ -958,6 +958,11 @@ var VitrineResponsiva = (
             // if category
             } else {
                 var endpoint = "offer/_category/" + category;
+
+                // if not from menu clicked randomize
+                if (!from_menu) {
+                    options["page"] = Math.floor(Math.random() * 3) + 1;
+                }
             }
 
             onDemandServices(endpoint, options, function (o) {
