@@ -1,2 +1,2 @@
+- Existe um bug que aparece em produção em outra maquina;
 - Fazer "suggestions" voltar a funcionar com novo endpoint usado pelo buscape.com.br;
-- Se não for possível fazer "suggestions" funcionar, fazer search funcionar somente no form submit;
