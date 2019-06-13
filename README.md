@@ -32,7 +32,7 @@ Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.h
 [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
 
 ## Devspeak
-De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. Com aproximadamente 1200 linhas de JavaScript puro, o HTML + CSS + JS pesa minificado aproximadamente 11.7 KB.
+De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. Com aproximadamente 1200 linhas de JavaScript puro, o HTML + CSS + JS pesa minificado 11.7 KB.
 
 ## Team
 O desenho da interface foi feito por [Mikael Carrara](https://github.com/mikaelcarrara).
