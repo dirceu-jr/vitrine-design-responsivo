@@ -762,8 +762,10 @@ var VitrineResponsiva = (
                 // 9877 anti acne
                 // 2796 Secador de Cabelo
                 
-                var tabs_ids = shuffle(["k_bolsa guess", "k_bota ramarim", 2993, 3442, 2796])
-                                .concat(default_categories_ids_order);
+                var
+                    tabs_ids = shuffle(["k_bolsa guess", "k_bota ramarim", 2993, 3442, 2796])
+                        .concat(default_categories_ids_order)
+                ;
 
             } else if(options["keywords"] !== undefined) {
 
@@ -834,12 +836,10 @@ var VitrineResponsiva = (
                 randomize_tabs_til = 5,
                 top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
                 other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
-                tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids)
-            ;
+                tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids),
 
-            var
                 tabs_content = [],
-                from_cookies_labels = shuffle(["Para você", "Recomendação"]);
+                from_cookies_labels = shuffle(["Para você", "Recomendação"])
             ;
 
             for (tab in tabs_ids) {
@@ -881,13 +881,18 @@ var VitrineResponsiva = (
         function openTab(open_category, from_menu) {
 
             var
-                tabsChilds = tabs_holder ? tabs_holder.getElementsByTagName('li') : [];
+                tabsChilds = tabs_holder ? tabs_holder.getElementsByTagName('li') : [],
+                tab = $("tab-" + open_category)
+            ;
+
+            // console.log(tabsChilds);
 
             // limpa estilo dos links das abas
             for (var i = 0; i < tabsChilds.length; i++) {
                 var
                     text = tabsChilds[i].innerText ? tabsChilds[i].innerText : tabsChilds[i].textContent,
-                    id = tabsChilds[i]["id"].split("tab-")[1];
+                    id = tabsChilds[i]["id"].split("tab-")[1]
+                ;
 
                 text = text.replace(/\n/g, "");
 
@@ -901,7 +906,6 @@ var VitrineResponsiva = (
             }
 
             // define o estilo de ativo da aba que esta aberta
-            var tab = $("tab-" + open_category);
             if (tab) {
                 tab.className = "current";
                 tab.innerHTML = "<span>" + (tab.innerText ? tab.innerText : tab.textContent) + "</span>";
@@ -1203,6 +1207,10 @@ var VitrineResponsiva = (
 
 
         function analytics(action, type, label, value) { 
+
+            // console.log("analytics: ");
+            // console.log([action, type, label, value]);
+
             if (typeof (gtag) !== "undefined") {
                 gtag('event', action, {
                     'event_category': type,
