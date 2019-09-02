@@ -36,4 +36,5 @@ De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de fr
 
 ## Team
 Programação: Dirceu
+
 Desenho da interface: [Mikael Carrara](https://github.com/mikaelcarrara)
