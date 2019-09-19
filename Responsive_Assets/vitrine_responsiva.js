@@ -21,7 +21,6 @@ var VitrineResponsiva = (
 
             tabs_map = {
                 "bestsellers": "Mais Vendidos",
-
                 77: "Celular e Smartphone",
                 2852: "TV",
                 3673: "Geladeira / Refrigerador",
@@ -1127,7 +1126,7 @@ var VitrineResponsiva = (
                 ;
 
                 // use width to define max_suggestions (2 to phones : 6 screen)
-                max_suggestions = (available_width <= 320) ? 2 : 6;
+                // max_suggestions = (available_width <= 320) ? 2 : 6;
 
                 // if (available_width <= 363) {
                 //     search_holder.setAttribute('placeholder', "Digite o produto, marca ou modelo.");
@@ -1192,7 +1191,9 @@ var VitrineResponsiva = (
 
             }
 
-            resizeCalc();
+            setTimeout(function() {
+                resizeCalc();
+            }, 300);
 
         }
 
@@ -1231,7 +1232,8 @@ var VitrineResponsiva = (
             analytics: analytics
         }
 
-    }(document));
+    }(document)
+);
 
 var
     hash = window.location.href.split("#"),
