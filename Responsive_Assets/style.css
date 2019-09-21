@@ -219,6 +219,10 @@ a:hover {
     cursor: pointer;
 }
 
+#sidebar li:last-child a {
+    border-bottom: none;
+}
+
 #tabs_holder .current span,
 #tabs_holder a:hover,
 #sugst a.hover {
