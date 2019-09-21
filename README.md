@@ -1,18 +1,18 @@
-# Vitrine Responsiva
+# Vitrine Para Design Responsivo
 
 ## História
-Após experiências com a API (Interface de Programação de Aplicativos) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegador, a Vitrine Responsiva começou a ser desenvolvida em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
+Após experiências com a API (Interface de Programação de Aplicativos) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegador, o projeto "Vitrine Para Design Responsivo" começou a ser desenvolvido em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
 
 Inicialmente foram disponibilizados formatos pré-desenhados (alert, widget e mobile). No primeiro semestre de 2013, a ferramenta foi re-desenhada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante. Formato conhecido por "design responsivo". Em 2018 a funcionalidade "design responsivo" foi simplificada.
 
-É hospedada e distribuida pela rede de marketing de afiliados [Lomadee](https://www.lomadee.com) na aba "Formatos" e enfrenta a concorrência de produtos de empresas como a Criteo, Google Ads, Outbrain e outras.
+O formato é hospedado e distribuido pela rede de marketing de afiliados [Lomadee](https://www.lomadee.com) na aba "Formatos" e enfrenta a concorrência de produtos de empresas como a Criteo, Google Ads, Outbrain e outras.
 
 Com foco em dispositivos móveis, foi otimizada para consumir poucos recursos de rede.
 
-Já foi usada por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/) e outros. É usada pelo [Bem Paraná](https://www.bemparana.com.br/).
+Já foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/) e outros. É usada pelo [Bem Paraná](https://www.bemparana.com.br/).
 
 ## Uso
-Faça o cadastro e login na rede de afiliados [Lomadee](https://www.lomadee.com), entre no menu "Formatos" e procure por "Vitrine Responsiva Coora".
+Faça o cadastro e login na rede de afiliados [Lomadee](https://www.lomadee.com), entre no menu "Formatos" e procure por "Vitrine Para Design Responsivo".
 
 ## Desenvolvendo
 Os arquivos de desenvolvimento são Responsive_Assets/vitrine_responsiva.js (JS) e Responsive_Assets/style.css (CSS).
