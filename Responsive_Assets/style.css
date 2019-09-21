@@ -193,7 +193,7 @@ a:hover {
     cursor: pointer;
     font-size: 18px;
     padding-bottom: 1px;
-    background: linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1));
+    background: #fff;
     border: 1px solid;
     border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
     border-left: 0;
@@ -226,7 +226,7 @@ a:hover {
 }
 
 .current span {
-    background: #f6f6f6;
+    background: #f9f9f9;
     text-decoration: none !important;
     cursor: default !important;
     font-weight: bold;
