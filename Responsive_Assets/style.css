@@ -58,8 +58,7 @@ body {
 
 #nxt:hover,
 #pre:hover {
-    /* opacity: .8; */
-    background: linear-gradient(#4cb1ff, #1793e5);
+    background-color: #1793e5;
     color: #fff;
 }
 
@@ -87,7 +86,10 @@ body {
     text-align: center;
     float: left;
     display: none;
-    background: #f1f1f1;
+    background-color: #f1f1f1;
+
+    -webkit-transition: .4s cubic-bezier(0,1,.5,1);
+    transition: .4s cubic-bezier(0,1,.5,1);
 }
 
 
@@ -201,6 +203,7 @@ a:hover {
     border-bottom-left-radius: 0;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+    -webkit-appearance: none;
 }
 
 #search-submit:hover {

@@ -986,7 +986,7 @@ var VitrineResponsiva = (
             suggestions_holder = $("sugst");
             tabs_holder = $("tabs_holder");
             sidebar = $("sidebar");
-            sugst_scroll = $("sugst_scroll");
+            // sugst_scroll = $("sugst_scroll");
             offers_holder = $("offer");
             footer = $("fotr");
             header = $("headr");
@@ -1116,7 +1116,7 @@ var VitrineResponsiva = (
             // !! render
             // a quantidade de colunas é ajustada no css
 
-            var resizeCalc = function () {
+            var resizeCalc = function(render) {
 
                 var
                     // tamanho da tela
@@ -1145,10 +1145,10 @@ var VitrineResponsiva = (
                 entry.style.height = available_height + "px";
 
                 // ajusta tamanho da parte scrollavel do menu
-                tabs_holder.style.height = (available_height - header.offsetHeight) + "px";
+                tabs_holder.style.height = (available_height - 35) + "px";
 
                 // ajusta suggestion
-                sugst_scroll.style.height = (available_height - header.offsetHeight) + "px";
+                // sugst_scroll.style.height = (available_height - header.offsetHeight) + "px";
 
                 var
                     product_template = offers_holder.childNodes[0],
@@ -1158,11 +1158,9 @@ var VitrineResponsiva = (
                 // sum product margin in product height
                 product_template.style.height = available_height + "px";
 
-                // quantas linhas de produtos cabem?
-
-                // ajusta altura da linha da paginacao
-                pagination_next.style.lineHeight = available_height + "px";
-                pagination_previous.style.lineHeight = available_height + "px";
+                // adjust line-height of pagination to align in the middle
+                pagination_next.style.lineHeight = (available_height - 7.5) + "px";
+                pagination_previous.style.lineHeight = (available_height - 7.5) + "px";
 
                 // TODO: deixar somente a quantidade exata, não deixar um produto a mais, para tirar a borda da direita
 
@@ -1185,16 +1183,21 @@ var VitrineResponsiva = (
                     return false;
                 }
 
-                renderTabs(options);
+                if (render) {
+                    renderTabs(options);
+                }
 
                 d.body.style.visibility = "visible";
 
             }
 
             setTimeout(function() {
-                resizeCalc();
+                resizeCalc(true);
             }, 300);
 
+            window.addEventListener("orientationchange", function() {
+                resizeCalc(false);
+            });
         }
 
 
