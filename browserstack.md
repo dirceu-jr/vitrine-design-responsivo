@@ -28,7 +28,7 @@ Versão testada atualmente: **1.7.6**.
 
 <a href="#windows-10">Windows 10 (resolução 1366x768)</a>
 
-<a href="#windows-8-1">Windows 8.1 (resolução 1366x768)</a>
+<a href="#windows-81">Windows 8.1 (resolução 1366x768)</a>
 
 <a href="#windows-8">Windows 8 (resolução 1366x768)</a>
 
