@@ -1,3 +1,7 @@
+<a href="#aparelhos-da-google---portrait-sem-metatag-viewport">Aparelhos da Google - Portrait (sem metatag viewport)</a>
+
+<a href="#aparelhos-da-google---portrait-com-metatag-viewport">Aparelhos da Google - Portrait (com metatag viewport)</a>
+
 # Analytics (Setembro/2019)
 
 ## Sistemas Operacionais
