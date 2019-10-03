@@ -468,6 +468,14 @@ Versão testada atualmente: **1.7.6**.
 
 <img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_63.0.png" />
 
+### win10_chrome_64.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_64.0.png" />
+
+### win10_chrome_65.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_65.0.png" />
+
 ### win10_chrome_66.0.png
 
 <img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_66.0.png" />
