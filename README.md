@@ -23,6 +23,9 @@ Executando o comando `python build.py` dentro da pasta Responsive_Assets/, os ar
 Foram escritos testes unitários e de integração.
 Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.html e os de integração usam a [gem watir](https://rubygems.org/gems/watir) e ficam na pasta Responsive_Assets/utils/
 
+## Compatibilidade
+Foi usada a ferramenta [BrowserStack](https://www.browserstack.com) para gerar captura de tela da Vitrine rodando em diversos sistemas operacionais e navegadores diferentes. [Ver compatibilidade](https://github.com/dirceup/vitrine-design-responsivo/edit/master/analytics_and_browserstack.md).
+
 ## Pics
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/formatos.png)
 
