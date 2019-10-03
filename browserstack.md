@@ -18,6 +18,14 @@ Versão testada atualmente: **1.7.6**.
 
 <a href="#aparelhos-da-samsung---landscape-com-metatag-viewport">Aparelhos da Samsung - Landscape (com metatag viewport)</a>
 
+<a href="#outros-android---portrait-sem-metatag-viewport">Outros Android - Portrait (sem metatag viewport)</a>
+
+<a href="#outros-android---portrait-com-metatag-viewport">Outros Android - Portrait (com metatag viewport)</a>
+
+<a href="#outros-android---landscape-sem-metatag-viewport">Outros Android - Landscape (sem metatag viewport)</a>
+
+<a href="#outros-android---landscape-com-metatag-viewport">Outros Android - Landscape (com metatag viewport)</a>
+
 ## Aparelhos da Google - Portrait (sem metatag viewport)
 
 ### 5.0_Google-Nexus-6_Portrait_real-mobile.jpg
@@ -377,3 +385,59 @@ Versão testada atualmente: **1.7.6**.
 ### android_Samsung-Galaxy-Tab-4-10.1_4.4_landscape.png
 
 <img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Samsung_Landscape_(width=device-width)/android_Samsung-Galaxy-Tab-4-10.1_4.4_landscape.png" />
+
+## Outros Android - Portrait (sem metatag viewport)
+
+### 5.0_Motorola-Moto-X-2nd-Gen_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(without_metatag)/5.0_Motorola-Moto-X-2nd-Gen_Portrait_real-mobile.jpg" />
+
+### 6.0_Motorola-Moto-X-2nd-Gen_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(without_metatag)/6.0_Motorola-Moto-X-2nd-Gen_Portrait_real-mobile.jpg" />
+
+### android_HTC-One-M8_4.4_portrait.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(without_metatag)/android_HTC-One-M8_4.4_portrait.jpg" />
+
+## Outros Android - Portrait (com metatag viewport)
+
+### 5.0_Motorola-Moto-X-2nd-Gen_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(width=device-width)/5.0_Motorola-Moto-X-2nd-Gen_Portrait_real-mobile.jpg" />
+
+### 6.0_Motorola-Moto-X-2nd-Gen_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(without_metatag)/6.0_Motorola-Moto-X-2nd-Gen_Portrait_real-mobile.jpg" />
+
+### android_HTC-One-M8_4.4_portrait.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(without_metatag)/android_HTC-One-M8_4.4_portrait.png" />
+
+## Outros Android - Landscape (sem metatag viewport)
+
+### 5.0_Motorola-Moto-X-2nd-Gen_Landscape_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Landscape_(without_metatag)/5.0_Motorola-Moto-X-2nd-Gen_Landscape_real-mobile.jpg" />
+
+### 6.0_Motorola-Moto-X-2nd-Gen_Landscape_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(without_metatag)/6.0_Motorola-Moto-X-2nd-Gen_Landscape_real-mobile.jpg" />
+
+### android_HTC-One-M8_4.4_landscape.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(without_metatag)/android_HTC-One-M8_4.4_landscape.jpg" />
+
+## Outros Android - Landscape (com metatag viewport)
+
+### 5.0_Motorola-Moto-X-2nd-Gen_landscape_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Landscape_(width=device-width)/5.0_Motorola-Moto-X-2nd-Gen_landscape_real-mobile.jpg" />
+
+### 6.0_Motorola-Moto-X-2nd-Gen_landscape_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(without_metatag)/6.0_Motorola-Moto-X-2nd-Gen_landscape_real-mobile.jpg" />
+
+### android_HTC-One-M8_4.4_landscape.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Portrait_(without_metatag)/android_HTC-One-M8_4.4_landscape.png" />
