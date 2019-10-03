@@ -15,3 +15,37 @@
 # BrowserStack Screenshots
 
 Para testar a ferramenta e a compatibilidade com os navegadores e sistemas operacionais foi usado o serviço da [BrowserStack](https://www.browserstack.com).
+
+## Aparelhos da Google - Portrait (sem metatag viewport)
+
+### 5.0_Google-Nexus-6_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+
+### 6.0_Google-Nexus-6_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+
+### 7.1_Google-Pixel_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+
+### 8.0_Google-Pixel_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+
+### 9.0_Google-Pixel-3_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+
+### 9.0_Google-Pixel-3-XL_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+
+### android_Google-Nexus-5_5.0_portrait.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+
+### android_Google-Nexus-9_5.0_portrait.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
