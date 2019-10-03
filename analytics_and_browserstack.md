@@ -2,15 +2,15 @@
 
 ## Sistemas Operacionais
 
-![alt text](https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Sistema_Operacional-Setembro-2019.png)
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Sistema_Operacional-Setembro-2019.png" width="300"/>
 
 ## Versões do Windows
 
-![alt text](https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Versões_do_Windows-Setembro-2019.png)
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows-Setembro-2019.png" width="300"/>
 
 ## Resolução de Tela
 
-![alt text](https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Resolução_de_Tela-Setembro-2019.png)
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
 
 # BrowserStack Screenshots
 
