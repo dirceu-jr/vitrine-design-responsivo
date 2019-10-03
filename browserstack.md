@@ -16,6 +16,8 @@ Versão testada atualmente: **1.7.6**.
 
 <a href="#aparelhos-da-samsung---portrait-com-metatag-viewport">Aparelhos da Samsung - Portrait (com metatag viewport)</a>
 
+<a href="#aparelhos-da-samsung---landscape-com-metatag-viewport">Aparelhos da Samsung - Landscape (com metatag viewport)</a>
+
 ## Aparelhos da Google - Portrait (sem metatag viewport)
 
 ### 5.0_Google-Nexus-6_Portrait_real-mobile.jpg
