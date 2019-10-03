@@ -441,3 +441,111 @@ Versão testada atualmente: **1.7.6**.
 ### android_HTC-One-M8_4.4_landscape.png
 
 <img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Others_Mobile_Landscape_(width=device-width)/android_HTC-One-M8_4.4_landscape.png" />
+
+## Windows 10
+
+### win10_chrome_39.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_39.0.png" />
+
+### win10_chrome_40.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_40.0.jpg" />
+
+### win10_chrome_41.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_41.0.png" />
+
+### win10_chrome_63.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_63.0.png" />
+
+### win10_chrome_66.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_66.0.png" />
+
+### win10_chrome_67.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_67.0.jpg" />
+
+### win10_chrome_68.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_68.0.png" />
+
+### win10_chrome_69.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_69.0.jpg" />
+
+### win10_chrome_70.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_70.0.png" />
+
+### win10_chrome_71.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_chrome_71.0.png" />
+
+### win10_edge_15.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_edge_15.0.png" />
+
+### win10_edge_16.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_edge_15.0.png" />
+
+### win10_edge_17.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_edge_17.0.png" />
+
+### win10_edge_18.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_edge_18.0.jpg" />
+
+### win10_edge_insider_preview.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_edge_insider_preview.png" />
+
+### win10_firefox_54.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_firefox_54.0.png" />
+
+### win10_firefox_55.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_firefox_55.0.png" />
+
+### win10_firefox_56.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_firefox_56.0.png" />
+
+### win10_firefox_57.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_firefox_57.0.png" />
+
+### win10_firefox_58.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_firefox_58.0.jpg" />
+
+### win10_firefox_59.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_firefox_59.0.png" />
+
+### win10_firefox_60.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_firefox_60.0.png" />
+
+### win10_firefox_61.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_firefox_61.0.jpg" />
+
+### win10_firefox_62.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_firefox_62.0.jpg" />
+
+### win10_ie_11.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_10_(1366x768)/win10_ie_11.0.jpg" />
+
+## Windows 8.1
+
+## Windows 8
+
+## Windows 7
