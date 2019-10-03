@@ -49,3 +49,49 @@ Para testar a ferramenta e a compatibilidade com os navegadores e sistemas opera
 ### android_Google-Nexus-9_5.0_portrait.jpg
 
 <img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(without_metatag)/android_Google-Nexus-9_5.0_portrait.jpg" />
+
+## Aparelhos da Google - Portrait (com metatag viewport)
+
+### 4.4_Google-Nexus-5_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/4.4_Google-Nexus-5_Portrait_real-mobile.jpg" />
+
+### 5.0_Google-Nexus-6_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/5.0_Google-Nexus-6_Portrait_real-mobile.jpg" />
+
+### 6.0_Google-Nexus-6_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/6.0_Google-Nexus-6_Portrait_real-mobile.jpg" />
+
+### 7.1_Google-Pixel_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/7.1_Google-Pixel_Portrait_real-mobile.jpg" />
+
+### 8.0_Google-Pixel_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/8.0_Google-Pixel_Portrait_real-mobile.jpg" />
+
+### 8.0_Google-Pixel-2_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/8.0_Google-Pixel-2_Portrait_real-mobile.jpg" />
+
+### 9.0_Google-Pixel-2_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/9.0_Google-Pixel-2_Portrait_real-mobile.jpg" />
+
+### 9.0_Google-Pixel-3_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/9.0_Google-Pixel-3_Portrait_real-mobile.jpg" />
+
+### 9.0_Google-Pixel-3-XL_Portrait_real-mobile.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/9.0_Google-Pixel-3-XL_Portrait_real-mobile.jpg" />
+
+### android_Google-Nexus-5_5.0_portrait.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/android_Google-Nexus-5_5.0_portrait.jpg" />
+
+### android_Google-Nexus-9_5.0_portrait.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(width=device-width)/android_Google-Nexus-9_5.0_portrait.png" />
