@@ -26,6 +26,14 @@ Versão testada atualmente: **1.7.6**.
 
 <a href="#outros-android---landscape-com-metatag-viewport">Outros Android - Landscape (com metatag viewport)</a>
 
+<a href="#windows-10">Windows 10 (resolução 1366x768)</a>
+
+<a href="#windows-8-1">Windows 8.1 (resolução 1366x768)</a>
+
+<a href="#windows-8">Windows 8 (resolução 1366x768)</a>
+
+<a href="#windows-7">Windows 7 (resolução 1366x768)</a>
+
 ## Aparelhos da Google - Portrait (sem metatag viewport)
 
 ### 5.0_Google-Nexus-6_Portrait_real-mobile.jpg
@@ -546,6 +554,290 @@ Versão testada atualmente: **1.7.6**.
 
 ## Windows 8.1
 
+### win8.1_chrome_60.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_60.0.png" />
+
+### win8.1_chrome_61.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_61.0.png" />
+
+### win8.1_chrome_62.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_62.0.jpg" />
+
+### win8.1_chrome_63.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_63.0.png" />
+
+### win8.1_chrome_64.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_64.0.jpg" />
+
+### win8.1_chrome_65.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_65.0.png" />
+
+### win8.1_chrome_66.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_66.0.png" />
+
+### win8.1_chrome_67.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_67.0.jpg" />
+
+### win8.1_chrome_68.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_68.0.png" />
+
+### win8.1_chrome_69.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_69.0.jpg" />
+
+### win8.1_chrome_70.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_70.0.jpg" />
+
+### win8.1_chrome_71.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_chrome_71.0.png" />
+
+### win8.1_firefox_52.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_52.0.png" />
+
+### win8.1_firefox_53.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_53.0.jpg" />
+
+### win8.1_firefox_54.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_54.0.png" />
+
+### win8.1_firefox_55.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_55.0.png" />
+
+### win8.1_firefox_56.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_56.0.png" />
+
+### win8.1_firefox_57.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_57.0.jpg" />
+
+### win8.1_firefox_58.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_58.0.png" />
+
+### win8.1_firefox_59.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_59.0.png" />
+
+### win8.1_firefox_60.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_60.0.png" />
+
+### win8.1_firefox_61.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_61.0.jpg" />
+
+### win8.1_firefox_62.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_firefox_62.0.png" />
+
+### win8.1_ie_11.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8.1_(1366x768)/win8.1_ie_11.0.jpg" />
+
 ## Windows 8
 
+### win8_chrome_60.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_60.0.png" />
+
+### win8_chrome_61.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_61.0.png" />
+
+### win8_chrome_62.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_62.0.png" />
+
+### win8_chrome_63.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_63.0.png" />
+
+### win8_chrome_64.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_64.0.png" />
+
+### win8_chrome_65.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_65.0.png" />
+
+### win8_chrome_65.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_65.0.png" />
+
+### win8_chrome_67.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_67.0.png" />
+
+### win8_chrome_68.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_68.0.png" />
+
+### win8_chrome_69.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_69.0.jpg" />
+
+### win8_chrome_70.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_70.0.jpg" />
+
+### win8_chrome_71.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_chrome_71.0.jpg" />
+
+### win8_firefox_52.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_52.0.png" />
+
+### win8_firefox_53.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_53.0.png" />
+
+### win8_firefox_54.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_54.0.jpg" />
+
+### win8_firefox_55.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_55.0.png" />
+
+### win8_firefox_56.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_56.0.png" />
+
+### win8_firefox_57.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_57.0.png" />
+
+### win8_firefox_58.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_58.0.png" />
+
+### win8_firefox_59.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_59.0.jpg" />
+
+### win8_firefox_60.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_60.0.png" />
+
+### win8_firefox_61.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_61.0.png" />
+
+### win8_firefox_62.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_firefox_62.0.png" />
+
+### win8_ie_10.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_8_(1366x768)/win8_ie_10.0.jpg" />
+
 ## Windows 7
+
+### win7_chrome_61.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_61.0.png" />
+
+### win7_chrome_62.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_62.0.png" />
+
+### win7_chrome_63.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_63.0.png" />
+
+### win7_chrome_64.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_64.0.png" />
+
+### win7_chrome_65.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_65.0.png" />
+
+### win7_chrome_66.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_66.0.png" />
+
+### win7_chrome_67.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_67.0.png" />
+
+### win7_chrome_68.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_68.0.png" />
+
+### win7_chrome_69.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_69.0.jpg" />
+
+### win7_chrome_70.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_70.0.png" />
+
+### win7_chrome_71.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_chrome_71.0.png" />
+
+### win7_firefox_54.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_firefox_54.0.png" />
+
+### win7_firefox_55.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_firefox_55.0.png" />
+
+### win7_firefox_56.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_firefox_56.0.png" />
+
+### win7_firefox_57.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_firefox_57.0.jpg" />
+
+### win7_firefox_58.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_firefox_58.0.png" />
+
+### win7_firefox_59.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_firefox_59.0.png" />
+
+### win7_firefox_60.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_firefox_60.0.png" />
+
+### win7_firefox_61.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_firefox_61.0.jpg" />
+
+### win7_firefox_62.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_firefox_62.0.png" />
+
+### win7_ie_8.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_ie_8.0.png" />
+
+### win7_ie_9.0.png
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_ie_9.0.png" />
+
+### win7_ie_10.0.jpg
+
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows_7_(1366x768)/win7_ie_10.0.jpg" />
