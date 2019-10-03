@@ -12,20 +12,6 @@ Versão testada atualmente: **1.7.6**.
 
 <a href="#aparelhos-da-google---landscape-com-metatag-viewport">Aparelhos da Google - Landscape (com metatag viewport)</a>
 
-# Analytics (Setembro/2019)
-
-## Sistemas Operacionais
-
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Sistema_Operacional-Setembro-2019.png" width="300"/>
-
-## Versões do Windows
-
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Windows-Setembro-2019.png" width="300"/>
-
-## Resolução de Tela
-
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
-
 ## Aparelhos da Google - Portrait (sem metatag viewport)
 
 ### 5.0_Google-Nexus-6_Portrait_real-mobile.jpg
