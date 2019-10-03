@@ -20,32 +20,32 @@ Para testar a ferramenta e a compatibilidade com os navegadores e sistemas opera
 
 ### 5.0_Google-Nexus-6_Portrait_real-mobile.jpg
 
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(without_metatag)/5.0_Google-Nexus-6_Portrait_real-mobile.jpg" width="700"/>
 
 ### 6.0_Google-Nexus-6_Portrait_real-mobile.jpg
 
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(without_metatag)/6.0_Google-Nexus-6_Portrait_real-mobile.jpg" width="700"/>
 
 ### 7.1_Google-Pixel_Portrait_real-mobile.jpg
 
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(without_metatag)/7.1_Google-Pixel_Portrait_real-mobile.jpg" width="700"/>
 
 ### 8.0_Google-Pixel_Portrait_real-mobile.jpg
 
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(without_metatag)/8.0_Google-Pixel_Portrait_real-mobile.jpg" width="700"/>
 
 ### 9.0_Google-Pixel-3_Portrait_real-mobile.jpg
 
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(without_metatag)/9.0_Google-Pixel-3_Portrait_real-mobile.jpg" width="700"/>
 
 ### 9.0_Google-Pixel-3-XL_Portrait_real-mobile.jpg
 
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(without_metatag)/9.0_Google-Pixel-3-XL_Portrait_real-mobile.jpg" width="700"/>
 
 ### android_Google-Nexus-5_5.0_portrait.jpg
 
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(without_metatag)/android_Google-Nexus-5_5.0_portrait.jpg" width="700"/>
 
 ### android_Google-Nexus-9_5.0_portrait.jpg
 
-<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Tela-Setembro-2019.png" width="300"/>
+<img src="https://raw.githubusercontent.com/dirceup/vitrine-design-responsivo/master/BrowserStack/Google_Portrait_(without_metatag)/android_Google-Nexus-9_5.0_portrait.jpg" width="700"/>
