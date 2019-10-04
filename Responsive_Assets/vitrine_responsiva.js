@@ -721,6 +721,9 @@ var VitrineResponsiva = (
             var
                 actual_count = 0,
                 next = function() {
+                    if (max == 1) {
+                        return;
+                    }
                     if (actual_count >= max) {
                         actual_count = 0;
                     }
