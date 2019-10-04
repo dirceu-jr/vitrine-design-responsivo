@@ -115,7 +115,9 @@ var VitrineResponsiva = (
             // to load more pages from last BWS call
             last_options,
             last_callback,
-            last_method
+            last_method,
+
+            zoom_in_interval
         ;
 
         // console.log(tabs_ids);
@@ -699,6 +701,7 @@ var VitrineResponsiva = (
 
                 hide(bg_message);
                 offers_holder.innerHTML = render.join("");
+                zoomInOffers(expected_length);
 
             } else {
 
@@ -710,6 +713,39 @@ var VitrineResponsiva = (
 
             }
 
+        }
+
+
+        function zoomInOffers(max) {
+            
+            var
+                actual_count = 0,
+                next = function() {
+                    if (actual_count >= max) {
+                        actual_count = 0;
+                    }
+                    var previous_count = actual_count - 1;
+                    if (previous_count < 0) {
+                        previous_count = max - 1;
+                    }
+
+                    var
+                        actual = offers_holder.childNodes[actual_count].childNodes[0],
+                        previous = offers_holder.childNodes[previous_count].childNodes[0]
+                    ;
+                    
+                    previous.className = "";
+                    actual.className = "hover";
+                    
+                    actual_count++;
+                }
+            ;
+            
+            // zoom_in_interval is global
+            clearInterval(zoom_in_interval);
+            zoom_in_interval = setInterval(function() {
+                next();
+            }, 2500);
         }
 
 

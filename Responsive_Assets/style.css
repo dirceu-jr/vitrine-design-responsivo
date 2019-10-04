@@ -56,6 +56,14 @@ body {
     color: #fff;
 }
 
+#nxt:hover {
+    text-indent: 3px;
+}
+
+#pre:hover {
+    text-indent: -3px;
+}
+
 /* #sx-loa {
     display: none;
     top: 2px;
@@ -303,7 +311,9 @@ a:hover .title {
     text-decoration: underline;
 }
 
-a:hover .thumb {
+a:hover .thumb,
+a.hover .thumb
+{
     -webkit-transform: scale(1.15);
     transform: scale(1.15);
 }
