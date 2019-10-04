@@ -1,8 +1,3 @@
-/*
-2013-2017 Coora.
-http://www.coora.com.br/
-*/
-
 * {
     padding: 0;
     margin: 0;
@@ -12,25 +7,24 @@ http://www.coora.com.br/
 }
 
 html {
-    font-size: 62.5%
+    font-size: 62.5%;
 }
 
 p {
-    margin: 20px 0 0
+    margin: 20px 0 0;
 }
 
 label {
-    cursor: pointer
+    cursor: pointer;
 }
 
 img {
-    border: none
+    border: none;
 }
 
 li {
-    list-style-type: none
+    list-style-type: none;
 }
-
 
 /* General */
 
@@ -279,7 +273,9 @@ a:hover {
 }
 
 .thumb {
-    width: 80%;
+    /* width: 80%; */
+    width: 90px;
+    height: 90px;
     overflow: hidden;
     display: block;
     margin: 8px auto;
@@ -298,7 +294,7 @@ a:hover {
     font-weight: normal;
     color: #484848;
     display: block;
-    line-height: normal;
+    line-height: 17px;
     /*  font-weight: bold;*/
 }
 

@@ -685,7 +685,7 @@ var VitrineResponsiva = (
                         "<li>",
                             "<a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"Oferta-Click\", \"", (o[i].product.id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'>",
                                 "<div class='thumbholder'>",
-                                    "<img class='thumb' width='96' src='", thumbnail, "' onerror='VitrineResponsiva.imgErr(this);' />",
+                                    "<img class='thumb' src='", thumbnail, "' onerror='VitrineResponsiva.imgErr(this);' />",
                                 "</div>",
                                 "<div>",
                                     "<h2 class='title'>", name, "</h2>",
@@ -952,7 +952,7 @@ var VitrineResponsiva = (
                     // in fact currently there are 226 totalSize
                     // total_size = 226,
                     // but it has to works a long time without modifications so will be conservative and lower it 
-                    total_size = 195,
+                    total_size = 150,
                     per_page = (g_results + 1),
                     total_pages = total_size/per_page
                 ;
