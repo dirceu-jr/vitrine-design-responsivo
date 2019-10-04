@@ -14,6 +14,14 @@ Já foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [Ban
 ## Uso
 Faça o cadastro e login na rede de afiliados [Lomadee](https://www.lomadee.com), entre no menu "Formatos" e procure por "Vitrine Para Design Responsivo".
 
+## Browsers support
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>iOS Safari |
+| --------- | --------- | --------- | --------- | --------- |
+| IE10, IE11, Edge| | | |
+
+Foi usada a ferramenta BrowserStack para gerar captura de tela da Vitrine rodando em diversos sistemas operacionais e navegadores diferentes. [Ver página "BrowserStack"](https://github.com/dirceup/vitrine-design-responsivo/blob/master/browserstack.md).
+
 ## Desenvolvendo
 Os arquivos de desenvolvimento são Responsive_Assets/vitrine_responsiva.js (JS) e Responsive_Assets/style.css (CSS).
 
@@ -23,11 +31,8 @@ Executando o comando `python build.py` dentro da pasta Responsive_Assets/, os ar
 Foram escritos testes unitários e de integração.
 Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.html e os de integração usam a [gem watir](https://rubygems.org/gems/watir) e ficam na pasta Responsive_Assets/utils/
 
-## Compatibilidade
-Foi usada a ferramenta [BrowserStack](https://www.browserstack.com) para gerar captura de tela da Vitrine rodando em diversos sistemas operacionais e navegadores diferentes. [Ver compatibilidade](https://github.com/dirceup/vitrine-design-responsivo/blob/master/browserstack.md).
-
 ## Analytics
-Alguns dados de uso são disponibilizados na página ["analytics"](https://github.com/dirceup/vitrine-design-responsivo/blob/master/analytics.md).
+Alguns dados de uso são disponibilizados na página [Analytics](https://github.com/dirceup/vitrine-design-responsivo/blob/master/analytics.md).
 
 ## Pics
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/formatos.png)
