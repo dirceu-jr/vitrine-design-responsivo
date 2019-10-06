@@ -384,6 +384,6 @@ a.hover .thumb
     }
 }
 
-input:focus::-webkit-input-placeholder {
+input:focus::placeholder {
     color: transparent;
 }
