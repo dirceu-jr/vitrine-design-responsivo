@@ -14,7 +14,7 @@ Já foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [Ban
 ## Uso
 Faça o cadastro e login na rede de afiliados [Lomadee](https://www.lomadee.com), entre no menu "Formatos" e procure por "Vitrine Para Design Responsivo".
 
-## Browsers support
+## Navegadores suportados
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>iOS Safari |
 | --------- | --------- | --------- | --------- | --------- |
@@ -34,18 +34,21 @@ Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.h
 ## Analytics
 Alguns dados de uso são disponibilizados na página [Analytics](https://github.com/dirceup/vitrine-design-responsivo/blob/master/analytics.md).
 
-## Pics
+## Captura de tela
+
+Formato na Lomadee:
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/formatos.png)
 
+Formato em página de testes:
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/pics.png)
 
 ## Demonstração
-[https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
+Veja uma página de demonstração da Vitrine: [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
 
-## Devspeak
+## Palavra do desenvolvedor
 De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. Com aproximadamente 1200 linhas de JavaScript puro, o HTML + CSS + JS pesa minificado 11.7 KB.
 
-## Team
+## Time
 Programação: Dirceu
 
 Desenho da interface: [Mikael Carrara](https://github.com/mikaelcarrara)
