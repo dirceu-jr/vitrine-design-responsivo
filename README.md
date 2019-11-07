@@ -36,15 +36,18 @@ Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.h
 ## Analytics
 Alguns dados de uso são disponibilizados na página [Analytics](https://github.com/dirceup/vitrine-design-responsivo/blob/master/analytics.md).
 
-## Pics
+## Captura de tela
+
+Formato na Lomadee:
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/formatos.png)
 
+Formato em página de testes:
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/pics.png)
 
 ## Demonstração
-[https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
+Veja uma página de demonstração da Vitrine: [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
 
-## Devspeak
+## Palavra do desenvolvedor
 De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. Com aproximadamente 1200 linhas de JavaScript puro, o HTML + CSS + JS pesa minificado 11.7 KB.
 
 ## Time
