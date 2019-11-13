@@ -27,7 +27,7 @@ O formato possui um modelo de desenvolvimento colaborativo, baseado em código l
 
 Os arquivos de desenvolvimento são Responsive_Assets/vitrine_responsiva.js (JavaScript) e Responsive_Assets/style.css (CSS).
 
-Executando o comando `python build.py` dentro da pasta Responsive_Assets/, os arquivos de produção são gerados dentro da pasta Responsive_Assets/staging/.
+Executando o comando `python build.py` dentro da pasta Responsive_Assets/, os arquivos de produção são gerados dentro da pasta public/.
 
 ## Testes
 Foram escritos testes unitários e de integração.

@@ -23,43 +23,43 @@ var VitrineResponsiva = (
                 "bestsellers": "Mais Vendidos",
                 77: "Celular e Smartphone",
                 2852: "TV",
-                3673: "Geladeira / Refrigerador",
+                // 3673: "Geladeira / Refrigerador",
                 6424: "Notebook",
-                3671: "Lavadora de Roupas",
-                3661: "Ar Condicionado",
+                // 3671: "Lavadora de Roupas",
+                // 3661: "Ar Condicionado",
                 6058: "Console de Video Game",
-                3606: "Impressora",
+                // 3606: "Impressora",
                 138: "Fogão",
-                126: "Microondas",
+                // 126: "Microondas",
                 10232: "Tablet",
-                9830: "Pneu para Carro",
+                // 9830: "Pneu para Carro",
                 62: "Caixa de Som para PC",
-                6504: "Frigobar",
-                3662: "Ventilador / Circulador",
+                // 6504: "Frigobar",
+                // 3662: "Ventilador / Circulador",
                 145: "Forno Elétrico",
                 150: "Fritadeira",
                 9863: "Purificador de Água",
                 131: "Freezer",
                 121: "Cafeteira",
-                3442: "Perfume",
+                // 3442: "Perfume",
                 119: "Aspirador de Pó / Água",
                 3694: "Relógio de Pulso",
-                6378: "Monitor Cardíaco",
+                // 6378: "Monitor Cardíaco",
                 129: "Lava Louças",
-                10936: "Media Server",
-                10104: "Leitor de e-book",
-                16: "Fone de Ouvido",
-                6409: "Jogos",
-                8958: "Climatizador",
+                // 10936: "Media Server",
+                // 10104: "Leitor de e-book",
+                // 16: "Fone de Ouvido",
+                // 6409: "Jogos",
+                // 8958: "Climatizador",
                 36: "Monitor",
                 3669: "Liquidificador",
-                2858: "Tênis",
+                // 2858: "Tênis",
                 120: "Batedeira",
-                2796: "Secador de Cabelo",
+                // 2796: "Secador de Cabelo",
                 2801: "Armário / Guarda-Roupa",
-                1437: "Bicicleta",
+                // 1437: "Bicicleta",
                 7594: "Coifa / Exaustor",
-                3737: "HD",
+                // 3737: "HD",
 
                 // essas são as especiais de moda
                 "2993": "Óculos de Sol",
@@ -71,7 +71,8 @@ var VitrineResponsiva = (
 
             },
 
-            default_categories_ids_order = ["bestsellers", 77, 2852, 3673, 6424, 3671, 3661, 6058, 3606, 138, 126, 10232, 9830, 62, 6504, 3662, 145, 150, 9863, 131, 121, 3442, 119, 3694, 6378, 129, 10936, 10104, 16, 6409, 8958, 36, 3669, 2858, 120, 2796, 2801, 1437, 7594, 3737],
+            default_categories_ids_order = ["bestsellers", 77, 2852, 6424, 6058, 138, 10232, 62, 145, 150, 9863, 131, 121, 119, 3694, 129, 36, 3669, 120, 2801, 7594],
+            // default_categories_ids_order = ["bestsellers", 77, 2852, 3673, 6424, 3671, 3661, 6058, 3606, 138, 126, 10232, 9830, 62, 6504, 3662, 145, 150, 9863, 131, 121, 3442, 119, 3694, 6378, 129, 10936, 10104, 16, 6409, 8958, 36, 3669, 2858, 120, 2796, 2801, 1437, 7594, 3737],
 
             suggestion_has_heart_beat = true,
             suggestion_has_heart_beat_keyboard = true,
@@ -277,9 +278,8 @@ var VitrineResponsiva = (
             
             var
                 protocol = ("https:" == window.location.protocol ? "https" : "http"),
-                url = protocol + "://api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params)
+                url = protocol + "://api.lomadee.com/v3/" + appid + "/" + service + "?" + paramsToQuery(params)
             ;
-            // var url = protocol + "://sandbox-api.lomadee.com/v2/" + appid + "/" + service + "?" + paramsToQuery(params);
 
             xhr(url, function (obj) {
                 callback(obj);
@@ -675,17 +675,21 @@ var VitrineResponsiva = (
                         installment = (o[i].installment && o[i].installment.quantity) ?
                             (o[i].installment.quantity + " x " + formatMoney(o[i].installment.value, abrv)) : "&nbsp;",
                         price = formatMoney(o[i].price, abrv),
-                        name = o[i].name.replace("Smartphone", "");
+                        name = o[i].name.replace("Smartphone", ""),
+                        thumbnail = o[i].thumbnail
+                    ;
 
-                    if (o[i].product.thumbnail && o[i].product.thumbnail.otherFormats[0]) {
-                        var thumbnail = o[i].product.thumbnail.otherFormats[0].url;
-                    } else {
-                        var thumbnail = o[i].thumbnail;
-                    }
+                    // console.log(o[i]);
+
+                    // if (o[i].product.thumbnail && o[i].product.thumbnail.otherFormats[0]) {
+                    //     var thumbnail = o[i].product.thumbnail.otherFormats[0].url;
+                    // } else {
+                    //     var thumbnail = o[i].thumbnail;
+                    // }
 
                     render.push(
                         "<li>",
-                            "<a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"Oferta-Click\", \"", (o[i].product.id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'>",
+                            "<a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"Oferta-Click\", \"", (o[i].id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'>",
                                 "<div class='thumbholder'>",
                                     "<img class='thumb' src='", thumbnail, "' onerror='VitrineResponsiva.imgErr(this);' />",
                                 "</div>",
@@ -854,19 +858,21 @@ var VitrineResponsiva = (
                         }
                     }
                 }
-                // px (products ids)
-                if (cookie_array[1]) {
-                    var pxs = cookie_array[1].split("=");
-                    if (pxs[1]) {
-                        var pxs_array = shuffle(pxs[1].split("|"));
-                        if (pxs_array[0]) {
-                            for (var i = 0; i < pxs_array.length; i++) {
-                                // coloca em cima
-                                tabs_ids.unshift("p_" + pxs_array[i]);
-                            }
-                        }
-                    }
-                }
+
+                // não tem mais endpoint na API do Lomadee para produtos
+                // // px (products ids)
+                // if (cookie_array[1]) {
+                //     var pxs = cookie_array[1].split("=");
+                //     if (pxs[1]) {
+                //         var pxs_array = shuffle(pxs[1].split("|"));
+                //         if (pxs_array[0]) {
+                //             for (var i = 0; i < pxs_array.length; i++) {
+                //                 // coloca em cima
+                //                 tabs_ids.unshift("p_" + pxs_array[i]);
+                //             }
+                //         }
+                //     }
+                // }
             }
 
             // aqui pode randomizar as primeiras
@@ -981,8 +987,8 @@ var VitrineResponsiva = (
                 var endpoint = "offer/_search";
             
             // if "category" is a product id
-            } else if (category[0] == "p") {
-                var endpoint = "offer/_product/" + category.split("p_")[1];
+            // } else if (category[0] == "p") {
+            //     var endpoint = "offer/_product/" + category.split("p_")[1];
 
             // if "category" is best sellers
             } else if (category == "bestsellers") {
@@ -995,6 +1001,8 @@ var VitrineResponsiva = (
                     per_page = (g_results + 1),
                     total_pages = total_size/per_page
                 ;
+
+                console.log(total_pages);
                 
                 options["page"] = Math.floor(Math.random() * total_pages) + 1;
             // if category
@@ -1002,9 +1010,9 @@ var VitrineResponsiva = (
                 var endpoint = "offer/_category/" + category;
 
                 // if not from menu clicked randomize
-                if (!from_menu) {
-                    options["page"] = Math.floor(Math.random() * 3) + 1;
-                }
+                // if (!from_menu) {
+                //     options["page"] = Math.floor(Math.random() * 3) + 1;
+                // }
             }
 
             onDemandServices(endpoint, options, function (o) {
@@ -1250,16 +1258,8 @@ var VitrineResponsiva = (
 
 
         function analytics(action, type, label, value) { 
-
-            // console.log("analytics: ");
-            // console.log([action, type, label, value]);
-
-            if (typeof (gtag) !== "undefined") {
-                gtag('event', action, {
-                    'event_category': type,
-                    'event_label': label,
-                    'value': value
-                });
+            if (typeof (ga) !== "undefined") {
+                ga('send', 'event', type, action, label, value);
             }
         }
 
