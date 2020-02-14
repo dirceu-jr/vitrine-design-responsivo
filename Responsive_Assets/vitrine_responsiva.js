@@ -27,9 +27,9 @@ var VitrineResponsiva = (
                 6424: "Notebook",
                 // 3671: "Lavadora de Roupas",
                 // 3661: "Ar Condicionado",
-                6058: "Console de Video Game",
+                // 6058: "Console de Video Game",
                 // 3606: "Impressora",
-                138: "Fogão",
+                // 138: "Fogão",
                 // 126: "Microondas",
                 10232: "Tablet",
                 // 9830: "Pneu para Carro",
@@ -71,7 +71,7 @@ var VitrineResponsiva = (
 
             },
 
-            default_categories_ids_order = ["bestsellers", 77, 2852, 6424, 6058, 138, 10232, 62, 145, 150, 9863, 131, 121, 119, 3694, 129, 36, 3669, 120, 2801, 7594],
+            default_categories_ids_order = ["bestsellers", 77, 2852, 6424, 10232, 62, 145, 150, 9863, 131, 121, 119, 3694, 129, 36, 3669, 120, 2801, 7594],
             // default_categories_ids_order = ["bestsellers", 77, 2852, 3673, 6424, 3671, 3661, 6058, 3606, 138, 126, 10232, 9830, 62, 6504, 3662, 145, 150, 9863, 131, 121, 3442, 119, 3694, 6378, 129, 10936, 10104, 16, 6409, 8958, 36, 3669, 2858, 120, 2796, 2801, 1437, 7594, 3737],
 
             suggestion_has_heart_beat = true,
@@ -877,7 +877,7 @@ var VitrineResponsiva = (
 
             // aqui pode randomizar as primeiras
             var
-                randomize_tabs_til = 5,
+                randomize_tabs_til = 4,
                 top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
                 other_tabs_ids = default_categories_ids_order.slice(randomize_tabs_til),
                 tabs_ids = shuffle(top_tabs_ids).concat(other_tabs_ids),
@@ -1002,7 +1002,7 @@ var VitrineResponsiva = (
                     total_pages = total_size/per_page
                 ;
 
-                console.log(total_pages);
+                // console.log(total_pages);
                 
                 options["page"] = Math.floor(Math.random() * total_pages) + 1;
             // if category
@@ -1010,9 +1010,9 @@ var VitrineResponsiva = (
                 var endpoint = "offer/_category/" + category;
 
                 // if not from menu clicked randomize
-                // if (!from_menu) {
-                //     options["page"] = Math.floor(Math.random() * 3) + 1;
-                // }
+                if (!from_menu) {
+                    options["page"] = Math.floor(Math.random() * 3) + 1;
+                }
             }
 
             onDemandServices(endpoint, options, function (o) {
