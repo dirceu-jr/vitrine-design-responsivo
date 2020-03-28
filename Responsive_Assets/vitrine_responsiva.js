@@ -23,60 +23,48 @@ var VitrineResponsiva = (
                 "bestsellers": "Mais Vendidos",
                 77: "Celular e Smartphone",
                 2852: "TV",
-                // 3673: "Geladeira / Refrigerador",
                 6424: "Notebook",
+                10232: "Tablet",
+                62: "Caixa de Som para PC",
+                145: "Forno Elétrico",
+                150: "Fritadeira",
+                9863: "Purificador de Água",
+                131: "Freezer",
+                121: "Cafeteira",
+                119: "Aspirador de Pó / Água",
+                3694: "Relógio de Pulso",
+                129: "Lava Louças",
+                36: "Monitor",
+                3669: "Liquidificador",
+                120: "Batedeira",
+                2801: "Armário / Guarda-Roupa",
+                7594: "Coifa / Exaustor",
+
+                // temp not working categories in lomadee...
+                // 3673: "Geladeira / Refrigerador",
                 // 3671: "Lavadora de Roupas",
                 // 3661: "Ar Condicionado",
                 // 6058: "Console de Video Game",
                 // 3606: "Impressora",
                 // 138: "Fogão",
                 // 126: "Microondas",
-                10232: "Tablet",
                 // 9830: "Pneu para Carro",
-                62: "Caixa de Som para PC",
                 // 6504: "Frigobar",
                 // 3662: "Ventilador / Circulador",
-                145: "Forno Elétrico",
-                150: "Fritadeira",
-                9863: "Purificador de Água",
-                131: "Freezer",
-                121: "Cafeteira",
                 // 3442: "Perfume",
-                119: "Aspirador de Pó / Água",
-                3694: "Relógio de Pulso",
                 // 6378: "Monitor Cardíaco",
-                129: "Lava Louças",
                 // 10936: "Media Server",
                 // 10104: "Leitor de e-book",
                 // 16: "Fone de Ouvido",
                 // 6409: "Jogos",
                 // 8958: "Climatizador",
-                36: "Monitor",
-                3669: "Liquidificador",
                 // 2858: "Tênis",
-                120: "Batedeira",
                 // 2796: "Secador de Cabelo",
-                2801: "Armário / Guarda-Roupa",
                 // 1437: "Bicicleta",
-                7594: "Coifa / Exaustor",
                 // 3737: "HD"
             },
 
             default_categories_ids_order = ["bestsellers", 77, 2852, 6424, 10232, 62, 145, 150, 9863, 131, 121, 119, 3694, 129, 36, 3669, 120, 2801, 7594],
-
-            suggestion_has_heart_beat = true,
-            suggestion_has_heart_beat_keyboard = true,
-            delayed_suggestion,
-            last_suggestion = "",
-
-            search_has_heart_beat = true,
-            delayed_search,
-
-            // suggestion
-            hover_suggest,
-            has_focus,
-            hover_pos,
-            max_suggestions = 6,
 
             // 'global options
             g_source_id,
@@ -84,7 +72,6 @@ var VitrineResponsiva = (
 
             // spin.js
             offers_spinner,
-            suggestions_spinner,
 
             // holders
             search_holder,
@@ -97,7 +84,6 @@ var VitrineResponsiva = (
             entry,
             bg_message,
             loading,
-            sugst_scroll,
 
             // pagination
             pagination_previous,
@@ -111,7 +97,6 @@ var VitrineResponsiva = (
             zoom_in_interval
         ;
 
-        // console.log(tabs_ids);
 
         function $(e) {
             return d.getElementById(e);
@@ -302,13 +287,8 @@ var VitrineResponsiva = (
             last_options = params;
 
             last_callback = function (o) {
-
-                delayedSearchCallback(function () {
-                    // esconde loading
-                    offers_spinner.stop();
-                    callback(o);
-                });
-
+                offers_spinner.stop();
+                callback(o);
             }
 
             Lomadee(last_method, last_options, last_callback);
@@ -319,63 +299,21 @@ var VitrineResponsiva = (
 
         function suggestionSearch(keyword) {
 
-            // heartbeat p/ não executar de novo se ja estiver executando
-            // isso faz com que uma segunda request fique no delayed_search
-            searchHeartBeat(function () {
+            keyword = slugify(keyword);
 
-                keyword = slugify(keyword);
+            if (keyword !== "") {
 
-                if (keyword !== "") {
+                onDemandServices("offer/_search", {
+                    keyword: keyword,
+                    size: g_results,
+                    page: 1
+                }, function (o) {
+                    renderOffers(o.offers);
+                    renderPagination(o.pagination);
+                });
 
-                    onDemandServices("offer/_search", {
-                        keyword: keyword,
-                        size: g_results,
-                        page: 1
-                    }, function (o) {
-                        renderOffers(o.offers);
-                        renderPagination(o.pagination);
-                    });
-
-                }
-
-            });
-
-        }
-
-
-        function mouseSugst(over, el) {
-
-            var
-                suggestionHolder = el.parentNode.parentNode,
-                index = el.getAttribute("data-index");
-
-            if (over) {
-
-                hover_suggest = true;
-
-                if (hover_pos !== -1) {
-                    var element = suggestionHolder.getElementsByTagName('li')[hover_pos];
-                    if (element) {
-                        element.getElementsByTagName('a')[0].className = "";
-                    }
-                }
-
-                el.className = "hover";
-                hover_pos = index;
-
-                // out
-            } else {
-                hover_suggest = false;
-                el.className = "";
             }
 
-        }
-
-
-        function selectSugst(el) {
-            search_holder.value = el.innerHTML;
-            suggestionSearch(el.innerHTML);
-            return false;
         }
 
 
@@ -386,48 +324,6 @@ var VitrineResponsiva = (
 
         function hide(el) {
             el.style.display = "none";
-        }
-
-
-        function searchHeartBeat(fn) {
-            if (search_has_heart_beat) {
-
-                search_has_heart_beat = false;
-                fn();
-
-            } else {
-
-                delayed_search = fn;
-
-            }
-        }
-
-
-        function delayedSearchCallback(fn) {
-            if (delayed_search) {
-
-                var delayed_buffer = delayed_search;
-                delayed_search = null;
-                delayed_buffer();
-
-            } else {
-
-                fn();
-                search_has_heart_beat = true;
-            }
-        }
-
-
-        function suggestionHeartBeatKeyboard(fn) {
-            if (suggestion_has_heart_beat_keyboard) {
-
-                suggestion_has_heart_beat_keyboard = false;
-                fn();
-
-                setTimeout(function () {
-                    suggestion_has_heart_beat_keyboard = true;
-                }, 200);
-            }
         }
 
 
@@ -529,6 +425,8 @@ var VitrineResponsiva = (
 
 
         function renderPagination(o) {
+
+            console.log(o);
 
             // console.log(o);
             if (!o) {
@@ -718,23 +616,16 @@ var VitrineResponsiva = (
                 sort: 'bestsellers'
             }
 
-            // console.log(options);
 
             // hide pagination
             hide(pagination_previous);
             hide(pagination_next);
-            
-            // console.log(category);
 
             // if "category" is a keyword
             if (category[0] == "k") {
                 options["keyword"] = category.split("k_")[1];
                 var endpoint = "offer/_search";
-            
-            // if "category" is a product id
-            // } else if (category[0] == "p") {
-            //     var endpoint = "offer/_product/" + category.split("p_")[1];
-
+                
             // if "category" is best sellers
             } else if (category == "bestsellers") {
                 var
@@ -823,25 +714,9 @@ var VitrineResponsiva = (
             var resizeCalc = function(render) {
 
                 var
-                    // tamanho da tela
                     available_width = offers_holder.offsetWidth,
-                    // available_width = windowWidth(),
                     available_height = windowHeight()
                 ;
-
-                // use width to define max_suggestions (2 to phones : 6 screen)
-                // max_suggestions = (available_width <= 320) ? 2 : 6;
-
-                // if (available_width <= 363) {
-                //     search_holder.setAttribute('placeholder', "Digite o produto, marca ou modelo.");
-                // }
-
-                // menos a sidebar (se ela estiver na tela)
-                // available_width -= (getStyle(sidebar, "display") !== "none" ? sidebar.offsetWidth : 0);
-
-                // console.log("sidebar.offsetWidth: " + sidebar.offsetWidth);
-                // console.log("offers_holder: " + offers_holder.offsetWidth);
-                // console.log(getStyle(sidebar, "display"));
 
                 // menos bordas
                 available_height -= 2;
@@ -850,9 +725,6 @@ var VitrineResponsiva = (
 
                 // ajusta tamanho da parte scrollavel do menu
                 tabs_holder.style.height = (available_height - 35) + "px";
-
-                // ajusta suggestion
-                // sugst_scroll.style.height = (available_height - header.offsetHeight) + "px";
 
                 var
                     product_template = offers_holder.childNodes[0],
@@ -866,8 +738,6 @@ var VitrineResponsiva = (
                 pagination_next.style.lineHeight = (available_height - 7.5) + "px";
                 pagination_previous.style.lineHeight = (available_height - 7.5) + "px";
 
-                // TODO: deixar somente a quantidade exata, não deixar um produto a mais, para tirar a borda da direita
-
                 var
                     available_space_cols = Math.max(Math.floor(available_width / product_width), 1)
                 ;
@@ -876,8 +746,8 @@ var VitrineResponsiva = (
                 // console.log("product width: " + product_width);
                 // console.log(available_width / product_width);
                 // console.log(available_space_cols);
-                //      console.log(available_space_lines);
-                //      console.log(available_space_cols);
+                // console.log(available_space_lines);
+                // console.log(available_space_cols);
 
                 // usa calculo para saber quantos produtos carregar
                 g_results = available_space_cols;
@@ -922,8 +792,6 @@ var VitrineResponsiva = (
 
 
         return {
-            selectSugst: selectSugst,
-            mouseSugst: mouseSugst,
             renderWidget: renderWidget,
             imgErr: imageError,
             openTab: openTab,
