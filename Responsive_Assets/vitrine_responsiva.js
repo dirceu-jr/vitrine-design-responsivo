@@ -41,6 +41,7 @@ var VitrineResponsiva = (
                 7594: "Coifa / Exaustor",
 
                 // temp not working categories in lomadee...
+
                 // 3673: "Geladeira / Refrigerador",
                 // 3671: "Lavadora de Roupas",
                 // 3661: "Ar Condicionado",
@@ -75,7 +76,6 @@ var VitrineResponsiva = (
 
             // holders
             search_holder,
-
             tabs_holder,
             offers_holder,
             header,
@@ -84,11 +84,14 @@ var VitrineResponsiva = (
             loading,
 
             // to load more pages from last BWS call
+            // (eg: in older pagination method)
             last_options,
             last_callback,
             last_method,
 
-            zoom_in_interval
+            zoom_in_interval,
+
+            has_scrolled = false
         ;
 
 
@@ -331,7 +334,8 @@ var VitrineResponsiva = (
 
                     var
                         abrv = "BRL",
-                        installment = (o[i].installment && o[i].installment.quantity) ?
+                        installment_conditional = o[i].installment && o[i].installment.quantity && o[i].installment.quantity > 1,
+                        installment = installment_conditional ?
                             (o[i].installment.quantity + " x " + formatMoney(o[i].installment.value, abrv)) : "&nbsp;",
                         price = formatMoney(o[i].price, abrv),
                         name = o[i].name.replace("Smartphone", ""),
@@ -348,7 +352,7 @@ var VitrineResponsiva = (
 
                     render.push(
                         "<li>",
-                            "<a href='", o[i].link, "' target='_blank' onclick='VitrineResponsiva.analytics(\"Oferta-Click\", \"", (o[i].id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'>",
+                            "<a href='", o[i].link, "' target='_blank' title='", name, "' onclick='VitrineResponsiva.analytics(\"Oferta-Click\", \"", (o[i].id || 0), "-", (o[i].category.id || 0), "\", \"", name, "\");'>",
                                 "<div class='thumbholder'>",
                                     "<img class='thumb' src='", thumbnail, "' onerror='VitrineResponsiva.imgErr(this);' />",
                                 "</div>",
@@ -389,11 +393,19 @@ var VitrineResponsiva = (
                         return;
                     }
                     if (actual_count >= max) {
-                        entry.scrollTo({
-                            top: 0,
-                            left: 0,
-                            behavior: 'smooth'
-                        });
+                        // avoid to move/scroll after user has manually scrolled
+                        if (!has_scrolled) {
+                            entry.scrollTo({
+                                top: 0,
+                                left: 0,
+                                behavior: 'smooth'
+                            });
+                            // in order to detect user scroll
+                            // set it to false when auto scrolled
+                            setTimeout(function() {
+                                has_scrolled = false;
+                            }, 500);
+                        }
 
                         actual_count = 0;
                     }
@@ -411,12 +423,20 @@ var VitrineResponsiva = (
                     actual.className = "hover";
 
                     // scroll if its an element initially not visible
-                    if (actual_count % g_results == 0) {
-                        entry.scrollTo({
-                            top: 0,
-                            left: actual_count * 121,
-                            behavior: 'smooth'
-                        });
+                    if (actual_count > 0 && (actual_count % g_results == 0)) {
+                        // avoid to move/scroll after user has manually scrolled
+                        if (!has_scrolled) {
+                            entry.scrollTo({
+                                top: 0,
+                                left: actual_count * 121,
+                                behavior: 'smooth'
+                            });
+                            // in order to detect user scroll
+                            // set it to false when auto scrolled
+                            setTimeout(function() {
+                                has_scrolled = false;
+                            }, 500);
+                        }
                     }
                     
                     actual_count++;
@@ -569,15 +589,15 @@ var VitrineResponsiva = (
 
         // more 'weigth' when g_results is smaller
         // eg:
-        // 1 * 3
-        // 2 * 3
-        // 3 * 3
+        // 1 * 4
+        // 2 * 4
+        // 3 * 4
         // 4 * 2
         // 5 * 2
         // ...
         function g_results_to_size() {
             if (g_results < 4) {
-                return g_results * 3;
+                return g_results * 4;
             } else {
                 return g_results * 2;
             }
@@ -586,6 +606,7 @@ var VitrineResponsiva = (
 
         function findTab(category, from_menu) {
 
+            has_scrolled = false;
             // console.log(g_results);
 
             var options = {
@@ -660,6 +681,10 @@ var VitrineResponsiva = (
 
             addEvent($("the-search"), "submit", function(evt) {
                 return onformsubmit(evt);
+            });
+
+            addEvent(entry, "scroll", function(evt) {
+                has_scrolled = true;
             });
 
             var resizeCalc = function(render) {
