@@ -48,7 +48,7 @@ Formato em página de testes:
 Veja uma página de demonstração da Vitrine: [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
 
 ## Palavra do desenvolvedor
-De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. Com aproximadamente 1200 linhas de JavaScript puro, o HTML + CSS + JS pesa minificado 11.7 KB.
+De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. Com aproximadamente 750 linhas de JavaScript puro, o HTML + CSS + JS pesa minificado 11.7 KB.
 
 ## Time
 Programação: Dirceu

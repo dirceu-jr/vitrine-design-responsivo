@@ -75,19 +75,13 @@ var VitrineResponsiva = (
 
             // holders
             search_holder,
-            suggestions_loading,
 
-            suggestions_holder,
             tabs_holder,
             offers_holder,
             header,
             entry,
             bg_message,
             loading,
-
-            // pagination
-            pagination_previous,
-            pagination_next,
 
             // to load more pages from last BWS call
             last_options,
@@ -277,7 +271,7 @@ var VitrineResponsiva = (
             if (offers_spinner) {
                 offers_spinner.spin(loading);
             } else {
-                offers_spinner = new Spinner({
+                offers_spinner = new Spin.Spinner({
                     color: "#d0d0d0",
                     lines: 12
                 }).spin(loading);
@@ -295,8 +289,6 @@ var VitrineResponsiva = (
         }
 
 
-        // TODO - executar delayed search no fail do jsonp
-
         function suggestionSearch(keyword) {
 
             keyword = slugify(keyword);
@@ -305,11 +297,10 @@ var VitrineResponsiva = (
 
                 onDemandServices("offer/_search", {
                     keyword: keyword,
-                    size: g_results,
+                    size: g_results_to_size(),
                     page: 1
                 }, function (o) {
                     renderOffers(o.offers);
-                    renderPagination(o.pagination);
                 });
 
             }
@@ -333,8 +324,8 @@ var VitrineResponsiva = (
 
                 var
                     render = [],
-                    expected_length = (g_results < o.length ? g_results : o.length);
-
+                    expected_length = o.length
+                ;
 
                 for (var i = 0; i < expected_length; i++) {
 
@@ -373,15 +364,16 @@ var VitrineResponsiva = (
 
                 hide(bg_message);
                 offers_holder.innerHTML = render.join("");
+
+                // to allow horizontal scrolling
+                offers_holder.style.width = (expected_length * 121) + 'px';
+
                 zoomInOffers(expected_length);
 
             } else {
 
-                // não encontrou oferta
+                // offer not found
                 offers_holder.innerHTML = "<div style='margin: 20px'>Nenhum produto encontrado para essa pesquisa.</div>";
-
-                // hide(pagination_previous);
-                // hide(pagination_next);
 
             }
 
@@ -397,6 +389,12 @@ var VitrineResponsiva = (
                         return;
                     }
                     if (actual_count >= max) {
+                        entry.scrollTo({
+                            top: 0,
+                            left: 0,
+                            behavior: 'smooth'
+                        });
+
                         actual_count = 0;
                     }
                     var previous_count = actual_count - 1;
@@ -411,6 +409,15 @@ var VitrineResponsiva = (
                     
                     previous.className = "";
                     actual.className = "hover";
+
+                    // scroll if its an element initially not visible
+                    if (actual_count % g_results == 0) {
+                        entry.scrollTo({
+                            top: 0,
+                            left: actual_count * 121,
+                            behavior: 'smooth'
+                        });
+                    }
                     
                     actual_count++;
                 }
@@ -424,48 +431,8 @@ var VitrineResponsiva = (
         }
 
 
-        function renderPagination(o) {
-
-            console.log(o);
-
-            // console.log(o);
-            if (!o) {
-                return false;
-            }
-
-            hide(pagination_previous);
-            hide(pagination_next);
-
-            if (o.page > 1) {
-                show(pagination_previous);
-            }
-
-            if (o.totalPage > o.page) {
-                show(pagination_next);
-            }
-
-        }
-
-        function actionPagination(action) {
-
-            analytics('Paginacao', action);
-
-            if (action == "pre") {
-                last_options.page = last_options.page - 1;
-            } else {
-                last_options.page = last_options.page + 1;
-            }
-
-            onDemandServices(last_method, last_options, last_callback);
-
-        }
-
-
-        // desenha menu lateral com "abas" de produtos
+        // render side menu with 'tabs' of products
         function renderTabs(options) {
-
-            // TODO:
-            // limitar tamanho da lista de keywords para não abusarem e bugar
 
             if(options["keywords"] !== undefined) {
 
@@ -518,7 +485,7 @@ var VitrineResponsiva = (
                 }
             }
 
-            // aqui pode randomizar as primeiras
+            // in order to randomize first ones...
             var
                 randomize_tabs_til = 1,
                 top_tabs_ids = default_categories_ids_order.slice(0, randomize_tabs_til),
@@ -563,8 +530,6 @@ var VitrineResponsiva = (
         }
 
 
-        // abre uma aba
-
         function openTab(open_category, from_menu) {
 
             var
@@ -572,9 +537,7 @@ var VitrineResponsiva = (
                 tab = $("tab-" + open_category)
             ;
 
-            // console.log(tabsChilds);
-
-            // limpa estilo dos links das abas
+            // clean tabs links styles
             for (var i = 0; i < tabsChilds.length; i++) {
                 var
                     text = tabsChilds[i].innerText ? tabsChilds[i].innerText : tabsChilds[i].textContent,
@@ -592,7 +555,7 @@ var VitrineResponsiva = (
                 tabsChilds[i].className = "";
             }
 
-            // define o estilo de ativo da aba que esta aberta
+            // set active style to open tab
             if (tab) {
                 tab.className = "current";
                 tab.innerHTML = "<span>" + (tab.innerText ? tab.innerText : tab.textContent) + "</span>";
@@ -604,22 +567,33 @@ var VitrineResponsiva = (
 
         }
 
+        // more 'weigth' when g_results is smaller
+        // eg:
+        // 1 * 3
+        // 2 * 3
+        // 3 * 3
+        // 4 * 2
+        // 5 * 2
+        // ...
+        function g_results_to_size() {
+            if (g_results < 4) {
+                return g_results * 3;
+            } else {
+                return g_results * 2;
+            }
+        }
 
-        // procura no bws/lomadee e manda renderizar
 
         function findTab(category, from_menu) {
 
+            // console.log(g_results);
+
             var options = {
                 page: 1,
-                size: (g_results + 1),
+                size: g_results_to_size(),
                 sourceId: g_source_id,
                 sort: 'bestsellers'
             }
-
-
-            // hide pagination
-            hide(pagination_previous);
-            hide(pagination_next);
 
             // if "category" is a keyword
             if (category[0] == "k") {
@@ -634,11 +608,9 @@ var VitrineResponsiva = (
                     // total_size = 226,
                     // but it has to works a long time without modifications so will be conservative and lower it 
                     total_size = 150,
-                    per_page = (g_results + 1),
+                    per_page = g_results_to_size(),
                     total_pages = total_size/per_page
                 ;
-
-                // console.log(total_pages);
                 
                 options["page"] = Math.floor(Math.random() * total_pages) + 1;
             // if category
@@ -654,7 +626,6 @@ var VitrineResponsiva = (
             onDemandServices(endpoint, options, function (o) {
                 offers_holder.style.visibility = "visible";
                 renderOffers(o.offers);
-                renderPagination(o.pagination);
             });
 
         }
@@ -665,17 +636,12 @@ var VitrineResponsiva = (
 
             g_source_id = (options["sourceId"] || "35802480");
             search_holder = $("in_sx");
-            suggestions_loading = $("sx-loa");
-            suggestions_holder = $("sugst");
             tabs_holder = $("tabs_holder");
             sidebar = $("sidebar");
-            // sugst_scroll = $("sugst_scroll");
             offers_holder = $("offer");
             footer = $("fotr");
             header = $("headr");
             entry = $("entry");
-            pagination_previous = $("pre");
-            pagination_next = $("nxt");
             bg_message = $("msg");
             loading = $("load");
 
@@ -696,34 +662,19 @@ var VitrineResponsiva = (
                 return onformsubmit(evt);
             });
 
-            addEvent(pagination_previous, "click", function (event) {
-                event.preventDefault();
-                actionPagination("pre");
-                return false;
-            });
-
-            addEvent(pagination_next, "click", function (event) {
-                event.preventDefault();
-                actionPagination("nxt");
-                return false;
-            });
-
-            // !! render
-            // a quantidade de colunas é ajustada no css
-
             var resizeCalc = function(render) {
 
                 var
-                    available_width = offers_holder.offsetWidth,
+                    available_width = entry.offsetWidth,
                     available_height = windowHeight()
                 ;
 
-                // menos bordas
+                // minus border
                 available_height -= 2;
 
                 entry.style.height = available_height + "px";
 
-                // ajusta tamanho da parte scrollavel do menu
+                // adjust vertically scrollable menu
                 tabs_holder.style.height = (available_height - 35) + "px";
 
                 var
@@ -735,8 +686,8 @@ var VitrineResponsiva = (
                 product_template.style.height = available_height + "px";
 
                 // adjust line-height of pagination to align in the middle
-                pagination_next.style.lineHeight = (available_height - 7.5) + "px";
-                pagination_previous.style.lineHeight = (available_height - 7.5) + "px";
+                // pagination_next.style.lineHeight = (available_height - 7.5) + "px";
+                // pagination_previous.style.lineHeight = (available_height - 7.5) + "px";
 
                 var
                     available_space_cols = Math.max(Math.floor(available_width / product_width), 1)
@@ -749,10 +700,11 @@ var VitrineResponsiva = (
                 // console.log(available_space_lines);
                 // console.log(available_space_cols);
 
-                // usa calculo para saber quantos produtos carregar
+                // calc how many products to load in function of width
+                // load double to has scroll
                 g_results = available_space_cols;
 
-                // se bugar algo para de carregar
+                // break if something went wrong
                 if (!isFinite(g_results)) {
                     return false;
                 }
@@ -767,7 +719,7 @@ var VitrineResponsiva = (
 
             setTimeout(function() {
                 resizeCalc(true);
-            }, 300);
+            }, 400);
 
             window.addEventListener("orientationchange", function() {
                 resizeCalc(false);
