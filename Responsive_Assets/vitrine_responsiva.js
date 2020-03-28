@@ -384,6 +384,18 @@ var VitrineResponsiva = (
         }
 
 
+        function entryScrollTo(options) {
+            var isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+            if (isSmoothScrollSupported) {
+                // Native smooth scrolling
+                entry.scrollTo(options);
+            } else {
+                // Old way scrolling without effects
+                entry.scrollTo(options.left, options.top);
+            }
+        }
+
+
         function zoomInOffers(max) {
             
             var
@@ -395,7 +407,7 @@ var VitrineResponsiva = (
                     if (actual_count >= max) {
                         // avoid to move/scroll after user has manually scrolled
                         if (!has_scrolled) {
-                            entry.scrollTo({
+                            entryScrollTo({
                                 top: 0,
                                 left: 0,
                                 behavior: 'smooth'
@@ -404,7 +416,7 @@ var VitrineResponsiva = (
                             // set it to false when auto scrolled
                             setTimeout(function() {
                                 has_scrolled = false;
-                            }, 500);
+                            }, 1000);
                         }
 
                         actual_count = 0;
@@ -426,7 +438,7 @@ var VitrineResponsiva = (
                     if (actual_count > 0 && (actual_count % g_results == 0)) {
                         // avoid to move/scroll after user has manually scrolled
                         if (!has_scrolled) {
-                            entry.scrollTo({
+                            entryScrollTo({
                                 top: 0,
                                 left: actual_count * 121,
                                 behavior: 'smooth'
@@ -435,7 +447,7 @@ var VitrineResponsiva = (
                             // set it to false when auto scrolled
                             setTimeout(function() {
                                 has_scrolled = false;
-                            }, 500);
+                            }, 1000);
                         }
                     }
                     

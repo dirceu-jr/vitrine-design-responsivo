@@ -248,6 +248,7 @@ a:hover {
     margin-left: 180px;
     overflow: hidden;
     overflow-y: hidden;
+    scroll-behavior: smooth;
 }
 
 #entry:hover {
