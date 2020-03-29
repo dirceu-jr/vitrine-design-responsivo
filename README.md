@@ -18,7 +18,7 @@ Já foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [Ban
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>iOS Safari |
 | --------- | --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge| | | |
+| IE10, IE11, Edge|✔|✔|✔|✔
 
 Foi usada a ferramenta BrowserStack para gerar captura de tela da Vitrine rodando em diversos sistemas operacionais e navegadores diferentes. [Ver página "BrowserStack"](https://github.com/dirceup/vitrine-design-responsivo/blob/master/browserstack.md).
 
