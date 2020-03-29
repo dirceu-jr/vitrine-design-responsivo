@@ -637,10 +637,9 @@ var VitrineResponsiva = (
             } else if (category == "bestsellers") {
                 var
                     endpoint = "offer/_bestsellers",
-                    // in fact currently there are 226 totalSize
-                    // total_size = 226,
-                    // but it has to works a long time without modifications so will be conservative and lower it 
-                    total_size = 150,
+
+                    // lomadee V3 has not a valid totalPage :|
+                    total_size = 200,
                     per_page = g_results_to_size(),
                     total_pages = total_size/per_page
                 ;
