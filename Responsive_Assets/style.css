@@ -247,7 +247,6 @@ a:hover {
     position: relative;
     margin-left: 180px;
     overflow: hidden;
-    overflow-y: hidden;
     scroll-behavior: smooth;
 }
 
@@ -364,9 +363,12 @@ a.hover .thumb
     float: left;
 }
 
+#tabs_holder {
+    overflow: hidden;
+}
+
 #tabs_holder:hover {
     overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 .disable {
