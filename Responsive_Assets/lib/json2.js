@@ -1,5 +1,5 @@
 /**
- * @preserve Thank you very much
+ * @preserve
  * https://github.com/douglascrockford/JSON-js
  */
 

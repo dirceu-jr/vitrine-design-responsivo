@@ -7,7 +7,7 @@ output_file_name = "../public/vitrine_responsiva-1.8.0.min.js"
 os.system("java -jar ../tools/yuicompressor-2.4.8.jar ./style.css -o ../public/style-min.css -v")
 
 # minimize JS using Closure Compiler - stores at ./staging/
-os.system("java -jar ../tools/closure-compiler-v20190301.jar --js ./lib/json2.js ./lib/spin.min.js ./vitrine_responsiva.js --js_output_file " + output_file_name)
+os.system("java -jar ../tools/closure-compiler-v20190301.jar --js ./lib/spin.min.js ./lib/json2.js ./vitrine_responsiva.js --js_output_file " + output_file_name)
 
 # open css file
 css_file = open("../public/style-min.css", "r")
