@@ -368,7 +368,7 @@ a.hover .thumb
 }
 
 #tabs_holder:hover {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .disable {
