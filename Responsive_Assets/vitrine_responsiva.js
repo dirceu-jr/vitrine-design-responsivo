@@ -34,14 +34,14 @@ var VitrineResponsiva = (
                 119: "Aspirador de Pó / Água",
                 3694: "Relógio de Pulso",
                 129: "Lava Louças",
-                36: "Monitor",
                 3669: "Liquidificador",
                 120: "Batedeira",
-                2801: "Armário / Guarda-Roupa",
-                7594: "Coifa / Exaustor",
+                7594: "Coifa / Exaustor"
 
                 // temp not working categories in lomadee...
 
+                // 2801: "Armário / Guarda-Roupa",
+                // 36: "Monitor",
                 // 3673: "Geladeira / Refrigerador",
                 // 3671: "Lavadora de Roupas",
                 // 3661: "Ar Condicionado",
@@ -64,8 +64,8 @@ var VitrineResponsiva = (
                 // 1437: "Bicicleta",
                 // 3737: "HD"
             },
-
-            default_categories_ids_order = ["bestsellers", 77, 2852, 6424, 10232, 62, 145, 150, 9863, 131, 121, 119, 3694, 129, 36, 3669, 120, 2801, 7594],
+            
+            default_categories_ids_order = ["bestsellers", 77, 2852, 6424, 10232, 62, 145, 150, 9863, 131, 121, 119, 3694, 129, 3669, 120, 7594],
 
             // 'global options
             g_source_id,
@@ -78,7 +78,6 @@ var VitrineResponsiva = (
             search_holder,
             tabs_holder,
             offers_holder,
-            header,
             entry,
             bg_message,
             loading,
@@ -398,6 +397,13 @@ var VitrineResponsiva = (
 
         function zoomInOffers(max) {
             
+            // reset scroll
+            entryScrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+
             var
                 actual_count = 0,
                 next = function() {
@@ -599,7 +605,7 @@ var VitrineResponsiva = (
 
         }
 
-        // more 'weigth' when g_results is smaller
+        // more 'weight' when g_results is smaller
         // eg:
         // 1 * 4
         // 2 * 4
