@@ -12,7 +12,7 @@ O formato é hospedado e distribuido pela rede de marketing de afiliados [Lomade
 
 Com foco em dispositivos móveis, foi otimizada para consumir poucos recursos de rede.
 
-Já foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/) e outros. É usado pelo [Bem Paraná](https://www.bemparana.com.br/).
+Já foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/), [Bem Paraná](https://www.bemparana.com.br/) e outros.
 
 ## Navegadores suportados
 
