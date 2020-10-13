@@ -4,7 +4,7 @@
 Faça o cadastro e login na rede de afiliados [Lomadee](https://www.lomadee.com), entre no menu "Formatos" e procure por "Vitrine Para Design Responsivo".
 
 ## História
-Após experiências com a API (Interface de Programação de Aplicativos) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegador, o projeto "Vitrine Para Design Responsivo" começou a ser desenvolvido em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
+Após experiências com a API (Interface de Programação de Aplicativos) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegadores, o projeto "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
 
 Inicialmente foram disponibilizados formatos pré-desenhados: alert, widget e mobile. No primeiro semestre de 2013, a ferramenta foi re-desenhada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante. Formato conhecido por "design responsivo". Em 2018 a funcionalidade "design responsivo" foi simplificada.
 
@@ -13,6 +13,8 @@ O formato é hospedado e distribuido pela rede de marketing de afiliados [Lomade
 Com foco em dispositivos móveis, foi otimizada para consumir poucos recursos de rede.
 
 Já foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/), [Bem Paraná](https://www.bemparana.com.br/) e outros.
+
+De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. O HTML + CSS + JS pesa "minificado" 11,7KB.
 
 ## Navegadores suportados
 
@@ -46,11 +48,3 @@ Formato em página de testes:
 
 ## Demonstração
 Veja uma página de demonstração da Vitrine: [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
-
-## Palavra do desenvolvedor
-De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. O HTML + CSS + JS pesa minificado 11.7 KB.
-
-## Time
-Programação: Dirceu
-
-Desenho da interface: [Mikael Carrara](https://github.com/mikaelcarrara)
