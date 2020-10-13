@@ -4,7 +4,7 @@
 Faça o cadastro e login na rede de afiliados [Lomadee](https://www.lomadee.com), entre no menu "Formatos" e procure por "Vitrine Para Design Responsivo".
 
 ## História
-Após experiências com a API (Interface de Programação de Aplicativos) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegadores, o projeto "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
+Após experiências com a API (Interface de Programação de Aplicativos) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegadores, o projeto "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) e programador [Dirceu Jr.](https://github.com/dirceup) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
 
 Inicialmente foram disponibilizados formatos pré-desenhados: alert, widget e mobile. No primeiro semestre de 2013, a ferramenta foi re-desenhada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante. Formato conhecido por "design responsivo". Em 2018 a funcionalidade "design responsivo" foi simplificada.
 
