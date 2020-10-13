@@ -1,18 +1,13 @@
 # Vitrine Para Design Responsivo
 
-## Uso
-Faça o cadastro e login na rede de afiliados [Lomadee](https://www.lomadee.com), entre no menu "Formatos" e procure por "Vitrine Para Design Responsivo".
-
 ## História
-Após experiências com a API (Interface de Programação de Aplicativos) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegadores, o projeto "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) e programador [Dirceu Jr.](https://github.com/dirceup) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
+Após experiências com a Interface de Programação de Aplicativos (API) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegadores, o projeto da ferramenta "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) e programador [Dirceu Jr.](https://github.com/dirceup) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
 
-Inicialmente foram disponibilizados formatos pré-desenhados: alert, widget e mobile. No primeiro semestre de 2013, a ferramenta foi re-desenhada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante. Formato conhecido por "design responsivo". Em 2018 a funcionalidade "design responsivo" foi simplificada.
+Inicialmente foram disponibilizados formatos pré-desenhados: *alert*, *widget* e *mobile*.
 
-O formato é hospedado e distribuido pela rede de marketing de afiliados [Lomadee](https://www.lomadee.com) na aba "Formatos" e enfrenta a concorrência de produtos de empresas como a Criteo, Google Ads, Outbrain e outras.
+No primeiro semestre de 2013, a ferramenta foi redesenhada e renomeada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante, formato conhecido por "*design responsivo*". Em 2018 a funcionalidade "design responsivo" foi simplificada. Com foco em dispositivos móveis, é otimizada para consumir poucos recursos de rede.
 
-Com foco em dispositivos móveis, foi otimizada para consumir poucos recursos de rede.
-
-Já foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/), [Bem Paraná](https://www.bemparana.com.br/) e outros.
+Hospedado e distribuido pela rede de marketing de afiliados [Lomadee](https://www.lomadee.com) na aba "Formatos", enfrentou a concorrência de produtos de empresas como a Criteo, Google Ads, Outbrain e outras. Já foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/), [Bem Paraná](https://www.bemparana.com.br/) entre outros.
 
 De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. O HTML + CSS + JS pesa "minificado" 11,7KB.
 
@@ -22,29 +17,25 @@ De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de fr
 | --------- | --------- | --------- | --------- | --------- |
 | IE10, IE11, Edge|✔|✔|✔|✔
 
-Foi usada a ferramenta BrowserStack para gerar captura de tela da Vitrine rodando em diversos sistemas operacionais e navegadores diferentes. [Ver página "BrowserStack"](https://github.com/dirceup/vitrine-design-responsivo/blob/master/browserstack.md).
+Usamos o serviço BrowserStack para gerar captura de tela da Vitrine rodando em diversos sistemas operacionais e navegadores diferentes. [Ver página "BrowserStack"](https://github.com/dirceup/vitrine-design-responsivo/blob/master/browserstack.md).
 
 ## Desenvolvimento
-O formato possui um modelo de desenvolvimento colaborativo, baseado em código livre. Issues e Pull requests são bem-vindas.
+O formato possui um modelo de desenvolvimento colaborativo, baseado em código livre. Os arquivos de desenvolvimento são `Responsive_Assets/vitrine_responsiva.js` (JavaScript) e `Responsive_Assets/style.css` (CSS).
 
-Os arquivos de desenvolvimento são Responsive_Assets/vitrine_responsiva.js (JavaScript) e Responsive_Assets/style.css (CSS).
-
-Executando o comando `python build.py` dentro da pasta Responsive_Assets/, os arquivos de produção são gerados dentro da pasta public/.
+Executando o comando `python build.py` dentro da pasta Responsive_Assets/, os arquivos de produção são gerados na pasta public/.
 
 ## Testes
-Foram escritos testes unitários e de integração.
-Os unitários podem ser rodados abrindo o arquivo Responsive_Assets/SpecRunner.html e os de integração usam a [gem watir](https://rubygems.org/gems/watir) e ficam na pasta Responsive_Assets/utils/
+Existem testes unitários e de integração. Os unitários podem ser rodados abrindo o arquivo `Responsive_Assets/SpecRunner.html` e os de integração usam a [gem watir](https://rubygems.org/gems/watir) e ficam na pasta `Responsive_Assets/utils/`.
 
 ## Analytics
 Alguns dados de uso são disponibilizados na página [Analytics](https://github.com/dirceup/vitrine-design-responsivo/blob/master/analytics.md).
 
-## Captura de tela
+## Formato disponível na Lomadee
 
-Formato na Lomadee:
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/formatos.png)
 
-Formato em página de testes:
+## Formato em página de testes
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/pics.png)
 
 ## Demonstração
-Veja uma página de demonstração da Vitrine: [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/)
+Veja uma página de demonstração da Vitrine: [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/).
