@@ -5,11 +5,11 @@ Após experiências com a Interface de Programação de Aplicativos (API) da [Bu
 
 Inicialmente foram disponibilizados formatos pré-desenhados: *alert*, *widget* e *mobile*.
 
-No primeiro semestre de 2013, a ferramenta foi redesenhada e renomeada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante, formato conhecido por "*design responsivo*". Em 2018 a funcionalidade "design responsivo" foi simplificada. Com foco em dispositivos móveis, é otimizada para consumir poucos recursos de rede.
+No primeiro semestre de 2013, a ferramenta foi redesenhada para um formato único que se ajusta ao espaço disponível da página do publicador ou do dispositivo do visitante, e renomeada para "Vitrine Responsiva" por causa do seu "*design responsivo*". Em 2018 a funcionalidade "design responsivo" foi simplificada e o nome alterado para "Vitrine Para Design Responsivo". Com foco em dispositivos móveis, é otimizada para consumir poucos recursos de rede.
 
 Hospedado e distribuido pela rede de marketing de afiliados [Lomadee](https://www.lomadee.com) na aba "Formatos", enfrentou a concorrência de produtos de empresas como a Criteo, Google Ads, Outbrain e outras. Foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/), [Bem Paraná](https://www.bemparana.com.br/) entre outros.
 
-De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de frameworks tal como jQuery, React ou Angular. O HTML + CSS + JS pesa "minificado" 11,7KB.
+De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de _frameworks_ tal como _jQuery_, _React_ ou _Angular_. O HTML + CSS + JS pesa "minificado" 11,7KB.
 
 ## Navegadores suportados
 
