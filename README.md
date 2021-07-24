@@ -1,17 +1,15 @@
 # Vitrine Para Design Responsivo
 
 ## História
-Após experiências com a Interface de Programação de Aplicativos (API) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegadores, o projeto da ferramenta "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) e programador [Dirceu Jr.](https://github.com/dirceup) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
+Após experiências com a Interface de Programação de Aplicativos (API) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegadores, o projeto da ferramenta "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) e pelo programador [Dirceu Jr.](https://github.com/dirceup) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
 
 Inicialmente foram disponibilizados formatos pré-desenhados: *alert*, *widget* e *mobile*.
 
-No primeiro semestre de 2013, a ferramenta foi redesenhada para um formato único que se ajustava ao espaço disponível da página do publicador ou do dispositivo do visitante, e renomeada para "Vitrine Responsiva" por causa do seu *design responsivo*. Em 2018 a funcionalidade _design responsivo_ foi simplificada e o nome alterado para "Vitrine Para Design Responsivo".
-
-Com foco em dispositivos móveis, foi otimizada para consumir poucos recursos de rede.
+No primeiro semestre de 2013 a ferramenta foi redesenhada para um formato único que se ajustava ao espaço disponível da página do publicador ou do dispositivo do visitante, e renomeada para "Vitrine Responsiva" por causa do seu *design responsivo*. Em 2018 a funcionalidade _design responsivo_ foi simplificada e o nome alterado para "Vitrine Para Design Responsivo". No ínicio de 2021 pedimos a remoção da distribuição pelo Lomadee devido a baixa relevância dos produtos exibidos.
 
 Era hospedado e distribuido pela rede de marketing de afiliados [Lomadee](https://www.lomadee.com) na aba "Formatos", enfrentou a concorrência de produtos de empresas como a Criteo, Google Ads, Outbrain e outras. Foi usado por sites como o [Catraca Livre](http://catracalivre.com.br), [BandaB](https://bandab.com.br), [Paiquere](https://www.paiquere.com.br/), [Bem Paraná](https://www.bemparana.com.br/) entre outros.
 
-De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de _frameworks_ tal como _jQuery_, _React_ ou _Angular_. O HTML + CSS + JS pesa "minificado" 11,7KB.
+Com foco em dispositivos móveis, foi otimizada para consumir poucos recursos de rede. De forma a evitar código-fonte desnecessário, foi desenvolvido sem o uso de _frameworks_ tal como _jQuery_, _React_ ou _Angular_. O HTML + CSS + JS pesa "minificado" 11,7 KB.
 
 ## Navegadores suportados
 
