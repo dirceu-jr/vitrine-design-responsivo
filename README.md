@@ -1,7 +1,7 @@
 # Vitrine Para Design Responsivo
 
 ## História
-Após experiências com a Interface de Programação de Aplicativos (API) da [Buscapé](https://buscape.com.br) na criação de uma extensão para navegadores, o projeto da ferramenta "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) e pelo programador [Dirceu Jr.](https://github.com/dirceup) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
+Após experiências com a Interface de Programação de Aplicativos (API) da [Buscapé](https://buscape.com.br) na criação de [uma extensão para navegadores](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/buscaofertas-screen.jpeg), o projeto da ferramenta "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) e pelo programador [Dirceu Jr.](https://github.com/dirceup) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
 
 Inicialmente foram disponibilizados formatos pré-desenhados: *alert*, *widget* e *mobile*.
 
