@@ -1,5 +1,7 @@
 # Vitrine Responsiva (Vitrine Para Design Responsivo)
 
+Foi um formato da rede de marketing de afiliados [Lomadee](https://www.lomadee.com/) que se ajustava ao espaço disponível da página do publicador ou do dispositivo do visitante.
+
 ## História
 Após experiências com a Interface de Programação de Aplicativos (API) da [Buscapé](https://buscape.com.br) na criação de [uma extensão para navegadores](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/buscaofertas-screen.jpeg), o projeto da ferramenta "Vitrine Para Design Responsivo" começou a ser desenvolvido pelo designer [Mikael Carrara](https://github.com/mikaelcarrara) e pelo programador [Dirceu Jr.](https://github.com/dirceup) em Fevereiro de 2011 com o nome de "Widget Busca Ofertas".
 
