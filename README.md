@@ -37,6 +37,3 @@ Alguns dados de uso são disponibilizados na página [Analytics](https://github.
 
 ## Formato em página de testes
 ![alt text](https://raw.githubusercontent.com/dirceup/vitrine-responsiva/master/pics.png)
-
-## Demonstração
-Veja uma página de demonstração da Vitrine: [https://vitrine-responsiva.firebaseapp.com/](https://vitrine-responsiva.firebaseapp.com/).
